@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>Gotrue.Tests</AssemblyName>
+    <RootNamespace>Gotrue.Tests</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <Nullable>enable</Nullable>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest</AnalysisLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+    <PackageReference Include="MSTest.TestAdapter"/>
+    <PackageReference Include="MSTest.TestFramework"/>
+    <PackageReference Include="NSubstitute"/>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+    <PackageReference Include="Verify.MSTest"/>
+    <PackageReference Include="WireMock.Net"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gotrue\Gotrue.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TokenRefresh\Fixtures\*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!--
+    Mutation-harness scoping: Stryker cannot filter by [TestCategory], so when STRYKER_MUTATION=true we
+    compile-exclude the E2E tests (which drive the live StitchDB CLI stack, are slow, and are non-deterministic
+    per-mutant). Stryker then runs only the fast, hermetic Unit + Contract tests once per mutant. The mutate
+    scope is pinned in stryker-config.json to the offline-testable logic those tiers own. MSBuild resolves the
+    environment variable automatically; Stryker's child build inherits it.
+  -->
+  <ItemGroup Condition="'$(STRYKER_MUTATION)' == 'true'">
+    <Compile Remove="Authentication\**\*.cs"/>
+    <Compile Remove="Users\**\*.cs"/>
+    <Compile Remove="Sessions\**\*.cs"/>
+    <Compile Remove="Mfa\**\*.cs"/>
+    <Compile Remove="Admin\**\*.cs"/>
+    <Compile Remove="Stateless\**\*.cs"/>
+    <Compile Remove="Network\**\*.cs"/>
+    <Compile Remove="Configuration\**\*.cs"/>
+    <Compile Remove="TokenRefresh\RefreshTests.cs"/>
+  </ItemGroup>
+</Project>

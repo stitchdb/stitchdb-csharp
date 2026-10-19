@@ -1,0 +1,174 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+# Markdown uses two trailing spaces as a hard line break; trimming corrupts it.
+[*.md]
+trim_trailing_whitespace = false
+
+[*.cs]
+# --- Language style ---
+# Severity decides who sees a rule. At :suggestion Rider shows a green checkmark
+# but neither `dotnet build` nor `dotnet format --severity warn` reports it, so
+# the gate is blind to it. At :warning both see it.
+#
+# Raising severity only changes who REPORTS a rule. It is safe.
+# What is not safe is `dotnet format` in WRITE mode across a multi-targeted
+# project: it computes a fix per TFM, cannot merge them, and writes conflict
+# markers into the source. Sweep one project at a time, build after each, and
+# only once everything is on a single target framework.
+#
+# The var and predefined-type rules also rewrite code in ways that can change
+# overload resolution — worth a build immediately after formatting those.
+csharp_preferred_modifier_order = public, private, protected, internal, new, static, abstract, virtual, sealed, readonly, override, extern, unsafe, volatile, async, file, required:warning
+csharp_space_after_cast = true
+csharp_new_line_before_members_in_object_initializers = false
+csharp_style_var_for_built_in_types = true:warning
+csharp_style_var_when_type_is_apparent = true:warning
+csharp_style_var_elsewhere = true:warning
+
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+dotnet_style_qualification_for_field = true:warning
+dotnet_style_qualification_for_property = true:warning
+dotnet_style_qualification_for_method = true:warning
+dotnet_style_qualification_for_event = true:warning
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:warning
+
+# --- Expression-bodied members: use an expression body when the member is a single statement ---
+csharp_style_expression_bodied_methods = when_on_single_line:warning
+csharp_style_expression_bodied_constructors = when_on_single_line:warning
+csharp_style_expression_bodied_operators = when_on_single_line:warning
+csharp_style_expression_bodied_local_functions = when_on_single_line:warning
+csharp_style_expression_bodied_lambdas = when_on_single_line:warning
+csharp_style_expression_bodied_properties = when_on_single_line:warning
+csharp_style_expression_bodied_indexers = when_on_single_line:warning
+csharp_style_expression_bodied_accessors = when_on_single_line:warning
+
+# --- Usings & namespaces (auto-fixable by dotnet format) ---
+csharp_style_namespace_declarations = file_scoped:warning
+csharp_using_directive_placement = outside_namespace:warning
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
+# --- Naming (warning-level) ---
+# ORDER MATTERS: naming rules are evaluated in declaration order and the first
+# matching rule wins. The specific rules must precede the general one, or the
+# general private-field rule swallows consts and static readonlys.
+
+# private const: PascalCase
+dotnet_naming_rule.private_const_pascal_case.severity = warning
+dotnet_naming_rule.private_const_pascal_case.symbols = private_const_fields
+dotnet_naming_rule.private_const_pascal_case.style = pascal_case
+dotnet_naming_symbols.private_const_fields.applicable_kinds = field
+dotnet_naming_symbols.private_const_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_const_fields.required_modifiers = const
+
+# private static readonly: PascalCase
+dotnet_naming_rule.private_static_readonly_pascal_case.severity = warning
+dotnet_naming_rule.private_static_readonly_pascal_case.symbols = private_static_readonly_fields
+dotnet_naming_rule.private_static_readonly_pascal_case.style = pascal_case
+dotnet_naming_symbols.private_static_readonly_fields.applicable_kinds = field
+dotnet_naming_symbols.private_static_readonly_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_readonly_fields.required_modifiers = static, readonly
+
+# private instance / static fields: camelCase, NO underscore prefix (CONVENTIONS §4)
+dotnet_naming_rule.private_fields_camel_case.severity = warning
+dotnet_naming_rule.private_fields_camel_case.symbols = private_fields
+dotnet_naming_rule.private_fields_camel_case.style = camel_case
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+# Public surface: PascalCase.
+dotnet_naming_rule.public_members_pascal_case.severity = warning
+dotnet_naming_rule.public_members_pascal_case.symbols = public_members
+dotnet_naming_rule.public_members_pascal_case.style = pascal_case
+dotnet_naming_symbols.public_members.applicable_kinds = property, method, event, field
+dotnet_naming_symbols.public_members.applicable_accessibilities = public, protected, protected_internal
+
+# Interfaces: I-prefixed.
+dotnet_naming_rule.interfaces_prefixed.severity = warning
+dotnet_naming_rule.interfaces_prefixed.symbols = interface_symbols
+dotnet_naming_rule.interfaces_prefixed.style = i_prefix
+dotnet_naming_symbols.interface_symbols.applicable_kinds = interface
+
+# Async methods: Async suffix (QUALITY_RUBRIC §1.6).
+dotnet_naming_rule.async_methods_suffix.severity = warning
+dotnet_naming_rule.async_methods_suffix.symbols = async_methods
+dotnet_naming_rule.async_methods_suffix.style = async_suffix
+dotnet_naming_symbols.async_methods.applicable_kinds = method
+dotnet_naming_symbols.async_methods.applicable_accessibilities = public, internal, protected
+dotnet_naming_symbols.async_methods.required_modifiers = async
+
+dotnet_naming_style.camel_case.capitalization = camel_case
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+dotnet_naming_style.i_prefix.capitalization = pascal_case
+dotnet_naming_style.i_prefix.required_prefix = I
+dotnet_naming_style.async_suffix.capitalization = pascal_case
+dotnet_naming_style.async_suffix.required_suffix = Async
+
+# --- Analyzers ---
+# Analyzer severities (dotnet_diagnostic.*) live in .globalconfig at the repo
+# root, not here — Rider's editorconfig validation does not recognise that
+# property family and flags every line as unsupported.
+
+# --- ReSharper / Rider hints (IDE-only; not enforced by dotnet build) ---
+# Collapse blank lines in method bodies to 0 — backs the "no blank lines between arrange/act/assert"
+# rule. Rider-enforced; CI cannot enforce this via editorconfig alone.
+resharper_csharp_keep_blank_lines_in_code = 0
+resharper_csharp_keep_blank_lines_in_declarations = 1
+resharper_braces_for_ifelse = required
+resharper_braces_for_for = required
+resharper_braces_for_foreach = required
+resharper_braces_for_while = required
+resharper_trailing_comma_in_multiline_lists = true
+
+# --- Test projects ---
+# ConfigureAwait is noise in test code, and tests are not public API. This
+# exemption cannot live here (see the Analyzers note above) — put it in the
+# test .csproj instead:
+#   <NoWarn>$(NoWarn);CA2007;CS1591</NoWarn>
+
+# Test method names follow the `Sut_ShouldConsequence_GivenScenario` convention
+# (underscores) and are not suffixed `Async`, so every test method trips the
+# public-member-PascalCase and async-suffix naming rules — IDE1006. That is
+# inherent to the convention, not a defect, so silence IDE1006 in test code only.
+# (Build never emitted it; this is what the IDE and `dotnet format` surface.)
+# Two things had to be fixed here, confirmed empirically against `dotnet format`
+# (not just reasoned about — both silently produced false "clean" results otherwise):
+# 1. The async-suffix violation is reported under IDE1006 but its severity is
+#    actually driven by the naming RULE's own `.severity` (line 102), which a
+#    blanket `dotnet_diagnostic.IDE1006.severity` override does not suppress —
+#    the rule itself needs its own override too.
+# 2. `**/*.Tests/**/*.cs` does NOT match a file sitting directly inside a
+#    `*.Tests` folder (only files in a subfolder of one) — the trailing `**/`
+#    still requires a literal path separator even when `**` matches zero
+#    segments. Most test projects here happen to be organized into subfolders
+#    (Http/, Diagnostics/, …) so this went unnoticed; a project with test files
+#    directly in its root (e.g. Functions.Tests) was silently unexempted.
+#    Match both shapes explicitly rather than relying on `**` to cover both.
+[**/*.Tests/*.cs]
+dotnet_diagnostic.IDE1006.severity = none
+dotnet_naming_rule.async_methods_suffix.severity = none
+
+[**/*.Tests/**/*.cs]
+dotnet_diagnostic.IDE1006.severity = none
+dotnet_naming_rule.async_methods_suffix.severity = none
+
+[*.{csproj,props,targets,nuspec}]
+indent_size = 2
+
+[*.{json,jsonc}]
+indent_size = 2
+
+[*.{yaml,yml}]
+indent_size = 2
+
+[*.{bash,sh,zsh}]
+indent_size = 2

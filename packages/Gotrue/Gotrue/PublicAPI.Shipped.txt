@@ -1,0 +1,1021 @@
+#nullable enable
+StitchDB.Gotrue.AdminClient
+StitchDB.Gotrue.AdminClient.AdminClient(string! serviceKey, StitchDB.Gotrue.ClientOptions? options = null) -> void
+StitchDB.Gotrue.AdminClient.CreateUser(StitchDB.Gotrue.AdminUserAttributes! attributes) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.AdminClient.CreateUser(string! email, string! password, StitchDB.Gotrue.AdminUserAttributes? attributes = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.AdminClient.DeleteFactor(StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams! deleteFactorParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse?>!
+StitchDB.Gotrue.AdminClient.DeleteUser(string! uid) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.AdminClient.DeleteUser(string! uid, bool shouldSoftDelete = false) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.AdminClient.GenerateLink(StitchDB.Gotrue.GenerateLinkOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.GenerateLinkResponse?>!
+StitchDB.Gotrue.AdminClient.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Gotrue.AdminClient.GetHeaders.set -> void
+StitchDB.Gotrue.AdminClient.GetUser(string! jwt) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.AdminClient.GetUserById(string! userId) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.AdminClient.InviteUserByEmail(string! email, StitchDB.Gotrue.InviteUserByEmailOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.AdminClient.ListFactors(StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams! listFactorsParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaAdminListFactorsResponse?>!
+StitchDB.Gotrue.AdminClient.ListUsers(string? filter = null, string? sortBy = null, StitchDB.Gotrue.Constants.SortOrder sortOrder = StitchDB.Gotrue.Constants.SortOrder.Descending, int? page = null, int? perPage = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.UserList<StitchDB.Gotrue.User!>?>!
+StitchDB.Gotrue.AdminClient.Options.get -> StitchDB.Gotrue.ClientOptions!
+StitchDB.Gotrue.AdminClient.Update(StitchDB.Gotrue.UserAttributes! attributes) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.AdminClient.UpdateUserById(string! userId, StitchDB.Gotrue.AdminUserAttributes! userData) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.AdminUserAttributes
+StitchDB.Gotrue.AdminUserAttributes.AdminUserAttributes() -> void
+StitchDB.Gotrue.AdminUserAttributes.AppMetadata.get -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Gotrue.AdminUserAttributes.AppMetadata.set -> void
+StitchDB.Gotrue.AdminUserAttributes.BanDuration.get -> string?
+StitchDB.Gotrue.AdminUserAttributes.BanDuration.set -> void
+StitchDB.Gotrue.AdminUserAttributes.EmailConfirm.get -> bool?
+StitchDB.Gotrue.AdminUserAttributes.EmailConfirm.set -> void
+StitchDB.Gotrue.AdminUserAttributes.PhoneConfirm.get -> bool?
+StitchDB.Gotrue.AdminUserAttributes.PhoneConfirm.set -> void
+StitchDB.Gotrue.AdminUserAttributes.UserMetadata.get -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Gotrue.AdminUserAttributes.UserMetadata.set -> void
+StitchDB.Gotrue.Api
+StitchDB.Gotrue.Api.Api(string! url, System.Collections.Generic.Dictionary<string!, string!>? headers = null) -> void
+StitchDB.Gotrue.Api.Api(string! url, System.Collections.Generic.Dictionary<string!, string!>? headers = null, System.Net.Http.HttpClient? httpClient = null, StitchDB.Core.Http.RetryOptions? retry = null) -> void
+StitchDB.Gotrue.Api.Challenge(string! jwt, StitchDB.Gotrue.Mfa.MfaChallengeParams! mfaChallengeParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaChallengeResponse?>!
+StitchDB.Gotrue.Api.CreateUser(string! jwt, StitchDB.Gotrue.AdminUserAttributes? attributes = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Api.DeleteFactor(string! jwt, StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams! deleteFactorParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse?>!
+StitchDB.Gotrue.Api.DeleteUser(string! uid, string! jwt) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.DeleteUser(string! uid, string! jwt, bool shouldSoftDelete = false) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.Enroll(string! jwt, StitchDB.Gotrue.Mfa.MfaEnrollParams! mfaEnrollParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaEnrollResponse?>!
+StitchDB.Gotrue.Api.ExchangeCodeForSession(string! codeVerifier, string! authCode) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.GenerateLink(string! jwt, StitchDB.Gotrue.GenerateLinkOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Gotrue.Api.GetHeaders.set -> void
+StitchDB.Gotrue.Api.GetJwksAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Claims.Jwks?>!
+StitchDB.Gotrue.Api.GetUriForProvider(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions? options = null) -> StitchDB.Gotrue.ProviderAuthState!
+StitchDB.Gotrue.Api.GetUser(string! jwt) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Api.GetUserAsync(string! jwt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Api.GetUserById(string! jwt, string! userId) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Api.Headers.get -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Gotrue.Api.Headers.set -> void
+StitchDB.Gotrue.Api.InviteUserByEmail(string! email, string! jwt, StitchDB.Gotrue.InviteUserByEmailOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.LinkIdentity(string! token, StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ProviderAuthState!>!
+StitchDB.Gotrue.Api.LinkIdentityWithIdToken(string! token, StitchDB.Gotrue.LinkIdentityWithIdTokenOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.ListFactors(string! jwt, StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams! listFactorsParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.ListUsers(string! jwt, string? filter = null, string? sortBy = null, StitchDB.Gotrue.Constants.SortOrder sortOrder = StitchDB.Gotrue.Constants.SortOrder.Descending, int? page = null, int? perPage = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.UserList<StitchDB.Gotrue.User!>?>!
+StitchDB.Gotrue.Api.Reauthenticate(string! userJwt) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.RefreshAccessToken(string! accessToken, string! refreshToken) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.ResetPasswordForEmail(StitchDB.Gotrue.ResetPasswordForEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ResetPasswordForEmailState!>!
+StitchDB.Gotrue.Api.ResetPasswordForEmail(string! email) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.SendMagicLinkEmail(string! email, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.SendMobileOTP(string! phone) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.Settings() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Settings?>!
+StitchDB.Gotrue.Api.SignInAnonymously(StitchDB.Gotrue.SignInAnonymouslyOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.SignInWithEmail(string! email, string! password) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.SignInWithEmail(string! email, string! password, StitchDB.Gotrue.SignInWithPasswordOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.SignInWithIdToken(StitchDB.Gotrue.Constants.Provider provider, string! idToken, string? accessToken = null, string? nonce = null, string? captchaToken = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Api.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Api.SignInWithPhone(string! phone, string! password) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.SignInWithPhone(string! phone, string! password, StitchDB.Gotrue.SignInWithPasswordOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.SignInWithSSO(System.Guid providerId, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Api.SignInWithSSO(string! domain, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Api.SignOut(string! jwt, StitchDB.Gotrue.Constants.SignOutScope scope = StitchDB.Gotrue.Constants.SignOutScope.Global) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Api.SignUpWithEmail(string! email, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.SignUpWithPhone(string! phone, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.Unenroll(string! jwt, StitchDB.Gotrue.Mfa.MfaUnenrollParams! mfaUnenrollParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaUnenrollResponse?>!
+StitchDB.Gotrue.Api.UnlinkIdentity(string! token, StitchDB.Gotrue.UserIdentity! userIdentity) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Api.UpdateUser(string! jwt, StitchDB.Gotrue.UserAttributes! attributes) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Api.UpdateUserById(string! jwt, string! userId, StitchDB.Gotrue.UserAttributes! userData) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Api.Verify(string! jwt, StitchDB.Gotrue.Mfa.MfaVerifyParams! mfaVerifyParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaVerifyResponse?>!
+StitchDB.Gotrue.Api.VerifyEmailOTP(string! email, string! token, StitchDB.Gotrue.Constants.EmailOtpType type) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.VerifyMobileOTP(string! phone, string! token, StitchDB.Gotrue.Constants.MobileOtpType type) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Api.VerifyTokenHash(string! tokenHash, StitchDB.Gotrue.Constants.EmailOtpType type) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Claims.GetClaimsOptions
+StitchDB.Gotrue.Claims.GetClaimsOptions.<Clone>$() -> StitchDB.Gotrue.Claims.GetClaimsOptions!
+StitchDB.Gotrue.Claims.GetClaimsOptions.AllowExpired.get -> bool
+StitchDB.Gotrue.Claims.GetClaimsOptions.AllowExpired.init -> void
+StitchDB.Gotrue.Claims.GetClaimsOptions.Equals(StitchDB.Gotrue.Claims.GetClaimsOptions? other) -> bool
+StitchDB.Gotrue.Claims.GetClaimsOptions.GetClaimsOptions() -> void
+StitchDB.Gotrue.Claims.GetClaimsOptions.Jwks.get -> StitchDB.Gotrue.Claims.Jwks?
+StitchDB.Gotrue.Claims.GetClaimsOptions.Jwks.init -> void
+StitchDB.Gotrue.Claims.GetClaimsResponse
+StitchDB.Gotrue.Claims.GetClaimsResponse.<Clone>$() -> StitchDB.Gotrue.Claims.GetClaimsResponse!
+StitchDB.Gotrue.Claims.GetClaimsResponse.Claims.get -> StitchDB.Gotrue.Claims.JwtClaims!
+StitchDB.Gotrue.Claims.GetClaimsResponse.Claims.init -> void
+StitchDB.Gotrue.Claims.GetClaimsResponse.Equals(StitchDB.Gotrue.Claims.GetClaimsResponse? other) -> bool
+StitchDB.Gotrue.Claims.GetClaimsResponse.GetClaimsResponse() -> void
+StitchDB.Gotrue.Claims.GetClaimsResponse.Header.get -> StitchDB.Gotrue.Claims.JwtHeader!
+StitchDB.Gotrue.Claims.GetClaimsResponse.Header.init -> void
+StitchDB.Gotrue.Claims.GetClaimsResponse.Signature.get -> byte[]!
+StitchDB.Gotrue.Claims.GetClaimsResponse.Signature.init -> void
+StitchDB.Gotrue.Claims.Jwk
+StitchDB.Gotrue.Claims.Jwk.<Clone>$() -> StitchDB.Gotrue.Claims.Jwk!
+StitchDB.Gotrue.Claims.Jwk.Alg.get -> string?
+StitchDB.Gotrue.Claims.Jwk.Alg.init -> void
+StitchDB.Gotrue.Claims.Jwk.Crv.get -> string?
+StitchDB.Gotrue.Claims.Jwk.Crv.init -> void
+StitchDB.Gotrue.Claims.Jwk.E.get -> string?
+StitchDB.Gotrue.Claims.Jwk.E.init -> void
+StitchDB.Gotrue.Claims.Jwk.Equals(StitchDB.Gotrue.Claims.Jwk? other) -> bool
+StitchDB.Gotrue.Claims.Jwk.Jwk() -> void
+StitchDB.Gotrue.Claims.Jwk.Kid.get -> string?
+StitchDB.Gotrue.Claims.Jwk.Kid.init -> void
+StitchDB.Gotrue.Claims.Jwk.Kty.get -> string?
+StitchDB.Gotrue.Claims.Jwk.Kty.init -> void
+StitchDB.Gotrue.Claims.Jwk.N.get -> string?
+StitchDB.Gotrue.Claims.Jwk.N.init -> void
+StitchDB.Gotrue.Claims.Jwk.Use.get -> string?
+StitchDB.Gotrue.Claims.Jwk.Use.init -> void
+StitchDB.Gotrue.Claims.Jwk.X.get -> string?
+StitchDB.Gotrue.Claims.Jwk.X.init -> void
+StitchDB.Gotrue.Claims.Jwk.Y.get -> string?
+StitchDB.Gotrue.Claims.Jwk.Y.init -> void
+StitchDB.Gotrue.Claims.Jwks
+StitchDB.Gotrue.Claims.Jwks.<Clone>$() -> StitchDB.Gotrue.Claims.Jwks!
+StitchDB.Gotrue.Claims.Jwks.Equals(StitchDB.Gotrue.Claims.Jwks? other) -> bool
+StitchDB.Gotrue.Claims.Jwks.Jwks() -> void
+StitchDB.Gotrue.Claims.Jwks.Keys.get -> System.Collections.Generic.IReadOnlyList<StitchDB.Gotrue.Claims.Jwk!>!
+StitchDB.Gotrue.Claims.Jwks.Keys.init -> void
+StitchDB.Gotrue.Claims.JwtClaims
+StitchDB.Gotrue.Claims.JwtClaims.<Clone>$() -> StitchDB.Gotrue.Claims.JwtClaims!
+StitchDB.Gotrue.Claims.JwtClaims.Aal.get -> string?
+StitchDB.Gotrue.Claims.JwtClaims.Aal.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.AdditionalClaims.get -> System.Collections.Generic.Dictionary<string!, System.Text.Json.JsonElement>!
+StitchDB.Gotrue.Claims.JwtClaims.AdditionalClaims.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.Aud.get -> System.Collections.Generic.IReadOnlyList<string!>!
+StitchDB.Gotrue.Claims.JwtClaims.Aud.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.Equals(StitchDB.Gotrue.Claims.JwtClaims? other) -> bool
+StitchDB.Gotrue.Claims.JwtClaims.Exp.get -> long?
+StitchDB.Gotrue.Claims.JwtClaims.Exp.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.Iat.get -> long?
+StitchDB.Gotrue.Claims.JwtClaims.Iat.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.Iss.get -> string?
+StitchDB.Gotrue.Claims.JwtClaims.Iss.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.JwtClaims() -> void
+StitchDB.Gotrue.Claims.JwtClaims.Role.get -> string?
+StitchDB.Gotrue.Claims.JwtClaims.Role.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.SessionId.get -> string?
+StitchDB.Gotrue.Claims.JwtClaims.SessionId.init -> void
+StitchDB.Gotrue.Claims.JwtClaims.Sub.get -> string?
+StitchDB.Gotrue.Claims.JwtClaims.Sub.init -> void
+StitchDB.Gotrue.Claims.JwtHeader
+StitchDB.Gotrue.Claims.JwtHeader.<Clone>$() -> StitchDB.Gotrue.Claims.JwtHeader!
+StitchDB.Gotrue.Claims.JwtHeader.Alg.get -> string?
+StitchDB.Gotrue.Claims.JwtHeader.Alg.init -> void
+StitchDB.Gotrue.Claims.JwtHeader.Equals(StitchDB.Gotrue.Claims.JwtHeader? other) -> bool
+StitchDB.Gotrue.Claims.JwtHeader.JwtHeader() -> void
+StitchDB.Gotrue.Claims.JwtHeader.Kid.get -> string?
+StitchDB.Gotrue.Claims.JwtHeader.Kid.init -> void
+StitchDB.Gotrue.Claims.JwtHeader.Typ.get -> string?
+StitchDB.Gotrue.Claims.JwtHeader.Typ.init -> void
+StitchDB.Gotrue.Client
+StitchDB.Gotrue.Client.AddDebugListener(System.Action<string!, System.Exception?>! listener) -> void
+StitchDB.Gotrue.Client.AddStateChangedListener(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>.AuthEventHandler! authEventHandler) -> void
+StitchDB.Gotrue.Client.Challenge(StitchDB.Gotrue.Mfa.MfaChallengeParams! mfaChallengeParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaChallengeResponse?>!
+StitchDB.Gotrue.Client.ChallengeAndVerify(StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams! mfaChallengeAndVerifyParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.ClearStateChangedListeners() -> void
+StitchDB.Gotrue.Client.Client(StitchDB.Gotrue.ClientOptions? options = null) -> void
+StitchDB.Gotrue.Client.CurrentSession.get -> StitchDB.Gotrue.Session?
+StitchDB.Gotrue.Client.CurrentUser.get -> StitchDB.Gotrue.User?
+StitchDB.Gotrue.Client.Debug(string! message, System.Exception? e = null) -> void
+StitchDB.Gotrue.Client.Enroll(StitchDB.Gotrue.Mfa.MfaEnrollParams! mfaEnrollParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaEnrollResponse?>!
+StitchDB.Gotrue.Client.ExchangeCodeForSession(string! codeVerifier, string! authCode) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.GetAuthenticatorAssuranceLevel() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse?>!
+StitchDB.Gotrue.Client.GetClaimsAsync(string? jwt = null, StitchDB.Gotrue.Claims.GetClaimsOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Claims.GetClaimsResponse!>!
+StitchDB.Gotrue.Client.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Gotrue.Client.GetHeaders.set -> void
+StitchDB.Gotrue.Client.GetSessionFromUrl(System.Uri! uri, bool storeSession = true) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.GetUser(string! jwt) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Client.LinkIdentity(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ProviderAuthState!>!
+StitchDB.Gotrue.Client.LinkIdentityWithIdToken(StitchDB.Gotrue.LinkIdentityWithIdTokenOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.ListFactors() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaListFactorsResponse?>!
+StitchDB.Gotrue.Client.LoadSession() -> void
+StitchDB.Gotrue.Client.LoadSessionAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Client.NotifyAuthStateChange(StitchDB.Gotrue.Constants.AuthState stateChanged) -> void
+StitchDB.Gotrue.Client.NotifyAuthStateChangeAsync(StitchDB.Gotrue.Constants.AuthState stateChanged, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Client.Online.get -> bool
+StitchDB.Gotrue.Client.Online.set -> void
+StitchDB.Gotrue.Client.Options.get -> StitchDB.Gotrue.ClientOptions!
+StitchDB.Gotrue.Client.Reauthenticate() -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Client.RefreshSession() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.RefreshToken() -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Client.RefreshToken(string! accessToken, string! refreshToken) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Client.RemoveStateChangedListener(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>.AuthEventHandler! authEventHandler) -> void
+StitchDB.Gotrue.Client.ResetPasswordForEmail(StitchDB.Gotrue.ResetPasswordForEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ResetPasswordForEmailState!>!
+StitchDB.Gotrue.Client.ResetPasswordForEmail(string! email) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Client.RetrieveSessionAsync() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SendMagicLink(string! email, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Client.SetPersistence(StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<StitchDB.Gotrue.Session!>! persistence) -> void
+StitchDB.Gotrue.Client.SetSession(string! accessToken, string! refreshToken, bool forceAccessTokenRefresh = false) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session!>!
+StitchDB.Gotrue.Client.Settings() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Settings?>!
+StitchDB.Gotrue.Client.Shutdown() -> void
+StitchDB.Gotrue.Client.SignIn(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ProviderAuthState!>!
+StitchDB.Gotrue.Client.SignIn(StitchDB.Gotrue.Constants.SignInType type, string! identifierOrToken, string? password = null, string? scopes = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SignIn(string! email, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Client.SignIn(string! email, string! password) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SignInAnonymously(StitchDB.Gotrue.SignInAnonymouslyOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SignInWithIdToken(StitchDB.Gotrue.Constants.Provider provider, string! idToken, string? accessToken = null, string? nonce = null, string? captchaToken = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Client.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Client.SignInWithPassword(StitchDB.Gotrue.Constants.SignInType type, string! identifier, string! password, StitchDB.Gotrue.SignInWithPasswordOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SignInWithPassword(string! email, string! password) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SignInWithSSO(System.Guid providerId, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Client.SignInWithSSO(string! domain, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Client.SignOut(StitchDB.Gotrue.Constants.SignOutScope scope = StitchDB.Gotrue.Constants.SignOutScope.Global) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Client.SignUp(StitchDB.Gotrue.Constants.SignUpType type, string! identifier, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.SignUp(string! email, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.StartAutoRefresh() -> void
+StitchDB.Gotrue.Client.StopAutoRefresh() -> void
+StitchDB.Gotrue.Client.TokenRefresh.get -> StitchDB.Gotrue.TokenRefresh?
+StitchDB.Gotrue.Client.Unenroll(StitchDB.Gotrue.Mfa.MfaUnenrollParams! mfaUnenrollParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaUnenrollResponse?>!
+StitchDB.Gotrue.Client.UnlinkIdentity(StitchDB.Gotrue.UserIdentity! userIdentity) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Client.Update(StitchDB.Gotrue.UserAttributes! attributes) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Client.Verify(StitchDB.Gotrue.Mfa.MfaVerifyParams! mfaVerifyParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.VerifyOTP(string! email, string! token, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.MagicLink) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.VerifyOTP(string! phone, string! token, StitchDB.Gotrue.Constants.MobileOtpType type = StitchDB.Gotrue.Constants.MobileOtpType.SMS) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Client.VerifyTokenHash(string! tokenHash, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.Email) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.ClientOptions
+StitchDB.Gotrue.ClientOptions.AllowUnconfirmedUserSessions.get -> bool
+StitchDB.Gotrue.ClientOptions.AllowUnconfirmedUserSessions.set -> void
+StitchDB.Gotrue.ClientOptions.AutoRefreshToken.get -> bool
+StitchDB.Gotrue.ClientOptions.AutoRefreshToken.set -> void
+StitchDB.Gotrue.ClientOptions.ClientOptions() -> void
+StitchDB.Gotrue.ClientOptions.DebugRefreshToken.get -> bool
+StitchDB.Gotrue.ClientOptions.DebugRefreshToken.set -> void
+StitchDB.Gotrue.ClientOptions.Headers -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Gotrue.ClientOptions.HttpClient.get -> System.Net.Http.HttpClient?
+StitchDB.Gotrue.ClientOptions.HttpClient.set -> void
+StitchDB.Gotrue.ClientOptions.MaximumRefreshWaitTime.get -> int
+StitchDB.Gotrue.ClientOptions.MaximumRefreshWaitTime.set -> void
+StitchDB.Gotrue.ClientOptions.Proxy.get -> System.Net.IWebProxy?
+StitchDB.Gotrue.ClientOptions.Proxy.set -> void
+StitchDB.Gotrue.ClientOptions.Retry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.Gotrue.ClientOptions.Retry.set -> void
+StitchDB.Gotrue.ClientOptions.Url.get -> string!
+StitchDB.Gotrue.ClientOptions.Url.set -> void
+StitchDB.Gotrue.Constants
+StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.AuthState.MfaChallengeVerified = 6 -> StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.AuthState.PasswordRecovery = 3 -> StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.AuthState.Shutdown = 5 -> StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.AuthState.SignedIn = 0 -> StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.AuthState.SignedOut = 1 -> StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.AuthState.TokenRefreshed = 4 -> StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.AuthState.UserUpdated = 2 -> StitchDB.Gotrue.Constants.AuthState
+StitchDB.Gotrue.Constants.EmailOtpType
+StitchDB.Gotrue.Constants.EmailOtpType.Email = 5 -> StitchDB.Gotrue.Constants.EmailOtpType
+StitchDB.Gotrue.Constants.EmailOtpType.EmailChange = 4 -> StitchDB.Gotrue.Constants.EmailOtpType
+StitchDB.Gotrue.Constants.EmailOtpType.Invite = 1 -> StitchDB.Gotrue.Constants.EmailOtpType
+StitchDB.Gotrue.Constants.EmailOtpType.MagicLink = 2 -> StitchDB.Gotrue.Constants.EmailOtpType
+StitchDB.Gotrue.Constants.EmailOtpType.Recovery = 3 -> StitchDB.Gotrue.Constants.EmailOtpType
+StitchDB.Gotrue.Constants.EmailOtpType.Signup = 0 -> StitchDB.Gotrue.Constants.EmailOtpType
+StitchDB.Gotrue.Constants.MobileOtpType
+StitchDB.Gotrue.Constants.MobileOtpType.PhoneChange = 1 -> StitchDB.Gotrue.Constants.MobileOtpType
+StitchDB.Gotrue.Constants.MobileOtpType.SMS = 0 -> StitchDB.Gotrue.Constants.MobileOtpType
+StitchDB.Gotrue.Constants.OAuthFlowType
+StitchDB.Gotrue.Constants.OAuthFlowType.Implicit = 0 -> StitchDB.Gotrue.Constants.OAuthFlowType
+StitchDB.Gotrue.Constants.OAuthFlowType.PKCE = 1 -> StitchDB.Gotrue.Constants.OAuthFlowType
+StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.AnonymousUsers = 0 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Apple = 1 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Azure = 2 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Bitbucket = 3 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Discord = 4 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Facebook = 5 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Figma = 6 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Fly = 7 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Github = 8 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Gitlab = 9 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Google = 10 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Kakao = 11 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.KeyCloak = 12 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.LinkedIn = 13 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.LinkedInOIDC = 14 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Notion = 15 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Slack = 16 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Spotify = 17 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Twitch = 18 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Twitter = 19 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.WorkOS = 20 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.Provider.Zoom = 21 -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Constants.SignInType
+StitchDB.Gotrue.Constants.SignInType.Email = 0 -> StitchDB.Gotrue.Constants.SignInType
+StitchDB.Gotrue.Constants.SignInType.Phone = 1 -> StitchDB.Gotrue.Constants.SignInType
+StitchDB.Gotrue.Constants.SignInType.RefreshToken = 2 -> StitchDB.Gotrue.Constants.SignInType
+StitchDB.Gotrue.Constants.SignOutScope
+StitchDB.Gotrue.Constants.SignOutScope.Global = 0 -> StitchDB.Gotrue.Constants.SignOutScope
+StitchDB.Gotrue.Constants.SignOutScope.Local = 1 -> StitchDB.Gotrue.Constants.SignOutScope
+StitchDB.Gotrue.Constants.SignOutScope.Others = 2 -> StitchDB.Gotrue.Constants.SignOutScope
+StitchDB.Gotrue.Constants.SignUpType
+StitchDB.Gotrue.Constants.SignUpType.Email = 0 -> StitchDB.Gotrue.Constants.SignUpType
+StitchDB.Gotrue.Constants.SignUpType.Phone = 1 -> StitchDB.Gotrue.Constants.SignUpType
+StitchDB.Gotrue.Constants.SortOrder
+StitchDB.Gotrue.Constants.SortOrder.Ascending = 0 -> StitchDB.Gotrue.Constants.SortOrder
+StitchDB.Gotrue.Constants.SortOrder.Descending = 1 -> StitchDB.Gotrue.Constants.SortOrder
+StitchDB.Gotrue.DebugNotification
+StitchDB.Gotrue.DebugNotification.AddDebugListener(System.Action<string!, System.Exception?>! listener) -> void
+StitchDB.Gotrue.DebugNotification.DebugNotification() -> void
+StitchDB.Gotrue.DebugNotification.Log(string! message, System.Exception? e = null) -> void
+StitchDB.Gotrue.Exceptions.FailureHint
+StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.AdminTokenRequired = 13 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.BadSessionUrl = 15 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.CloudflareNetworkError = 21 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.ExpiredRefreshToken = 12 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.InvalidFlowType = 16 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.InvalidJwt = 22 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.InvalidRefreshToken = 11 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.MfaChallengeUnverified = 19 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.NetworkError = 20 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.NoSessionFound = 14 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.Offline = 1 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.SsoDomainNotFound = 17 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.SsoProviderNotFound = 18 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.Unknown = 0 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserAlreadyRegistered = 9 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserBadEmailAddress = 6 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserBadLogin = 5 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserBadMultiple = 3 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserBadPassword = 4 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserBadPhoneNumber = 7 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserEmailNotConfirmed = 2 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserMissingInformation = 8 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.FailureHint.Reason.UserTooManyRequests = 10 -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.GotrueException
+StitchDB.Gotrue.Exceptions.GotrueException.AddReason() -> void
+StitchDB.Gotrue.Exceptions.GotrueException.Content.get -> string?
+StitchDB.Gotrue.Exceptions.GotrueException.ErrorCode.get -> string?
+StitchDB.Gotrue.Exceptions.GotrueException.GotrueException(string! message, StitchDB.Gotrue.Exceptions.FailureHint.Reason reason, System.Exception? innerException) -> void
+StitchDB.Gotrue.Exceptions.GotrueException.GotrueException(string? message) -> void
+StitchDB.Gotrue.Exceptions.GotrueException.GotrueException(string? message, StitchDB.Gotrue.Exceptions.FailureHint.Reason reason) -> void
+StitchDB.Gotrue.Exceptions.GotrueException.GotrueException(string? message, System.Exception? innerException) -> void
+StitchDB.Gotrue.Exceptions.GotrueException.Reason.get -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+StitchDB.Gotrue.Exceptions.GotrueException.Response.get -> System.Net.Http.HttpResponseMessage?
+StitchDB.Gotrue.Exceptions.GotrueException.StatusCode.get -> int
+StitchDB.Gotrue.GenerateLinkEmailChangeCurrentOptions
+StitchDB.Gotrue.GenerateLinkEmailChangeCurrentOptions.GenerateLinkEmailChangeCurrentOptions(string! email, string! newEmail) -> void
+StitchDB.Gotrue.GenerateLinkEmailChangeNewOptions
+StitchDB.Gotrue.GenerateLinkEmailChangeNewOptions.GenerateLinkEmailChangeNewOptions(string! email, string! newEmail) -> void
+StitchDB.Gotrue.GenerateLinkOptions
+StitchDB.Gotrue.GenerateLinkOptions.Data.get -> System.Collections.Generic.Dictionary<string!, object!>?
+StitchDB.Gotrue.GenerateLinkOptions.Data.set -> void
+StitchDB.Gotrue.GenerateLinkOptions.Email.get -> string!
+StitchDB.Gotrue.GenerateLinkOptions.GenerateLinkOptions(StitchDB.Gotrue.GenerateLinkOptions.LinkType linkType, string! email) -> void
+StitchDB.Gotrue.GenerateLinkOptions.LinkType
+StitchDB.Gotrue.GenerateLinkOptions.LinkType.EmailChangeCurrent = 4 -> StitchDB.Gotrue.GenerateLinkOptions.LinkType
+StitchDB.Gotrue.GenerateLinkOptions.LinkType.EmailChangeNew = 5 -> StitchDB.Gotrue.GenerateLinkOptions.LinkType
+StitchDB.Gotrue.GenerateLinkOptions.LinkType.Invite = 1 -> StitchDB.Gotrue.GenerateLinkOptions.LinkType
+StitchDB.Gotrue.GenerateLinkOptions.LinkType.MagicLink = 2 -> StitchDB.Gotrue.GenerateLinkOptions.LinkType
+StitchDB.Gotrue.GenerateLinkOptions.LinkType.Recovery = 3 -> StitchDB.Gotrue.GenerateLinkOptions.LinkType
+StitchDB.Gotrue.GenerateLinkOptions.LinkType.SignUp = 0 -> StitchDB.Gotrue.GenerateLinkOptions.LinkType
+StitchDB.Gotrue.GenerateLinkOptions.NewEmail.get -> string?
+StitchDB.Gotrue.GenerateLinkOptions.NewEmail.set -> void
+StitchDB.Gotrue.GenerateLinkOptions.Password.get -> string?
+StitchDB.Gotrue.GenerateLinkOptions.Password.set -> void
+StitchDB.Gotrue.GenerateLinkOptions.RedirectTo.get -> string?
+StitchDB.Gotrue.GenerateLinkOptions.RedirectTo.set -> void
+StitchDB.Gotrue.GenerateLinkOptions.Type.get -> string!
+StitchDB.Gotrue.GenerateLinkSignupOptions
+StitchDB.Gotrue.GenerateLinkSignupOptions.GenerateLinkSignupOptions(string! email, string! password) -> void
+StitchDB.Gotrue.GotrueDiagnostics
+StitchDB.Gotrue.Helpers
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.CreateUser(StitchDB.Gotrue.AdminUserAttributes! attributes) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.CreateUser(string! email, string! password, StitchDB.Gotrue.AdminUserAttributes? attributes = null) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.DeleteFactor(StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams! deleteFactorParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.DeleteUser(string! uid) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.DeleteUser(string! uid, bool shouldSoftDelete = false) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.GenerateLink(StitchDB.Gotrue.GenerateLinkOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.GenerateLinkResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.GetUser(string! jwt) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.GetUserById(string! userId) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.InviteUserByEmail(string! email, StitchDB.Gotrue.InviteUserByEmailOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.ListFactors(StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams! listFactorsParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaAdminListFactorsResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.ListUsers(string? filter = null, string? sortBy = null, StitchDB.Gotrue.Constants.SortOrder sortOrder = StitchDB.Gotrue.Constants.SortOrder.Descending, int? page = null, int? perPage = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.UserList<TUser!>?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.Update(StitchDB.Gotrue.UserAttributes! attributes) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Interfaces.IGotrueAdminClient<TUser>.UpdateUserById(string! userId, StitchDB.Gotrue.AdminUserAttributes! userData) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.Challenge(string! jwt, StitchDB.Gotrue.Mfa.MfaChallengeParams! mfaChallengeParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaChallengeResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.CreateUser(string! jwt, StitchDB.Gotrue.AdminUserAttributes? attributes = null) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.DeleteFactor(string! jwt, StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams! deleteFactorParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.DeleteUser(string! uid, string! jwt) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.DeleteUser(string! uid, string! jwt, bool shouldSoftDelete = false) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.Enroll(string! jwt, StitchDB.Gotrue.Mfa.MfaEnrollParams! mfaEnrollParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaEnrollResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.ExchangeCodeForSession(string! codeVerifier, string! authCode) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.GenerateLink(string! jwt, StitchDB.Gotrue.GenerateLinkOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.GetJwksAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Claims.Jwks?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.GetUriForProvider(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions? options = null) -> StitchDB.Gotrue.ProviderAuthState!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.GetUser(string! jwt) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.GetUserAsync(string! jwt, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.GetUserById(string! jwt, string! userId) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.InviteUserByEmail(string! email, string! jwt, StitchDB.Gotrue.InviteUserByEmailOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.LinkIdentity(string! token, StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ProviderAuthState!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.LinkIdentityWithIdToken(string! token, StitchDB.Gotrue.LinkIdentityWithIdTokenOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.ListFactors(string! jwt, StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams! listFactorsParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.ListUsers(string! jwt, string? filter = null, string? sortBy = null, StitchDB.Gotrue.Constants.SortOrder sortOrder = StitchDB.Gotrue.Constants.SortOrder.Descending, int? page = null, int? perPage = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.UserList<TUser!>?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.Reauthenticate(string! userJwt) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.RefreshAccessToken(string! accessToken, string! refreshToken) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.ResetPasswordForEmail(StitchDB.Gotrue.ResetPasswordForEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ResetPasswordForEmailState!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.ResetPasswordForEmail(string! email) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SendMagicLinkEmail(string! email, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SendMobileOTP(string! phone) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.Settings() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Settings?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInAnonymously(StitchDB.Gotrue.SignInAnonymouslyOptions? options = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithEmail(string! email, string! password) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithEmail(string! email, string! password, StitchDB.Gotrue.SignInWithPasswordOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithIdToken(StitchDB.Gotrue.Constants.Provider provider, string! idToken, string? accessToken = null, string? nonce = null, string? captchaToken = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithPhone(string! phone, string! password) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithPhone(string! phone, string! password, StitchDB.Gotrue.SignInWithPasswordOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithSSO(System.Guid providerId, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignInWithSSO(string! domain, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignOut(string! jwt, StitchDB.Gotrue.Constants.SignOutScope scope = StitchDB.Gotrue.Constants.SignOutScope.Global) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Responses.BaseResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignUpWithEmail(string! email, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.SignUpWithPhone(string! phone, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.Unenroll(string! jwt, StitchDB.Gotrue.Mfa.MfaUnenrollParams! mfaVerifyParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaUnenrollResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.UnlinkIdentity(string! token, StitchDB.Gotrue.UserIdentity! userIdentity) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.UpdateUser(string! jwt, StitchDB.Gotrue.UserAttributes! attributes) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.UpdateUserById(string! jwt, string! userId, StitchDB.Gotrue.UserAttributes! userData) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.Verify(string! jwt, StitchDB.Gotrue.Mfa.MfaVerifyParams! mfaVerifyParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaVerifyResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.VerifyEmailOTP(string! email, string! token, StitchDB.Gotrue.Constants.EmailOtpType type) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.VerifyMobileOTP(string! phone, string! token, StitchDB.Gotrue.Constants.MobileOtpType type) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueApi<TUser, TSession>.VerifyTokenHash(string! tokenHash, StitchDB.Gotrue.Constants.EmailOtpType type) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.AddDebugListener(System.Action<string!, System.Exception?>! listener) -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.AuthEventHandler
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Challenge(StitchDB.Gotrue.Mfa.MfaChallengeParams! mfaChallengeParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaChallengeResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.ChallengeAndVerify(StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams! mfaChallengeAndVerifyParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.ClearStateChangedListeners() -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.CurrentSession.get -> TSession?
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.CurrentUser.get -> TUser?
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Debug(string! message, System.Exception? e = null) -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Enroll(StitchDB.Gotrue.Mfa.MfaEnrollParams! mfaEnrollParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaEnrollResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.ExchangeCodeForSession(string! codeVerifier, string! authCode) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.GetAuthenticatorAssuranceLevel() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.GetClaimsAsync(string? jwt = null, StitchDB.Gotrue.Claims.GetClaimsOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Claims.GetClaimsResponse!>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.GetSessionFromUrl(System.Uri! uri, bool storeSession = true) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.GetUser(string! jwt) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.LinkIdentity(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ProviderAuthState!>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.LinkIdentityWithIdToken(StitchDB.Gotrue.LinkIdentityWithIdTokenOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.ListFactors() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaListFactorsResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.LoadSession() -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.LoadSessionAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.NotifyAuthStateChange(StitchDB.Gotrue.Constants.AuthState stateChanged) -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.NotifyAuthStateChangeAsync(StitchDB.Gotrue.Constants.AuthState stateChanged, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Online.get -> bool
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Online.set -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Options.get -> StitchDB.Gotrue.ClientOptions!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Reauthenticate() -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.RefreshSession() -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.RefreshToken() -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.RefreshToken(string! accessToken, string! refreshToken) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.ResetPasswordForEmail(StitchDB.Gotrue.ResetPasswordForEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ResetPasswordForEmailState!>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.ResetPasswordForEmail(string! email) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.RetrieveSessionAsync() -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SendMagicLink(string! email, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SetPersistence(StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession!>! persistence) -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SetSession(string! accessToken, string! refreshToken, bool forceAccessTokenRefresh = false) -> System.Threading.Tasks.Task<TSession!>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Settings() -> System.Threading.Tasks.Task<StitchDB.Gotrue.Settings?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Shutdown() -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignIn(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.ProviderAuthState!>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignIn(StitchDB.Gotrue.Constants.SignInType type, string! identifierOrToken, string? password = null, string? scopes = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignIn(string! email, StitchDB.Gotrue.SignInOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignIn(string! email, string! password) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInAnonymously(StitchDB.Gotrue.SignInAnonymouslyOptions? options = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInWithIdToken(StitchDB.Gotrue.Constants.Provider provider, string! idToken, string? accessToken = null, string? nonce = null, string? captchaToken = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessEmailOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInWithOtp(StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.PasswordlessSignInState!>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInWithPassword(StitchDB.Gotrue.Constants.SignInType type, string! identifier, string! password, StitchDB.Gotrue.SignInWithPasswordOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInWithPassword(string! email, string! password) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInWithSSO(System.Guid providerId, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignInWithSSO(string! domain, StitchDB.Gotrue.SignInWithSSOOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.SSOResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignOut(StitchDB.Gotrue.Constants.SignOutScope scope = StitchDB.Gotrue.Constants.SignOutScope.Global) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignUp(StitchDB.Gotrue.Constants.SignUpType type, string! identifier, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.SignUp(string! email, string! password, StitchDB.Gotrue.SignUpOptions? options = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.StartAutoRefresh() -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.StopAutoRefresh() -> void
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Unenroll(StitchDB.Gotrue.Mfa.MfaUnenrollParams! mfaUnenrollParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaUnenrollResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.UnlinkIdentity(StitchDB.Gotrue.UserIdentity! userIdentity) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Update(StitchDB.Gotrue.UserAttributes! attributes) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.Verify(StitchDB.Gotrue.Mfa.MfaVerifyParams! mfaVerifyParams) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.VerifyOTP(string! email, string! token, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.MagicLink) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.VerifyOTP(string! phone, string! token, StitchDB.Gotrue.Constants.MobileOtpType type = StitchDB.Gotrue.Constants.MobileOtpType.SMS) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.VerifyTokenHash(string! tokenHash, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.Email) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotruePersistenceListener<TSession>
+StitchDB.Gotrue.Interfaces.IGotruePersistenceListener<TSession>.EventHandler(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, TSession!>! sender, StitchDB.Gotrue.Constants.AuthState stateChanged) -> void
+StitchDB.Gotrue.Interfaces.IGotruePersistenceListener<TSession>.EventHandlerAsync(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, TSession!>! sender, StitchDB.Gotrue.Constants.AuthState stateChanged, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotruePersistenceListener<TSession>.Persistence.get -> StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession!>!
+StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession>
+StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession>.DestroySession() -> void
+StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession>.DestroySessionAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession>.LoadSession() -> TSession?
+StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession>.LoadSessionAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession>.SaveSession(TSession! session) -> void
+StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<TSession>.SaveSessionAsync(TSession! session, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.Challenge(string! jwt, StitchDB.Gotrue.Mfa.MfaChallengeParams! mfaChallengeParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaChallengeResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.ChallengeAndVerify(string! jwt, StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams! mfaChallengeAndVerifyParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaVerifyResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.CreateUser(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.AdminUserAttributes! attributes) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.CreateUser(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string! email, string! password, StitchDB.Gotrue.AdminUserAttributes? attributes = null) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.DeleteUser(string! uid, string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.DeleteUser(string! uid, string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, bool shouldSoftDelete = false) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.Enroll(string! jwt, StitchDB.Gotrue.Mfa.MfaEnrollParams! mfaEnrollParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaEnrollResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.ExchangeCodeForSession(string! codeVerifier, string! authCode, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.GetApi(StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> StitchDB.Gotrue.Interfaces.IGotrueApi<TUser!, TSession!>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.GetAuthenticatorAssuranceLevel(string! jwt, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.GetSessionFromUrl(System.Uri! uri, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.GetUser(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.GetUserById(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string! userId) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.InviteUserByEmail(string! email, string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.InviteUserByEmailOptions? inviteOptions = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.ListFactors(string! jwt, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaListFactorsResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.ListUsers(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string? filter = null, string? sortBy = null, StitchDB.Gotrue.Constants.SortOrder sortOrder = StitchDB.Gotrue.Constants.SortOrder.Descending, int? page = null, int? perPage = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.UserList<StitchDB.Gotrue.User!>?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.RefreshToken(string! accessToken, string! refreshToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.ResetPasswordForEmail(string! email, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SendMagicLink(string! email, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInOptions? signInOptions = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.Settings(StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Settings?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignIn(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInOptions? signInOptions = null) -> StitchDB.Gotrue.ProviderAuthState!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignIn(StitchDB.Gotrue.Constants.SignInType type, string! identifierOrToken, string? password = null, StitchDB.Gotrue.StatelessClient.StatelessClientOptions? options = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignIn(StitchDB.Gotrue.Constants.SignInType type, string! identifierOrToken, string? password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInWithPasswordOptions! signInOptions) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignIn(string! email, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInOptions? signInOptions = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignIn(string! email, string! password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignOut(string! accessToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignOut(string! accessToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.SignOutScope scope) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignUp(StitchDB.Gotrue.Constants.SignUpType type, string! identifier, string! password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignUpOptions? signUpOptions = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.SignUp(string! email, string! password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignUpOptions? signUpOptions = null) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.Unenroll(string! jwt, StitchDB.Gotrue.Mfa.MfaUnenrollParams! mfaUnenrollParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaUnenrollResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.Update(string! accessToken, StitchDB.Gotrue.UserAttributes! attributes, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.UpdateUserById(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string! userId, StitchDB.Gotrue.AdminUserAttributes! userData) -> System.Threading.Tasks.Task<TUser?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.Verify(string! jwt, StitchDB.Gotrue.Mfa.MfaVerifyParams! mfaVerifyParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaVerifyResponse?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.VerifyOTP(string! email, string! otpToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.MagicLink) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.VerifyOTP(string! phone, string! otpToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.MobileOtpType type = StitchDB.Gotrue.Constants.MobileOtpType.SMS) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.Interfaces.IGotrueStatelessClient<TUser, TSession>.VerifyTokenHash(string! tokenHash, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.Email) -> System.Threading.Tasks.Task<TSession?>!
+StitchDB.Gotrue.InviteUserByEmailOptions
+StitchDB.Gotrue.InviteUserByEmailOptions.Data.get -> System.Collections.Generic.Dictionary<string!, object!>?
+StitchDB.Gotrue.InviteUserByEmailOptions.Data.set -> void
+StitchDB.Gotrue.InviteUserByEmailOptions.InviteUserByEmailOptions() -> void
+StitchDB.Gotrue.InviteUserByEmailOptions.RedirectTo.get -> string?
+StitchDB.Gotrue.InviteUserByEmailOptions.RedirectTo.set -> void
+StitchDB.Gotrue.LinkIdentityWithIdTokenOptions
+StitchDB.Gotrue.LinkIdentityWithIdTokenOptions.AccessToken.get -> string?
+StitchDB.Gotrue.LinkIdentityWithIdTokenOptions.CaptchaToken.get -> string?
+StitchDB.Gotrue.LinkIdentityWithIdTokenOptions.IdToken.get -> string!
+StitchDB.Gotrue.LinkIdentityWithIdTokenOptions.LinkIdentityWithIdTokenOptions(StitchDB.Gotrue.Constants.Provider provider, string! idToken, string? accessToken = null, string? nonce = null, string? captchaToken = null) -> void
+StitchDB.Gotrue.LinkIdentityWithIdTokenOptions.Nonce.get -> string?
+StitchDB.Gotrue.LinkIdentityWithIdTokenOptions.Provider.get -> StitchDB.Gotrue.Constants.Provider
+StitchDB.Gotrue.Mfa.AmrEntry
+StitchDB.Gotrue.Mfa.AmrEntry.AmrEntry() -> void
+StitchDB.Gotrue.Mfa.AmrEntry.Method.get -> string!
+StitchDB.Gotrue.Mfa.AmrEntry.Method.set -> void
+StitchDB.Gotrue.Mfa.AmrEntry.Timestamp.get -> long
+StitchDB.Gotrue.Mfa.AmrEntry.Timestamp.set -> void
+StitchDB.Gotrue.Mfa.AuthenticatorAssuranceLevel
+StitchDB.Gotrue.Mfa.AuthenticatorAssuranceLevel.aal1 = 0 -> StitchDB.Gotrue.Mfa.AuthenticatorAssuranceLevel
+StitchDB.Gotrue.Mfa.AuthenticatorAssuranceLevel.aal2 = 1 -> StitchDB.Gotrue.Mfa.AuthenticatorAssuranceLevel
+StitchDB.Gotrue.Mfa.Factor
+StitchDB.Gotrue.Mfa.Factor.CreatedAt.get -> System.DateTime
+StitchDB.Gotrue.Mfa.Factor.CreatedAt.set -> void
+StitchDB.Gotrue.Mfa.Factor.Factor() -> void
+StitchDB.Gotrue.Mfa.Factor.FactorType.get -> string!
+StitchDB.Gotrue.Mfa.Factor.FactorType.set -> void
+StitchDB.Gotrue.Mfa.Factor.FriendlyName.get -> string?
+StitchDB.Gotrue.Mfa.Factor.FriendlyName.set -> void
+StitchDB.Gotrue.Mfa.Factor.Id.get -> string!
+StitchDB.Gotrue.Mfa.Factor.Id.set -> void
+StitchDB.Gotrue.Mfa.Factor.Status.get -> string!
+StitchDB.Gotrue.Mfa.Factor.Status.set -> void
+StitchDB.Gotrue.Mfa.Factor.UpdatedAt.get -> System.DateTime
+StitchDB.Gotrue.Mfa.Factor.UpdatedAt.set -> void
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams.Id.get -> string!
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams.Id.set -> void
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams.MfaAdminDeleteFactorParams() -> void
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams.UserId.get -> string!
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorParams.UserId.set -> void
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse.Id.get -> string!
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse.Id.set -> void
+StitchDB.Gotrue.Mfa.MfaAdminDeleteFactorResponse.MfaAdminDeleteFactorResponse() -> void
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams.MfaAdminListFactorsParams() -> void
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams.UserId.get -> string!
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsParams.UserId.set -> void
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsResponse
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsResponse.Factors.get -> System.Collections.Generic.List<StitchDB.Gotrue.Mfa.Factor!>!
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsResponse.Factors.set -> void
+StitchDB.Gotrue.Mfa.MfaAdminListFactorsResponse.MfaAdminListFactorsResponse() -> void
+StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams
+StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams.Code.get -> string!
+StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams.Code.set -> void
+StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams.FactorId.get -> string!
+StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams.FactorId.set -> void
+StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams.MfaChallengeAndVerifyParams() -> void
+StitchDB.Gotrue.Mfa.MfaChallengeParams
+StitchDB.Gotrue.Mfa.MfaChallengeParams.FactorId.get -> string!
+StitchDB.Gotrue.Mfa.MfaChallengeParams.FactorId.set -> void
+StitchDB.Gotrue.Mfa.MfaChallengeParams.MfaChallengeParams() -> void
+StitchDB.Gotrue.Mfa.MfaChallengeResponse
+StitchDB.Gotrue.Mfa.MfaChallengeResponse.ExpiresAt.get -> long
+StitchDB.Gotrue.Mfa.MfaChallengeResponse.ExpiresAt.set -> void
+StitchDB.Gotrue.Mfa.MfaChallengeResponse.Id.get -> string!
+StitchDB.Gotrue.Mfa.MfaChallengeResponse.Id.set -> void
+StitchDB.Gotrue.Mfa.MfaChallengeResponse.MfaChallengeResponse() -> void
+StitchDB.Gotrue.Mfa.MfaEnrollParams
+StitchDB.Gotrue.Mfa.MfaEnrollParams.FactorType.get -> string!
+StitchDB.Gotrue.Mfa.MfaEnrollParams.FactorType.set -> void
+StitchDB.Gotrue.Mfa.MfaEnrollParams.FriendlyName.get -> string?
+StitchDB.Gotrue.Mfa.MfaEnrollParams.FriendlyName.set -> void
+StitchDB.Gotrue.Mfa.MfaEnrollParams.Issuer.get -> string?
+StitchDB.Gotrue.Mfa.MfaEnrollParams.Issuer.set -> void
+StitchDB.Gotrue.Mfa.MfaEnrollParams.MfaEnrollParams() -> void
+StitchDB.Gotrue.Mfa.MfaEnrollResponse
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.FriendlyName.get -> string!
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.FriendlyName.set -> void
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.Id.get -> string!
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.Id.set -> void
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.MfaEnrollResponse() -> void
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.Totp.get -> StitchDB.Gotrue.Mfa.TOTP!
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.Totp.set -> void
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.Type.get -> string!
+StitchDB.Gotrue.Mfa.MfaEnrollResponse.Type.set -> void
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse.CurrentAuthenticationMethods.get -> StitchDB.Gotrue.Mfa.AmrEntry![]!
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse.CurrentAuthenticationMethods.set -> void
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse.CurrentLevel.get -> StitchDB.Gotrue.Mfa.AuthenticatorAssuranceLevel?
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse.CurrentLevel.set -> void
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse.MfaGetAuthenticatorAssuranceLevelResponse() -> void
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse.NextLevel.get -> StitchDB.Gotrue.Mfa.AuthenticatorAssuranceLevel?
+StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse.NextLevel.set -> void
+StitchDB.Gotrue.Mfa.MfaListFactorsResponse
+StitchDB.Gotrue.Mfa.MfaListFactorsResponse.All.get -> System.Collections.Generic.List<StitchDB.Gotrue.Mfa.Factor!>!
+StitchDB.Gotrue.Mfa.MfaListFactorsResponse.All.set -> void
+StitchDB.Gotrue.Mfa.MfaListFactorsResponse.MfaListFactorsResponse() -> void
+StitchDB.Gotrue.Mfa.MfaListFactorsResponse.Totp.get -> System.Collections.Generic.List<StitchDB.Gotrue.Mfa.Factor!>!
+StitchDB.Gotrue.Mfa.MfaListFactorsResponse.Totp.set -> void
+StitchDB.Gotrue.Mfa.MfaUnenrollParams
+StitchDB.Gotrue.Mfa.MfaUnenrollParams.FactorId.get -> string!
+StitchDB.Gotrue.Mfa.MfaUnenrollParams.FactorId.set -> void
+StitchDB.Gotrue.Mfa.MfaUnenrollParams.MfaUnenrollParams() -> void
+StitchDB.Gotrue.Mfa.MfaUnenrollResponse
+StitchDB.Gotrue.Mfa.MfaUnenrollResponse.Id.get -> string!
+StitchDB.Gotrue.Mfa.MfaUnenrollResponse.Id.set -> void
+StitchDB.Gotrue.Mfa.MfaUnenrollResponse.MfaUnenrollResponse() -> void
+StitchDB.Gotrue.Mfa.MfaVerifyParams
+StitchDB.Gotrue.Mfa.MfaVerifyParams.ChallengeId.get -> string!
+StitchDB.Gotrue.Mfa.MfaVerifyParams.ChallengeId.set -> void
+StitchDB.Gotrue.Mfa.MfaVerifyParams.Code.get -> string!
+StitchDB.Gotrue.Mfa.MfaVerifyParams.Code.set -> void
+StitchDB.Gotrue.Mfa.MfaVerifyParams.FactorId.get -> string!
+StitchDB.Gotrue.Mfa.MfaVerifyParams.FactorId.set -> void
+StitchDB.Gotrue.Mfa.MfaVerifyParams.MfaVerifyParams() -> void
+StitchDB.Gotrue.Mfa.MfaVerifyResponse
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.AccessToken.get -> string!
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.AccessToken.set -> void
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.ExpiresIn.get -> int
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.ExpiresIn.set -> void
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.MfaVerifyResponse() -> void
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.RefreshToken.get -> string!
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.RefreshToken.set -> void
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.TokenType.get -> string!
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.TokenType.set -> void
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.User.get -> StitchDB.Gotrue.User!
+StitchDB.Gotrue.Mfa.MfaVerifyResponse.User.set -> void
+StitchDB.Gotrue.Mfa.TOTP
+StitchDB.Gotrue.Mfa.TOTP.QrCode.get -> string!
+StitchDB.Gotrue.Mfa.TOTP.QrCode.set -> void
+StitchDB.Gotrue.Mfa.TOTP.Secret.get -> string!
+StitchDB.Gotrue.Mfa.TOTP.Secret.set -> void
+StitchDB.Gotrue.Mfa.TOTP.TOTP() -> void
+StitchDB.Gotrue.Mfa.TOTP.Uri.get -> string!
+StitchDB.Gotrue.Mfa.TOTP.Uri.set -> void
+StitchDB.Gotrue.NetworkStatus
+StitchDB.Gotrue.NetworkStatus.AddListener(StitchDB.Gotrue.NetworkStatus.NetworkListener! listener) -> void
+StitchDB.Gotrue.NetworkStatus.Client.get -> StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>?
+StitchDB.Gotrue.NetworkStatus.Client.set -> void
+StitchDB.Gotrue.NetworkStatus.NetworkListener
+StitchDB.Gotrue.NetworkStatus.NetworkStatus() -> void
+StitchDB.Gotrue.NetworkStatus.NetworkStatus(System.Net.Http.HttpClient? httpClient = null) -> void
+StitchDB.Gotrue.NetworkStatus.PingCheckAsync(string! url) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.NetworkStatus.Ready -> bool
+StitchDB.Gotrue.NetworkStatus.RemoveListener(StitchDB.Gotrue.NetworkStatus.NetworkListener! listener) -> void
+StitchDB.Gotrue.NetworkStatus.StartAsync(string! url) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.NetworkStatus.~NetworkStatus() -> void
+StitchDB.Gotrue.PasswordlessSignInState
+StitchDB.Gotrue.PasswordlessSignInState.PKCEVerifier.get -> string?
+StitchDB.Gotrue.PasswordlessSignInState.PKCEVerifier.set -> void
+StitchDB.Gotrue.PasswordlessSignInState.PasswordlessSignInState() -> void
+StitchDB.Gotrue.PersistenceListener
+StitchDB.Gotrue.PersistenceListener.EventHandler(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>! sender, StitchDB.Gotrue.Constants.AuthState stateChanged) -> void
+StitchDB.Gotrue.PersistenceListener.EventHandlerAsync(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>! sender, StitchDB.Gotrue.Constants.AuthState stateChanged, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.PersistenceListener.Persistence.get -> StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<StitchDB.Gotrue.Session!>!
+StitchDB.Gotrue.PersistenceListener.PersistenceListener(StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<StitchDB.Gotrue.Session!>! persistence) -> void
+StitchDB.Gotrue.ProviderAuthState
+StitchDB.Gotrue.ProviderAuthState.PKCEVerifier.get -> string?
+StitchDB.Gotrue.ProviderAuthState.PKCEVerifier.set -> void
+StitchDB.Gotrue.ProviderAuthState.ProviderAuthState(System.Uri! uri) -> void
+StitchDB.Gotrue.ProviderAuthState.Uri.get -> System.Uri!
+StitchDB.Gotrue.ProviderAuthState.Uri.set -> void
+StitchDB.Gotrue.ResetPasswordForEmailOptions
+StitchDB.Gotrue.ResetPasswordForEmailOptions.CaptchaToken.get -> string?
+StitchDB.Gotrue.ResetPasswordForEmailOptions.CaptchaToken.set -> void
+StitchDB.Gotrue.ResetPasswordForEmailOptions.Email.get -> string!
+StitchDB.Gotrue.ResetPasswordForEmailOptions.FlowType.get -> StitchDB.Gotrue.Constants.OAuthFlowType
+StitchDB.Gotrue.ResetPasswordForEmailOptions.FlowType.set -> void
+StitchDB.Gotrue.ResetPasswordForEmailOptions.PKCEVerifier.get -> string?
+StitchDB.Gotrue.ResetPasswordForEmailOptions.PKCEVerifier.set -> void
+StitchDB.Gotrue.ResetPasswordForEmailOptions.RedirectTo.get -> string?
+StitchDB.Gotrue.ResetPasswordForEmailOptions.RedirectTo.set -> void
+StitchDB.Gotrue.ResetPasswordForEmailOptions.ResetPasswordForEmailOptions(string! email) -> void
+StitchDB.Gotrue.ResetPasswordForEmailState
+StitchDB.Gotrue.ResetPasswordForEmailState.PKCEVerifier.get -> string?
+StitchDB.Gotrue.ResetPasswordForEmailState.PKCEVerifier.set -> void
+StitchDB.Gotrue.ResetPasswordForEmailState.ResetPasswordForEmailState() -> void
+StitchDB.Gotrue.Responses.BaseResponse
+StitchDB.Gotrue.Responses.BaseResponse.BaseResponse() -> void
+StitchDB.Gotrue.Responses.BaseResponse.Content.get -> string?
+StitchDB.Gotrue.Responses.BaseResponse.Content.set -> void
+StitchDB.Gotrue.Responses.BaseResponse.ResponseMessage.get -> System.Net.Http.HttpResponseMessage?
+StitchDB.Gotrue.Responses.BaseResponse.ResponseMessage.set -> void
+StitchDB.Gotrue.Responses.GenerateLinkResponse
+StitchDB.Gotrue.Responses.GenerateLinkResponse.ActionLink.get -> string?
+StitchDB.Gotrue.Responses.GenerateLinkResponse.ActionLink.set -> void
+StitchDB.Gotrue.Responses.GenerateLinkResponse.EmailOtp.get -> string?
+StitchDB.Gotrue.Responses.GenerateLinkResponse.EmailOtp.set -> void
+StitchDB.Gotrue.Responses.GenerateLinkResponse.GenerateLinkResponse() -> void
+StitchDB.Gotrue.Responses.GenerateLinkResponse.HashedToken.get -> string?
+StitchDB.Gotrue.Responses.GenerateLinkResponse.HashedToken.set -> void
+StitchDB.Gotrue.Responses.GenerateLinkResponse.RedirectTo.get -> string?
+StitchDB.Gotrue.Responses.GenerateLinkResponse.RedirectTo.set -> void
+StitchDB.Gotrue.Responses.GenerateLinkResponse.VerificationType.get -> string?
+StitchDB.Gotrue.Responses.GenerateLinkResponse.VerificationType.set -> void
+StitchDB.Gotrue.SSOResponse
+StitchDB.Gotrue.SSOResponse.SSOResponse(System.Uri! uri) -> void
+StitchDB.Gotrue.Session
+StitchDB.Gotrue.Session.AccessToken.get -> string?
+StitchDB.Gotrue.Session.AccessToken.set -> void
+StitchDB.Gotrue.Session.CreatedAt.get -> System.DateTime
+StitchDB.Gotrue.Session.CreatedAt.set -> void
+StitchDB.Gotrue.Session.ExpiresIn.get -> long
+StitchDB.Gotrue.Session.ExpiresIn.set -> void
+StitchDB.Gotrue.Session.ProviderRefreshToken.get -> string?
+StitchDB.Gotrue.Session.ProviderRefreshToken.set -> void
+StitchDB.Gotrue.Session.ProviderToken.get -> string?
+StitchDB.Gotrue.Session.ProviderToken.set -> void
+StitchDB.Gotrue.Session.RefreshToken.get -> string?
+StitchDB.Gotrue.Session.RefreshToken.set -> void
+StitchDB.Gotrue.Session.Session() -> void
+StitchDB.Gotrue.Session.TokenType.get -> string?
+StitchDB.Gotrue.Session.TokenType.set -> void
+StitchDB.Gotrue.Session.User.get -> StitchDB.Gotrue.User?
+StitchDB.Gotrue.Session.User.set -> void
+StitchDB.Gotrue.Settings
+StitchDB.Gotrue.Settings.DisableSignup.get -> bool?
+StitchDB.Gotrue.Settings.DisableSignup.set -> void
+StitchDB.Gotrue.Settings.ExternalProviders.get -> System.Collections.Generic.Dictionary<string!, bool>?
+StitchDB.Gotrue.Settings.ExternalProviders.set -> void
+StitchDB.Gotrue.Settings.MFAEnabled.get -> bool?
+StitchDB.Gotrue.Settings.MFAEnabled.set -> void
+StitchDB.Gotrue.Settings.MailerAutoConfirm.get -> bool?
+StitchDB.Gotrue.Settings.MailerAutoConfirm.set -> void
+StitchDB.Gotrue.Settings.PhoneAutoConfirm.get -> bool?
+StitchDB.Gotrue.Settings.PhoneAutoConfirm.set -> void
+StitchDB.Gotrue.Settings.SAMLEnabled.get -> bool?
+StitchDB.Gotrue.Settings.SAMLEnabled.set -> void
+StitchDB.Gotrue.Settings.Settings() -> void
+StitchDB.Gotrue.Settings.SmsProvider.get -> string?
+StitchDB.Gotrue.Settings.SmsProvider.set -> void
+StitchDB.Gotrue.SignInAnonymouslyOptions
+StitchDB.Gotrue.SignInAnonymouslyOptions.CaptchaToken.get -> string?
+StitchDB.Gotrue.SignInAnonymouslyOptions.CaptchaToken.set -> void
+StitchDB.Gotrue.SignInAnonymouslyOptions.Data.get -> System.Collections.Generic.Dictionary<string!, object!>?
+StitchDB.Gotrue.SignInAnonymouslyOptions.Data.set -> void
+StitchDB.Gotrue.SignInAnonymouslyOptions.SignInAnonymouslyOptions() -> void
+StitchDB.Gotrue.SignInOptions
+StitchDB.Gotrue.SignInOptions.FlowType.get -> StitchDB.Gotrue.Constants.OAuthFlowType
+StitchDB.Gotrue.SignInOptions.FlowType.set -> void
+StitchDB.Gotrue.SignInOptions.QueryParams.get -> System.Collections.Generic.Dictionary<string!, string!>?
+StitchDB.Gotrue.SignInOptions.QueryParams.set -> void
+StitchDB.Gotrue.SignInOptions.RedirectTo.get -> string?
+StitchDB.Gotrue.SignInOptions.RedirectTo.set -> void
+StitchDB.Gotrue.SignInOptions.Scopes.get -> string?
+StitchDB.Gotrue.SignInOptions.Scopes.set -> void
+StitchDB.Gotrue.SignInOptions.SignInOptions() -> void
+StitchDB.Gotrue.SignInWithPasswordOptions
+StitchDB.Gotrue.SignInWithPasswordOptions.CaptchaToken.get -> string?
+StitchDB.Gotrue.SignInWithPasswordOptions.CaptchaToken.init -> void
+StitchDB.Gotrue.SignInWithPasswordOptions.SignInWithPasswordOptions() -> void
+StitchDB.Gotrue.SignInWithPasswordlessEmailOptions
+StitchDB.Gotrue.SignInWithPasswordlessEmailOptions.Email.get -> string!
+StitchDB.Gotrue.SignInWithPasswordlessEmailOptions.EmailRedirectTo.get -> string?
+StitchDB.Gotrue.SignInWithPasswordlessEmailOptions.EmailRedirectTo.set -> void
+StitchDB.Gotrue.SignInWithPasswordlessEmailOptions.FlowType.get -> StitchDB.Gotrue.Constants.OAuthFlowType
+StitchDB.Gotrue.SignInWithPasswordlessEmailOptions.FlowType.set -> void
+StitchDB.Gotrue.SignInWithPasswordlessEmailOptions.SignInWithPasswordlessEmailOptions(string! email) -> void
+StitchDB.Gotrue.SignInWithPasswordlessOptions
+StitchDB.Gotrue.SignInWithPasswordlessOptions.CaptchaToken.get -> string?
+StitchDB.Gotrue.SignInWithPasswordlessOptions.CaptchaToken.set -> void
+StitchDB.Gotrue.SignInWithPasswordlessOptions.Data -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Gotrue.SignInWithPasswordlessOptions.ShouldCreateUser.get -> bool
+StitchDB.Gotrue.SignInWithPasswordlessOptions.ShouldCreateUser.set -> void
+StitchDB.Gotrue.SignInWithPasswordlessOptions.SignInWithPasswordlessOptions() -> void
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.Channel.get -> StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.MessagingChannel
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.Channel.set -> void
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.MessagingChannel
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.MessagingChannel.SMS = 0 -> StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.MessagingChannel
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.MessagingChannel.WHATSAPP = 1 -> StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.MessagingChannel
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.Phone.get -> string!
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.Phone.set -> void
+StitchDB.Gotrue.SignInWithPasswordlessPhoneOptions.SignInWithPasswordlessPhoneOptions(string! phone) -> void
+StitchDB.Gotrue.SignInWithSSOOptions
+StitchDB.Gotrue.SignInWithSSOOptions.CaptchaToken.get -> string?
+StitchDB.Gotrue.SignInWithSSOOptions.CaptchaToken.set -> void
+StitchDB.Gotrue.SignInWithSSOOptions.SignInWithSSOOptions() -> void
+StitchDB.Gotrue.SignUpOptions
+StitchDB.Gotrue.SignUpOptions.CaptchaToken.get -> string?
+StitchDB.Gotrue.SignUpOptions.CaptchaToken.set -> void
+StitchDB.Gotrue.SignUpOptions.Data.get -> System.Collections.Generic.Dictionary<string!, object!>?
+StitchDB.Gotrue.SignUpOptions.Data.set -> void
+StitchDB.Gotrue.SignUpOptions.SignUpOptions() -> void
+StitchDB.Gotrue.StatelessClient
+StitchDB.Gotrue.StatelessClient.Challenge(string! jwt, StitchDB.Gotrue.Mfa.MfaChallengeParams! mfaChallengeParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaChallengeResponse?>!
+StitchDB.Gotrue.StatelessClient.ChallengeAndVerify(string! jwt, StitchDB.Gotrue.Mfa.MfaChallengeAndVerifyParams! mfaChallengeAndVerifyParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaVerifyResponse?>!
+StitchDB.Gotrue.StatelessClient.CreateUser(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.AdminUserAttributes! attributes) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.StatelessClient.CreateUser(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string! email, string! password, StitchDB.Gotrue.AdminUserAttributes? attributes = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.StatelessClient.DeleteUser(string! uid, string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.StatelessClient.DeleteUser(string! uid, string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, bool shouldSoftDelete = false) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.StatelessClient.Enroll(string! jwt, StitchDB.Gotrue.Mfa.MfaEnrollParams! mfaEnrollParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaEnrollResponse?>!
+StitchDB.Gotrue.StatelessClient.ExchangeCodeForSession(string! codeVerifier, string! authCode, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.GetApi(StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> StitchDB.Gotrue.Interfaces.IGotrueApi<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>!
+StitchDB.Gotrue.StatelessClient.GetAuthenticatorAssuranceLevel(string! jwt, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaGetAuthenticatorAssuranceLevelResponse?>!
+StitchDB.Gotrue.StatelessClient.GetSessionFromUrl(System.Uri! uri, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.GetUser(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.StatelessClient.GetUserById(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string! userId) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.StatelessClient.InviteUserByEmail(string! email, string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.InviteUserByEmailOptions? invitationOptions = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.StatelessClient.ListFactors(string! jwt, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaListFactorsResponse?>!
+StitchDB.Gotrue.StatelessClient.ListUsers(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string? filter = null, string? sortBy = null, StitchDB.Gotrue.Constants.SortOrder sortOrder = StitchDB.Gotrue.Constants.SortOrder.Descending, int? page = null, int? perPage = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.UserList<StitchDB.Gotrue.User!>?>!
+StitchDB.Gotrue.StatelessClient.RefreshToken(string! accessToken, string! refreshToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.ResetPasswordForEmail(string! email, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.StatelessClient.SendMagicLink(string! email, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInOptions? signInOptions = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.StatelessClient.Settings(StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Settings?>!
+StitchDB.Gotrue.StatelessClient.SignIn(StitchDB.Gotrue.Constants.Provider provider, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInOptions? signInOptions = null) -> StitchDB.Gotrue.ProviderAuthState!
+StitchDB.Gotrue.StatelessClient.SignIn(StitchDB.Gotrue.Constants.SignInType type, string! identifierOrToken, string? password = null, StitchDB.Gotrue.StatelessClient.StatelessClientOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.SignIn(StitchDB.Gotrue.Constants.SignInType type, string! identifierOrToken, string? password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInWithPasswordOptions! signInOptions) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.SignIn(string! email, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignInOptions? signInOptions = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.StatelessClient.SignIn(string! email, string! password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.SignOut(string! accessToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Gotrue.StatelessClient.SignOut(string! accessToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.SignOutScope scope) -> System.Threading.Tasks.Task!
+StitchDB.Gotrue.StatelessClient.SignUp(StitchDB.Gotrue.Constants.SignUpType type, string! identifier, string! password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignUpOptions? signUpOptions = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.SignUp(string! email, string! password, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.SignUpOptions? signUpOptions = null) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.StatelessClient() -> void
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.AllowUnconfirmedUserSessions.get -> bool
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.AllowUnconfirmedUserSessions.set -> void
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.HttpClient.get -> System.Net.Http.HttpClient?
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.HttpClient.set -> void
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.Proxy.get -> System.Net.IWebProxy?
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.Proxy.set -> void
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.Retry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.Retry.set -> void
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.StatelessClientOptions() -> void
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.Url.get -> string!
+StitchDB.Gotrue.StatelessClient.StatelessClientOptions.Url.set -> void
+StitchDB.Gotrue.StatelessClient.Unenroll(string! jwt, StitchDB.Gotrue.Mfa.MfaUnenrollParams! mfaUnenrollParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaUnenrollResponse?>!
+StitchDB.Gotrue.StatelessClient.Update(string! accessToken, StitchDB.Gotrue.UserAttributes! attributes, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.StatelessClient.UpdateUserById(string! serviceRoleToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, string! userId, StitchDB.Gotrue.AdminUserAttributes! userData) -> System.Threading.Tasks.Task<StitchDB.Gotrue.User?>!
+StitchDB.Gotrue.StatelessClient.Verify(string! jwt, StitchDB.Gotrue.Mfa.MfaVerifyParams! mfaVerifyParams, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Mfa.MfaVerifyResponse?>!
+StitchDB.Gotrue.StatelessClient.VerifyOTP(string! email, string! otpToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.MagicLink) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.VerifyOTP(string! phone, string! otpToken, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.MobileOtpType type = StitchDB.Gotrue.Constants.MobileOtpType.SMS) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.StatelessClient.VerifyTokenHash(string! tokenHash, StitchDB.Gotrue.StatelessClient.StatelessClientOptions! options, StitchDB.Gotrue.Constants.EmailOtpType type = StitchDB.Gotrue.Constants.EmailOtpType.Email) -> System.Threading.Tasks.Task<StitchDB.Gotrue.Session?>!
+StitchDB.Gotrue.TokenRefresh
+StitchDB.Gotrue.TokenRefresh.Debug -> bool
+StitchDB.Gotrue.TokenRefresh.ManageAutoRefresh(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>! sender, StitchDB.Gotrue.Constants.AuthState stateChanged) -> void
+StitchDB.Gotrue.TokenRefresh.TokenRefresh(StitchDB.Gotrue.Client! client) -> void
+StitchDB.Gotrue.User
+StitchDB.Gotrue.User.AppMetadata.get -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Gotrue.User.AppMetadata.set -> void
+StitchDB.Gotrue.User.Aud.get -> string?
+StitchDB.Gotrue.User.Aud.set -> void
+StitchDB.Gotrue.User.BannedUntil.get -> System.DateTime?
+StitchDB.Gotrue.User.BannedUntil.set -> void
+StitchDB.Gotrue.User.ConfirmationSentAt.get -> System.DateTime?
+StitchDB.Gotrue.User.ConfirmationSentAt.set -> void
+StitchDB.Gotrue.User.ConfirmedAt.get -> System.DateTime?
+StitchDB.Gotrue.User.ConfirmedAt.set -> void
+StitchDB.Gotrue.User.CreatedAt.get -> System.DateTime
+StitchDB.Gotrue.User.CreatedAt.set -> void
+StitchDB.Gotrue.User.Email.get -> string?
+StitchDB.Gotrue.User.Email.set -> void
+StitchDB.Gotrue.User.EmailConfirmedAt.get -> System.DateTime?
+StitchDB.Gotrue.User.EmailConfirmedAt.set -> void
+StitchDB.Gotrue.User.Factors.get -> System.Collections.Generic.List<StitchDB.Gotrue.Mfa.Factor!>!
+StitchDB.Gotrue.User.Factors.set -> void
+StitchDB.Gotrue.User.Id.get -> string?
+StitchDB.Gotrue.User.Id.set -> void
+StitchDB.Gotrue.User.Identities.get -> System.Collections.Generic.List<StitchDB.Gotrue.UserIdentity!>!
+StitchDB.Gotrue.User.Identities.set -> void
+StitchDB.Gotrue.User.InvitedAt.get -> System.DateTime?
+StitchDB.Gotrue.User.InvitedAt.set -> void
+StitchDB.Gotrue.User.IsAnonymous.get -> bool
+StitchDB.Gotrue.User.IsAnonymous.set -> void
+StitchDB.Gotrue.User.IsConfirmed.get -> bool
+StitchDB.Gotrue.User.LastSignInAt.get -> System.DateTime?
+StitchDB.Gotrue.User.LastSignInAt.set -> void
+StitchDB.Gotrue.User.Phone.get -> string?
+StitchDB.Gotrue.User.Phone.set -> void
+StitchDB.Gotrue.User.PhoneConfirmedAt.get -> System.DateTime?
+StitchDB.Gotrue.User.PhoneConfirmedAt.set -> void
+StitchDB.Gotrue.User.RecoverySentAt.get -> System.DateTime?
+StitchDB.Gotrue.User.RecoverySentAt.set -> void
+StitchDB.Gotrue.User.Role.get -> string?
+StitchDB.Gotrue.User.Role.set -> void
+StitchDB.Gotrue.User.UpdatedAt.get -> System.DateTime?
+StitchDB.Gotrue.User.UpdatedAt.set -> void
+StitchDB.Gotrue.User.User() -> void
+StitchDB.Gotrue.User.UserMetadata.get -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Gotrue.User.UserMetadata.set -> void
+StitchDB.Gotrue.UserAttributes
+StitchDB.Gotrue.UserAttributes.Data.get -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Gotrue.UserAttributes.Data.set -> void
+StitchDB.Gotrue.UserAttributes.Email.get -> string?
+StitchDB.Gotrue.UserAttributes.Email.set -> void
+StitchDB.Gotrue.UserAttributes.EmailChangeToken.get -> string?
+StitchDB.Gotrue.UserAttributes.EmailChangeToken.set -> void
+StitchDB.Gotrue.UserAttributes.Nonce.get -> string?
+StitchDB.Gotrue.UserAttributes.Nonce.set -> void
+StitchDB.Gotrue.UserAttributes.Password.get -> string?
+StitchDB.Gotrue.UserAttributes.Password.set -> void
+StitchDB.Gotrue.UserAttributes.Phone.get -> string?
+StitchDB.Gotrue.UserAttributes.Phone.set -> void
+StitchDB.Gotrue.UserAttributes.UserAttributes() -> void
+StitchDB.Gotrue.UserIdentity
+StitchDB.Gotrue.UserIdentity.CreatedAt.get -> System.DateTime
+StitchDB.Gotrue.UserIdentity.CreatedAt.set -> void
+StitchDB.Gotrue.UserIdentity.Id.get -> string?
+StitchDB.Gotrue.UserIdentity.Id.set -> void
+StitchDB.Gotrue.UserIdentity.IdentityData.get -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Gotrue.UserIdentity.IdentityData.set -> void
+StitchDB.Gotrue.UserIdentity.IdentityId.get -> string!
+StitchDB.Gotrue.UserIdentity.IdentityId.set -> void
+StitchDB.Gotrue.UserIdentity.LastSignInAt.get -> System.DateTime
+StitchDB.Gotrue.UserIdentity.LastSignInAt.set -> void
+StitchDB.Gotrue.UserIdentity.Provider.get -> string?
+StitchDB.Gotrue.UserIdentity.Provider.set -> void
+StitchDB.Gotrue.UserIdentity.UpdatedAt.get -> System.DateTime?
+StitchDB.Gotrue.UserIdentity.UpdatedAt.set -> void
+StitchDB.Gotrue.UserIdentity.UserId.get -> string?
+StitchDB.Gotrue.UserIdentity.UserId.set -> void
+StitchDB.Gotrue.UserIdentity.UserIdentity() -> void
+StitchDB.Gotrue.UserList<TUser>
+StitchDB.Gotrue.UserList<TUser>.Aud.get -> string?
+StitchDB.Gotrue.UserList<TUser>.Aud.set -> void
+StitchDB.Gotrue.UserList<TUser>.UserList() -> void
+StitchDB.Gotrue.UserList<TUser>.Users.get -> System.Collections.Generic.List<TUser!>!
+StitchDB.Gotrue.UserList<TUser>.Users.set -> void
+StitchDB.Gotrue.VerifyOTPParams
+StitchDB.Gotrue.VerifyOTPParams.Email.get -> string?
+StitchDB.Gotrue.VerifyOTPParams.Email.set -> void
+StitchDB.Gotrue.VerifyOTPParams.Phone.get -> string?
+StitchDB.Gotrue.VerifyOTPParams.Phone.set -> void
+StitchDB.Gotrue.VerifyOTPParams.Token.get -> string?
+StitchDB.Gotrue.VerifyOTPParams.Token.set -> void
+StitchDB.Gotrue.VerifyOTPParams.Type.get -> string?
+StitchDB.Gotrue.VerifyOTPParams.Type.set -> void
+StitchDB.Gotrue.VerifyOTPParams.VerifyOTPParams() -> void
+const StitchDB.Gotrue.Constants.AUDIENCE = "" -> string!
+const StitchDB.Gotrue.Constants.EXPIRY_MARGIN = 60000 -> int
+const StitchDB.Gotrue.Constants.GOTRUE_URL = "http://localhost:9999" -> string!
+const StitchDB.Gotrue.Constants.STORAGE_KEY = "stitchdb.auth.token" -> string!
+const StitchDB.Gotrue.GotrueDiagnostics.SourceName = "StitchDB.Gotrue" -> string!
+override StitchDB.Gotrue.Claims.GetClaimsOptions.Equals(object? obj) -> bool
+override StitchDB.Gotrue.Claims.GetClaimsOptions.GetHashCode() -> int
+override StitchDB.Gotrue.Claims.GetClaimsOptions.ToString() -> string!
+override StitchDB.Gotrue.Claims.GetClaimsResponse.Equals(object? obj) -> bool
+override StitchDB.Gotrue.Claims.GetClaimsResponse.GetHashCode() -> int
+override StitchDB.Gotrue.Claims.GetClaimsResponse.ToString() -> string!
+override StitchDB.Gotrue.Claims.Jwk.Equals(object? obj) -> bool
+override StitchDB.Gotrue.Claims.Jwk.GetHashCode() -> int
+override StitchDB.Gotrue.Claims.Jwk.ToString() -> string!
+override StitchDB.Gotrue.Claims.Jwks.Equals(object? obj) -> bool
+override StitchDB.Gotrue.Claims.Jwks.GetHashCode() -> int
+override StitchDB.Gotrue.Claims.Jwks.ToString() -> string!
+override StitchDB.Gotrue.Claims.JwtClaims.Equals(object? obj) -> bool
+override StitchDB.Gotrue.Claims.JwtClaims.GetHashCode() -> int
+override StitchDB.Gotrue.Claims.JwtClaims.ToString() -> string!
+override StitchDB.Gotrue.Claims.JwtHeader.Equals(object? obj) -> bool
+override StitchDB.Gotrue.Claims.JwtHeader.GetHashCode() -> int
+override StitchDB.Gotrue.Claims.JwtHeader.ToString() -> string!
+readonly StitchDB.Gotrue.StatelessClient.StatelessClientOptions.Headers -> System.Collections.Generic.Dictionary<string!, string!>!
+static StitchDB.Gotrue.Claims.GetClaimsOptions.operator !=(StitchDB.Gotrue.Claims.GetClaimsOptions? left, StitchDB.Gotrue.Claims.GetClaimsOptions? right) -> bool
+static StitchDB.Gotrue.Claims.GetClaimsOptions.operator ==(StitchDB.Gotrue.Claims.GetClaimsOptions? left, StitchDB.Gotrue.Claims.GetClaimsOptions? right) -> bool
+static StitchDB.Gotrue.Claims.GetClaimsResponse.operator !=(StitchDB.Gotrue.Claims.GetClaimsResponse? left, StitchDB.Gotrue.Claims.GetClaimsResponse? right) -> bool
+static StitchDB.Gotrue.Claims.GetClaimsResponse.operator ==(StitchDB.Gotrue.Claims.GetClaimsResponse? left, StitchDB.Gotrue.Claims.GetClaimsResponse? right) -> bool
+static StitchDB.Gotrue.Claims.Jwk.operator !=(StitchDB.Gotrue.Claims.Jwk? left, StitchDB.Gotrue.Claims.Jwk? right) -> bool
+static StitchDB.Gotrue.Claims.Jwk.operator ==(StitchDB.Gotrue.Claims.Jwk? left, StitchDB.Gotrue.Claims.Jwk? right) -> bool
+static StitchDB.Gotrue.Claims.Jwks.operator !=(StitchDB.Gotrue.Claims.Jwks? left, StitchDB.Gotrue.Claims.Jwks? right) -> bool
+static StitchDB.Gotrue.Claims.Jwks.operator ==(StitchDB.Gotrue.Claims.Jwks? left, StitchDB.Gotrue.Claims.Jwks? right) -> bool
+static StitchDB.Gotrue.Claims.JwtClaims.operator !=(StitchDB.Gotrue.Claims.JwtClaims? left, StitchDB.Gotrue.Claims.JwtClaims? right) -> bool
+static StitchDB.Gotrue.Claims.JwtClaims.operator ==(StitchDB.Gotrue.Claims.JwtClaims? left, StitchDB.Gotrue.Claims.JwtClaims? right) -> bool
+static StitchDB.Gotrue.Claims.JwtHeader.operator !=(StitchDB.Gotrue.Claims.JwtHeader? left, StitchDB.Gotrue.Claims.JwtHeader? right) -> bool
+static StitchDB.Gotrue.Claims.JwtHeader.operator ==(StitchDB.Gotrue.Claims.JwtHeader? left, StitchDB.Gotrue.Claims.JwtHeader? right) -> bool
+static StitchDB.Gotrue.Exceptions.FailureHint.DetectReason(StitchDB.Gotrue.Exceptions.GotrueException! gte) -> StitchDB.Gotrue.Exceptions.FailureHint.Reason
+static StitchDB.Gotrue.Exceptions.FailureHint.ParseErrorCode(string? content) -> string?
+static StitchDB.Gotrue.Helpers.GenerateNonce() -> string!
+static StitchDB.Gotrue.Helpers.GeneratePKCENonceVerifier(string! codeVerifier) -> string!
+static StitchDB.Gotrue.Helpers.GenerateSHA256NonceFromRawNonce(string! rawNonce) -> string!
+static readonly StitchDB.Gotrue.Constants.CookieOptions -> System.Collections.Generic.Dictionary<string!, object!>!
+virtual StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.AuthEventHandler.Invoke(StitchDB.Gotrue.Interfaces.IGotrueClient<TUser!, TSession!>! sender, StitchDB.Gotrue.Constants.AuthState stateChanged) -> void
+virtual StitchDB.Gotrue.NetworkStatus.NetworkListener.Invoke(bool isNetworkAvailable) -> void
+~StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.AddStateChangedListener(StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.AuthEventHandler! authEventHandler) -> void
+~StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.RemoveStateChangedListener(StitchDB.Gotrue.Interfaces.IGotrueClient<TUser, TSession>.AuthEventHandler! authEventHandler) -> void

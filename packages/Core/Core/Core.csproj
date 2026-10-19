@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<PackOnBuild>true</PackOnBuild>
+		<PackageId>StitchDB.Core</PackageId>
+		<PackageProjectUrl>https://github.com/stitchdb/stitchdb-csharp/tree/main/packages/Core</PackageProjectUrl>
+		<NeutralLanguage>en</NeutralLanguage>
+		<Description>StitchDB .NET shared HTTP, retry and telemetry pieces used by the StitchDB packages.</Description>
+		<AssemblyName>StitchDB.Core</AssemblyName>
+		<RootNamespace>StitchDB.Core</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>stitchdb;core</PackageTags>
+		<!-- x-release-please-start-version -->
+		<PackageVersion>1.0.0</PackageVersion>
+		<ReleaseVersion>1.0.0</ReleaseVersion>
+		<!-- x-release-please-end -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="\" Visible="false" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="PolySharp">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="System.Diagnostics.DiagnosticSource" />
+		<PackageReference Include="System.Text.Json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Core.Tests" />
+		<InternalsVisibleTo Include="StitchDB.Extensions.DependencyInjection" />
+		<InternalsVisibleTo Include="StitchDB.Gotrue" />
+		<InternalsVisibleTo Include="StitchDB.Postgrest" />
+		<InternalsVisibleTo Include="StitchDB.Storage" />
+	</ItemGroup>
+</Project>

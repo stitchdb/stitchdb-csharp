@@ -1,0 +1,14 @@
+{
+  "stryker-config": {
+    "project": "Postgrest.csproj",
+    "test-projects": [
+      "Postgrest.Tests.csproj"
+    ],
+    "target-framework": "net10.0",
+    "reporters": [
+      "json",
+      "progress"
+    ],
+    "test-case-filter": "TestCategory!=E2E"
+  }
+}

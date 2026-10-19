@@ -1,0 +1,402 @@
+#nullable enable
+StitchDB.Postgrest.Attributes.ColumnAttribute
+StitchDB.Postgrest.Attributes.ColumnAttribute.ColumnAttribute(string? columnName = null, System.Text.Json.Serialization.JsonIgnoreCondition nullValueHandling = System.Text.Json.Serialization.JsonIgnoreCondition.Never, bool ignoreOnInsert = false, bool ignoreOnUpdate = false) -> void
+StitchDB.Postgrest.Attributes.ColumnAttribute.ColumnName.get -> string!
+StitchDB.Postgrest.Attributes.ColumnAttribute.IgnoreOnInsert.get -> bool
+StitchDB.Postgrest.Attributes.ColumnAttribute.IgnoreOnUpdate.get -> bool
+StitchDB.Postgrest.Attributes.ColumnAttribute.NullValueHandling.get -> System.Text.Json.Serialization.JsonIgnoreCondition
+StitchDB.Postgrest.Attributes.ColumnAttribute.NullValueHandling.set -> void
+StitchDB.Postgrest.Attributes.PrimaryKeyAttribute
+StitchDB.Postgrest.Attributes.PrimaryKeyAttribute.ColumnName.get -> string!
+StitchDB.Postgrest.Attributes.PrimaryKeyAttribute.PrimaryKeyAttribute(string? columnName = null, bool shouldInsert = false) -> void
+StitchDB.Postgrest.Attributes.PrimaryKeyAttribute.ShouldInsert.get -> bool
+StitchDB.Postgrest.Attributes.ReferenceAttribute
+StitchDB.Postgrest.Attributes.ReferenceAttribute.ColumnName.get -> string?
+StitchDB.Postgrest.Attributes.ReferenceAttribute.Columns.get -> System.Collections.Generic.List<string!>!
+StitchDB.Postgrest.Attributes.ReferenceAttribute.ForeignKey.get -> string?
+StitchDB.Postgrest.Attributes.ReferenceAttribute.IgnoreOnInsert.get -> bool
+StitchDB.Postgrest.Attributes.ReferenceAttribute.IgnoreOnUpdate.get -> bool
+StitchDB.Postgrest.Attributes.ReferenceAttribute.IncludeInQuery.get -> bool
+StitchDB.Postgrest.Attributes.ReferenceAttribute.JoinType
+StitchDB.Postgrest.Attributes.ReferenceAttribute.JoinType.Inner = 0 -> StitchDB.Postgrest.Attributes.ReferenceAttribute.JoinType
+StitchDB.Postgrest.Attributes.ReferenceAttribute.JoinType.Left = 1 -> StitchDB.Postgrest.Attributes.ReferenceAttribute.JoinType
+StitchDB.Postgrest.Attributes.ReferenceAttribute.Model.get -> System.Type!
+StitchDB.Postgrest.Attributes.ReferenceAttribute.ReferenceAttribute(System.Type! model, StitchDB.Postgrest.Attributes.ReferenceAttribute.JoinType joinType, bool includeInQuery = true, string! columnName = "", string? foreignKey = null) -> void
+StitchDB.Postgrest.Attributes.ReferenceAttribute.ReferenceAttribute(System.Type! model, bool includeInQuery = true, bool useInnerJoin = true, string? columnName = null, string? foreignKey = null) -> void
+StitchDB.Postgrest.Attributes.ReferenceAttribute.TableName.get -> string!
+StitchDB.Postgrest.Attributes.ReferenceAttribute.UseInnerJoin.get -> bool
+StitchDB.Postgrest.Attributes.TableAttribute
+StitchDB.Postgrest.Attributes.TableAttribute.Name.get -> string!
+StitchDB.Postgrest.Attributes.TableAttribute.Name.set -> void
+StitchDB.Postgrest.Attributes.TableAttribute.TableAttribute(string! tableName) -> void
+StitchDB.Postgrest.Client
+StitchDB.Postgrest.Client.AddDebugHandler(StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler! handler) -> void
+StitchDB.Postgrest.Client.AddRequestPreparedHandler(StitchDB.Postgrest.OnRequestPreparedEventHandler! handler) -> void
+StitchDB.Postgrest.Client.Attach<T>(T! model) -> T!
+StitchDB.Postgrest.Client.BaseUrl.get -> string!
+StitchDB.Postgrest.Client.ClearDebugHandlers() -> void
+StitchDB.Postgrest.Client.ClearRequestPreparedHandlers() -> void
+StitchDB.Postgrest.Client.Client(string! baseUrl, StitchDB.Postgrest.ClientOptions? options = null) -> void
+StitchDB.Postgrest.Client.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Postgrest.Client.GetHeaders.set -> void
+StitchDB.Postgrest.Client.Options.get -> StitchDB.Postgrest.ClientOptions!
+StitchDB.Postgrest.Client.RemoveDebugHandler(StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler! handler) -> void
+StitchDB.Postgrest.Client.RemoveRequestPreparedHandler(StitchDB.Postgrest.OnRequestPreparedEventHandler! handler) -> void
+StitchDB.Postgrest.Client.Rpc(string! procedureName, object? parameters = null) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.BaseResponse!>!
+StitchDB.Postgrest.Client.Rpc<TModeledResponse>(string! procedureName, object? parameters = null) -> System.Threading.Tasks.Task<TModeledResponse?>!
+StitchDB.Postgrest.Client.Table<T>() -> StitchDB.Postgrest.Interfaces.IPostgrestTable<T!>!
+StitchDB.Postgrest.Client.Table<T>(StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider! cacheProvider) -> StitchDB.Postgrest.Interfaces.IPostgrestTableWithCache<T!>!
+StitchDB.Postgrest.ClientOptions
+StitchDB.Postgrest.ClientOptions.ClientOptions() -> void
+StitchDB.Postgrest.ClientOptions.Headers.get -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Postgrest.ClientOptions.Headers.set -> void
+StitchDB.Postgrest.ClientOptions.HttpClient.get -> System.Net.Http.HttpClient?
+StitchDB.Postgrest.ClientOptions.HttpClient.set -> void
+StitchDB.Postgrest.ClientOptions.Proxy.get -> System.Net.IWebProxy?
+StitchDB.Postgrest.ClientOptions.Proxy.set -> void
+StitchDB.Postgrest.ClientOptions.QueryParams.get -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Postgrest.ClientOptions.QueryParams.set -> void
+StitchDB.Postgrest.ClientOptions.Retry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.Postgrest.ClientOptions.Retry.set -> void
+StitchDB.Postgrest.ClientOptions.Schema.get -> string!
+StitchDB.Postgrest.ClientOptions.Schema.set -> void
+StitchDB.Postgrest.ClientOptions.SerializeEnumsAsStrings.get -> bool
+StitchDB.Postgrest.ClientOptions.SerializeEnumsAsStrings.set -> void
+StitchDB.Postgrest.ClientOptions.Timeout.get -> System.TimeSpan?
+StitchDB.Postgrest.ClientOptions.Timeout.set -> void
+StitchDB.Postgrest.Constants
+StitchDB.Postgrest.Constants.CountType
+StitchDB.Postgrest.Constants.CountType.Estimated = 2 -> StitchDB.Postgrest.Constants.CountType
+StitchDB.Postgrest.Constants.CountType.Exact = 0 -> StitchDB.Postgrest.Constants.CountType
+StitchDB.Postgrest.Constants.CountType.Planned = 1 -> StitchDB.Postgrest.Constants.CountType
+StitchDB.Postgrest.Constants.NullPosition
+StitchDB.Postgrest.Constants.NullPosition.First = 0 -> StitchDB.Postgrest.Constants.NullPosition
+StitchDB.Postgrest.Constants.NullPosition.Last = 1 -> StitchDB.Postgrest.Constants.NullPosition
+StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Adjacent = 23 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.And = 0 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.ContainedIn = 17 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Contains = 16 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Equals = 2 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.FTS = 12 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.GreaterThan = 3 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.GreaterThanOrEqual = 4 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.ILike = 9 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.In = 10 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Is = 11 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.LessThan = 5 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.LessThanOrEqual = 6 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Like = 8 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Not = 24 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.NotEqual = 7 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.NotLeftOf = 22 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.NotRightOf = 21 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Or = 1 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.Overlap = 18 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.PHFTS = 14 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.PLFTS = 13 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.StrictlyLeft = 19 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.StrictlyRight = 20 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Operator.WFTS = 15 -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Constants.Ordering
+StitchDB.Postgrest.Constants.Ordering.Ascending = 0 -> StitchDB.Postgrest.Constants.Ordering
+StitchDB.Postgrest.Constants.Ordering.Descending = 1 -> StitchDB.Postgrest.Constants.Ordering
+StitchDB.Postgrest.Converters.DateTimeConverter
+StitchDB.Postgrest.Converters.DateTimeConverter.DateTimeConverter() -> void
+StitchDB.Postgrest.Converters.DateTimeListConverter
+StitchDB.Postgrest.Converters.DateTimeListConverter.DateTimeListConverter() -> void
+StitchDB.Postgrest.Converters.IntArrayConverter
+StitchDB.Postgrest.Converters.IntArrayConverter.IntArrayConverter() -> void
+StitchDB.Postgrest.Converters.PostgrestStringEnumConverter
+StitchDB.Postgrest.Converters.PostgrestStringEnumConverter.PostgrestStringEnumConverter() -> void
+StitchDB.Postgrest.Exceptions.FailureHint
+StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.ForeignKeyViolation = 2 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.InvalidArgument = 7 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.NotAuthorized = 1 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.ServerError = 4 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.UndefinedFunction = 6 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.UndefinedTable = 5 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.UniquenessViolation = 3 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.Unknown = 0 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.FailureHint.Reason.UriTooLong = 8 -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.PostgrestException
+StitchDB.Postgrest.Exceptions.PostgrestException.AddReason() -> void
+StitchDB.Postgrest.Exceptions.PostgrestException.Content.get -> string?
+StitchDB.Postgrest.Exceptions.PostgrestException.PostgrestException(string? message) -> void
+StitchDB.Postgrest.Exceptions.PostgrestException.PostgrestException(string? message, System.Exception? innerException) -> void
+StitchDB.Postgrest.Exceptions.PostgrestException.Reason.get -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+StitchDB.Postgrest.Exceptions.PostgrestException.Response.get -> System.Net.Http.HttpResponseMessage?
+StitchDB.Postgrest.Exceptions.PostgrestException.StatusCode.get -> int
+StitchDB.Postgrest.Extensions.EnumExtensions
+StitchDB.Postgrest.Extensions.RangeExtensions
+StitchDB.Postgrest.Extensions.UriExtensions
+StitchDB.Postgrest.FullTextSearchConfig
+StitchDB.Postgrest.FullTextSearchConfig.Config.get -> string!
+StitchDB.Postgrest.FullTextSearchConfig.FullTextSearchConfig(string! queryText, string? config) -> void
+StitchDB.Postgrest.FullTextSearchConfig.QueryText.get -> string!
+StitchDB.Postgrest.Index
+StitchDB.Postgrest.Index.Equals(StitchDB.Postgrest.Index! other) -> bool
+StitchDB.Postgrest.Index.GetOffset(int length) -> int
+StitchDB.Postgrest.Index.Index(int value, bool fromEnd = false) -> void
+StitchDB.Postgrest.Index.IsFromEnd.get -> bool
+StitchDB.Postgrest.Index.Value.get -> int
+StitchDB.Postgrest.IntRange
+StitchDB.Postgrest.IntRange.End.get -> StitchDB.Postgrest.Index!
+StitchDB.Postgrest.IntRange.Equals(StitchDB.Postgrest.IntRange! other) -> bool
+StitchDB.Postgrest.IntRange.GetOffsetAndLength(int length) -> (int Offset, int Length)
+StitchDB.Postgrest.IntRange.IntRange(StitchDB.Postgrest.Index! start, StitchDB.Postgrest.Index! end) -> void
+StitchDB.Postgrest.IntRange.Start.get -> StitchDB.Postgrest.Index!
+StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider
+StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider.ClearItem(string! key) -> System.Threading.Tasks.Task!
+StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider.Empty() -> System.Threading.Tasks.Task!
+StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider.GetItem<T>(string! key) -> System.Threading.Tasks.Task<T?>!
+StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider.SetItem(string! key, object! value) -> System.Threading.Tasks.Task!
+StitchDB.Postgrest.Interfaces.IPostgrestClient
+StitchDB.Postgrest.Interfaces.IPostgrestClient.AddDebugHandler(StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler! handler) -> void
+StitchDB.Postgrest.Interfaces.IPostgrestClient.AddRequestPreparedHandler(StitchDB.Postgrest.OnRequestPreparedEventHandler! handler) -> void
+StitchDB.Postgrest.Interfaces.IPostgrestClient.Attach<T>(T! model) -> T!
+StitchDB.Postgrest.Interfaces.IPostgrestClient.BaseUrl.get -> string!
+StitchDB.Postgrest.Interfaces.IPostgrestClient.ClearDebugHandlers() -> void
+StitchDB.Postgrest.Interfaces.IPostgrestClient.ClearRequestPreparedHandlers() -> void
+StitchDB.Postgrest.Interfaces.IPostgrestClient.Options.get -> StitchDB.Postgrest.ClientOptions!
+StitchDB.Postgrest.Interfaces.IPostgrestClient.RemoveDebugHandler(StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler! handler) -> void
+StitchDB.Postgrest.Interfaces.IPostgrestClient.RemoveRequestPreparedHandler(StitchDB.Postgrest.OnRequestPreparedEventHandler! handler) -> void
+StitchDB.Postgrest.Interfaces.IPostgrestClient.Rpc(string! procedureName, object? parameters) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.BaseResponse!>!
+StitchDB.Postgrest.Interfaces.IPostgrestClient.Rpc<TModeledResponse>(string! procedureName, object? parameters = null) -> System.Threading.Tasks.Task<TModeledResponse?>!
+StitchDB.Postgrest.Interfaces.IPostgrestClient.Table<T>() -> StitchDB.Postgrest.Interfaces.IPostgrestTable<T!>!
+StitchDB.Postgrest.Interfaces.IPostgrestClient.Table<T>(StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider! cacheProvider) -> StitchDB.Postgrest.Interfaces.IPostgrestTableWithCache<T!>!
+StitchDB.Postgrest.Interfaces.IPostgrestDebugger
+StitchDB.Postgrest.Interfaces.IPostgrestDebugger.AddDebugHandler(StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler! handler) -> void
+StitchDB.Postgrest.Interfaces.IPostgrestDebugger.ClearDebugHandlers() -> void
+StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler
+StitchDB.Postgrest.Interfaces.IPostgrestDebugger.Log(object? sender, string! message, StitchDB.Postgrest.Exceptions.PostgrestException? exception = null) -> void
+StitchDB.Postgrest.Interfaces.IPostgrestDebugger.RemoveDebugHandler(StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler! handler) -> void
+StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter
+StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter.Criteria.get -> object?
+StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter.Op.get -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter.Property.get -> string?
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.And(System.Collections.Generic.List<StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter!>! filters) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.BaseUrl.get -> string!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Clear() -> void
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Columns(System.Linq.Expressions.Expression<System.Func<TModel!, object![]!>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Columns(string![]! columns) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Count(StitchDB.Postgrest.Constants.CountType type, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<int>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Delete(StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Delete(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Filter<TCriterion>(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Filter<TCriterion>(string! columnName, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.GenerateUrl() -> string!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Get(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), StitchDB.Postgrest.Constants.CountType countType = StitchDB.Postgrest.Constants.CountType.Estimated) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Insert(System.Collections.Generic.ICollection<TModel!>! models, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Insert(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Limit(int limit, string? foreignTableName = null) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Match(System.Collections.Generic.Dictionary<string!, string!>! query) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Match(TModel! model) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Not(StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter! filter) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Not(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.Dictionary<string!, object!>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Not(string! columnName, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.Dictionary<string!, object!>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Not<TCriterion>(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.List<TCriterion>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Not<TCriterion>(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Not<TCriterion>(string! columnName, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.List<TCriterion>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Not<TCriterion>(string! columnName, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Offset(int offset, string? foreignTableName = null) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.OnConflict(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.OnConflict(string! columnName) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Or(System.Collections.Generic.List<StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter!>! filters) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Order(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Ordering ordering, StitchDB.Postgrest.Constants.NullPosition nullPosition = StitchDB.Postgrest.Constants.NullPosition.First) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Order(string! column, StitchDB.Postgrest.Constants.Ordering ordering, StitchDB.Postgrest.Constants.NullPosition nullPosition = StitchDB.Postgrest.Constants.NullPosition.First) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Order(string! foreignTable, string! column, StitchDB.Postgrest.Constants.Ordering ordering, StitchDB.Postgrest.Constants.NullPosition nullPosition = StitchDB.Postgrest.Constants.NullPosition.First) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Range(int from) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Range(int from, int to) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Select(System.Linq.Expressions.Expression<System.Func<TModel!, object![]!>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Select(string! columnQuery) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Set(System.Linq.Expressions.Expression<System.Func<TModel!, System.Collections.Generic.KeyValuePair<object!, object?>>!>! keyValuePairExpression) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Set(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! keySelector, object? value) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Single(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<TModel?>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.StripNulls() -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.TableName.get -> string!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Update(StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Update(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Upsert(System.Collections.Generic.ICollection<TModel!>! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Upsert(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel>.Where(System.Linq.Expressions.Expression<System.Func<TModel!, bool>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Interfaces.IPostgrestTableWithCache<T>
+StitchDB.Postgrest.Interfaces.IPostgrestTableWithCache<T>.Get(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Requests.CacheBackedRequest<T!>!>!
+StitchDB.Postgrest.Models.BaseModel
+StitchDB.Postgrest.Models.BaseModel.BaseModel() -> void
+StitchDB.Postgrest.Models.BaseModel.BaseUrl.get -> string?
+StitchDB.Postgrest.Models.BaseModel.BaseUrl.set -> void
+StitchDB.Postgrest.Models.BaseModel.PrimaryKey.get -> System.Collections.Generic.Dictionary<StitchDB.Postgrest.Attributes.PrimaryKeyAttribute!, object!>!
+StitchDB.Postgrest.Models.BaseModel.RequestClientOptions.get -> StitchDB.Postgrest.ClientOptions?
+StitchDB.Postgrest.Models.BaseModel.RequestClientOptions.set -> void
+StitchDB.Postgrest.Models.BaseModel.TableName.get -> string!
+StitchDB.Postgrest.Models.BaseModel.Update<T>(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<T!>!>!
+StitchDB.Postgrest.Models.CachedModel<TModel>
+StitchDB.Postgrest.Models.CachedModel<TModel>.CachedAt.get -> System.DateTime
+StitchDB.Postgrest.Models.CachedModel<TModel>.CachedAt.set -> void
+StitchDB.Postgrest.Models.CachedModel<TModel>.CachedModel() -> void
+StitchDB.Postgrest.Models.CachedModel<TModel>.Models.get -> System.Collections.Generic.List<TModel!>?
+StitchDB.Postgrest.Models.CachedModel<TModel>.Models.set -> void
+StitchDB.Postgrest.OnRequestPreparedEventHandler
+StitchDB.Postgrest.PostgrestDiagnostics
+StitchDB.Postgrest.QueryFilter
+StitchDB.Postgrest.QueryFilter.Criteria.get -> object?
+StitchDB.Postgrest.QueryFilter.Op.get -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.QueryFilter.Property.get -> string?
+StitchDB.Postgrest.QueryFilter.QueryFilter(StitchDB.Postgrest.Constants.Operator op, StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter! filter) -> void
+StitchDB.Postgrest.QueryFilter.QueryFilter(StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.List<StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter!>! filters) -> void
+StitchDB.Postgrest.QueryFilter.QueryFilter(string! property, StitchDB.Postgrest.Constants.Operator op, StitchDB.Postgrest.FullTextSearchConfig! fullTextSearchConfig) -> void
+StitchDB.Postgrest.QueryFilter.QueryFilter(string! property, StitchDB.Postgrest.Constants.Operator op, StitchDB.Postgrest.IntRange! range) -> void
+StitchDB.Postgrest.QueryFilter.QueryFilter(string! property, StitchDB.Postgrest.Constants.Operator op, object? criteria) -> void
+StitchDB.Postgrest.QueryFilter<TModel, TCriterion>
+StitchDB.Postgrest.QueryFilter<TModel, TCriterion>.Criteria.get -> object?
+StitchDB.Postgrest.QueryFilter<TModel, TCriterion>.Op.get -> StitchDB.Postgrest.Constants.Operator
+StitchDB.Postgrest.QueryFilter<TModel, TCriterion>.Property.get -> string?
+StitchDB.Postgrest.QueryFilter<TModel, TCriterion>.QueryFilter(System.Linq.Expressions.Expression<System.Func<TModel, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> void
+StitchDB.Postgrest.QueryOptions
+StitchDB.Postgrest.QueryOptions.Count.get -> StitchDB.Postgrest.QueryOptions.CountType
+StitchDB.Postgrest.QueryOptions.Count.set -> void
+StitchDB.Postgrest.QueryOptions.CountType
+StitchDB.Postgrest.QueryOptions.CountType.Estimated = 3 -> StitchDB.Postgrest.QueryOptions.CountType
+StitchDB.Postgrest.QueryOptions.CountType.Exact = 1 -> StitchDB.Postgrest.QueryOptions.CountType
+StitchDB.Postgrest.QueryOptions.CountType.None = 0 -> StitchDB.Postgrest.QueryOptions.CountType
+StitchDB.Postgrest.QueryOptions.CountType.Planned = 2 -> StitchDB.Postgrest.QueryOptions.CountType
+StitchDB.Postgrest.QueryOptions.DuplicateResolution.get -> StitchDB.Postgrest.QueryOptions.DuplicateResolutionType
+StitchDB.Postgrest.QueryOptions.DuplicateResolution.set -> void
+StitchDB.Postgrest.QueryOptions.DuplicateResolutionType
+StitchDB.Postgrest.QueryOptions.DuplicateResolutionType.IgnoreDuplicates = 1 -> StitchDB.Postgrest.QueryOptions.DuplicateResolutionType
+StitchDB.Postgrest.QueryOptions.DuplicateResolutionType.MergeDuplicates = 0 -> StitchDB.Postgrest.QueryOptions.DuplicateResolutionType
+StitchDB.Postgrest.QueryOptions.OnConflict.get -> string?
+StitchDB.Postgrest.QueryOptions.OnConflict.set -> void
+StitchDB.Postgrest.QueryOptions.QueryOptions() -> void
+StitchDB.Postgrest.QueryOptions.ReturnType
+StitchDB.Postgrest.QueryOptions.ReturnType.Minimal = 0 -> StitchDB.Postgrest.QueryOptions.ReturnType
+StitchDB.Postgrest.QueryOptions.ReturnType.Representation = 1 -> StitchDB.Postgrest.QueryOptions.ReturnType
+StitchDB.Postgrest.QueryOptions.Returning.get -> StitchDB.Postgrest.QueryOptions.ReturnType
+StitchDB.Postgrest.QueryOptions.Returning.set -> void
+StitchDB.Postgrest.QueryOptions.ToHeaders() -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Postgrest.QueryOptions.Upsert.get -> bool
+StitchDB.Postgrest.QueryOptions.Upsert.set -> void
+StitchDB.Postgrest.QueryOrderer
+StitchDB.Postgrest.QueryOrderer.Column.get -> string!
+StitchDB.Postgrest.QueryOrderer.ForeignTable.get -> string?
+StitchDB.Postgrest.QueryOrderer.NullPosition.get -> StitchDB.Postgrest.Constants.NullPosition
+StitchDB.Postgrest.QueryOrderer.Ordering.get -> StitchDB.Postgrest.Constants.Ordering
+StitchDB.Postgrest.QueryOrderer.QueryOrderer(string? foreignTable, string! column, StitchDB.Postgrest.Constants.Ordering ordering, StitchDB.Postgrest.Constants.NullPosition nullPosition) -> void
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.CacheBackedRequest(StitchDB.Postgrest.Interfaces.IPostgrestTableWithCache<TModel!>! instance, StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider! cacheProvider, System.Func<System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!>! remoteRequestAction) -> void
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.CacheTime.get -> System.DateTime?
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.CacheTime.set -> void
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.Models.get -> System.Collections.Generic.List<TModel!>!
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.Models.set -> void
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.PropertyChanged -> System.ComponentModel.PropertyChangedEventHandler?
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.RemoteModelsPopulated -> StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.RemoteModelsPopulatedEventHandler?
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.RemoteModelsPopulatedEventHandler
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.Response.get -> StitchDB.Postgrest.Responses.ModeledResponse<TModel!>?
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.Response.set -> void
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.WasCacheHit.get -> bool
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.WasCacheHit.set -> void
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.WasResponseCached.get -> bool
+StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.WasResponseCached.set -> void
+StitchDB.Postgrest.Responses.BaseResponse
+StitchDB.Postgrest.Responses.BaseResponse.BaseResponse(StitchDB.Postgrest.ClientOptions! clientOptions, System.Net.Http.HttpResponseMessage? responseMessage, string? content) -> void
+StitchDB.Postgrest.Responses.BaseResponse.ClientOptions.get -> StitchDB.Postgrest.ClientOptions!
+StitchDB.Postgrest.Responses.BaseResponse.ClientOptions.set -> void
+StitchDB.Postgrest.Responses.BaseResponse.Content.get -> string?
+StitchDB.Postgrest.Responses.BaseResponse.Content.set -> void
+StitchDB.Postgrest.Responses.BaseResponse.ResponseMessage.get -> System.Net.Http.HttpResponseMessage?
+StitchDB.Postgrest.Responses.BaseResponse.ResponseMessage.set -> void
+StitchDB.Postgrest.Responses.ModeledResponse<T>
+StitchDB.Postgrest.Responses.ModeledResponse<T>.Count -> int
+StitchDB.Postgrest.Responses.ModeledResponse<T>.Model.get -> T?
+StitchDB.Postgrest.Responses.ModeledResponse<T>.ModeledResponse(StitchDB.Postgrest.Responses.BaseResponse! baseResponse, System.Text.Json.JsonSerializerOptions! serializerSettings, System.Func<System.Collections.Generic.Dictionary<string!, string!>!>? getHeaders = null, bool shouldParse = true) -> void
+StitchDB.Postgrest.Responses.ModeledResponse<T>.Models.get -> System.Collections.Generic.List<T!>!
+StitchDB.Postgrest.Table<TModel>
+StitchDB.Postgrest.Table<TModel>.And(System.Collections.Generic.List<StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter!>! filters) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.BaseUrl.get -> string!
+StitchDB.Postgrest.Table<TModel>.Clear() -> void
+StitchDB.Postgrest.Table<TModel>.Columns(System.Linq.Expressions.Expression<System.Func<TModel!, object![]!>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Columns(string![]! columns) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Count(StitchDB.Postgrest.Constants.CountType type, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<int>!
+StitchDB.Postgrest.Table<TModel>.Delete(StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Delete(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Filter<TCriterion>(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Filter<TCriterion>(string! columnName, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.GenerateUrl() -> string!
+StitchDB.Postgrest.Table<TModel>.Get(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), StitchDB.Postgrest.Constants.CountType type = StitchDB.Postgrest.Constants.CountType.Estimated) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Postgrest.Table<TModel>.GetHeaders.set -> void
+StitchDB.Postgrest.Table<TModel>.Insert(System.Collections.Generic.ICollection<TModel!>! models, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Insert(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Limit(int limit, string? foreignTableName = null) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Match(System.Collections.Generic.Dictionary<string!, string!>! query) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Match(TModel! model) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Not(StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter! filter) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Not(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.Dictionary<string!, object!>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Not(string! columnName, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.Dictionary<string!, object!>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Not<TCriterion>(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.List<TCriterion>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Not<TCriterion>(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Not<TCriterion>(string! columnName, StitchDB.Postgrest.Constants.Operator op, System.Collections.Generic.List<TCriterion>! criteria) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Not<TCriterion>(string! columnName, StitchDB.Postgrest.Constants.Operator op, TCriterion? criterion) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Offset(int offset, string? foreignTableName = null) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.OnConflict(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.OnConflict(string! columnName) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Or(System.Collections.Generic.List<StitchDB.Postgrest.Interfaces.IPostgrestQueryFilter!>! filters) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Order(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! predicate, StitchDB.Postgrest.Constants.Ordering ordering, StitchDB.Postgrest.Constants.NullPosition nullPosition = StitchDB.Postgrest.Constants.NullPosition.First) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Order(string! column, StitchDB.Postgrest.Constants.Ordering ordering, StitchDB.Postgrest.Constants.NullPosition nullPosition = StitchDB.Postgrest.Constants.NullPosition.First) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Order(string! foreignTable, string! column, StitchDB.Postgrest.Constants.Ordering ordering, StitchDB.Postgrest.Constants.NullPosition nullPosition = StitchDB.Postgrest.Constants.NullPosition.First) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Range(int from) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Range(int from, int to) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Select(System.Linq.Expressions.Expression<System.Func<TModel!, object![]!>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Select(string! columnQuery) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Set(System.Linq.Expressions.Expression<System.Func<TModel!, System.Collections.Generic.KeyValuePair<object!, object?>>!>! keyValuePairExpression) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Set(System.Linq.Expressions.Expression<System.Func<TModel!, object!>!>! keySelector, object? value) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Single(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<TModel?>!
+StitchDB.Postgrest.Table<TModel>.StripNulls() -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.Table<TModel>.Table(string! baseUrl, System.Text.Json.JsonSerializerOptions! serializerSettings, StitchDB.Postgrest.ClientOptions? options = null) -> void
+StitchDB.Postgrest.Table<TModel>.TableName.get -> string!
+StitchDB.Postgrest.Table<TModel>.Update(StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Update(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Upsert(System.Collections.Generic.ICollection<TModel!>! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Upsert(TModel! model, StitchDB.Postgrest.QueryOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.ModeledResponse<TModel!>!>!
+StitchDB.Postgrest.Table<TModel>.Where(System.Linq.Expressions.Expression<System.Func<TModel!, bool>!>! predicate) -> StitchDB.Postgrest.Interfaces.IPostgrestTable<TModel!>!
+StitchDB.Postgrest.TableWithCache<T>
+StitchDB.Postgrest.TableWithCache<T>.CacheProvider.get -> StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider!
+StitchDB.Postgrest.TableWithCache<T>.Get(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Requests.CacheBackedRequest<T!>!>!
+StitchDB.Postgrest.TableWithCache<T>.TableWithCache(string! baseUrl, StitchDB.Postgrest.Interfaces.IPostgrestCacheProvider! cacheProvider, System.Text.Json.JsonSerializerOptions! serializerSettings, StitchDB.Postgrest.ClientOptions? options = null) -> void
+const StitchDB.Postgrest.ClientOptions.DATE_TIME_FORMAT = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFK" -> string!
+const StitchDB.Postgrest.PostgrestDiagnostics.SourceName = "StitchDB.Postgrest" -> string!
+const StitchDB.Postgrest.QueryFilter.NullVal = "null" -> string!
+override StitchDB.Postgrest.Attributes.ReferenceAttribute.Equals(object? obj) -> bool
+override StitchDB.Postgrest.Converters.DateTimeConverter.Read(ref System.Text.Json.Utf8JsonReader reader, System.Type! typeToConvert, System.Text.Json.JsonSerializerOptions! options) -> System.DateTime
+override StitchDB.Postgrest.Converters.DateTimeConverter.Write(System.Text.Json.Utf8JsonWriter! writer, System.DateTime value, System.Text.Json.JsonSerializerOptions! options) -> void
+override StitchDB.Postgrest.Converters.DateTimeListConverter.Read(ref System.Text.Json.Utf8JsonReader reader, System.Type! typeToConvert, System.Text.Json.JsonSerializerOptions! options) -> System.Collections.Generic.List<System.DateTime>?
+override StitchDB.Postgrest.Converters.DateTimeListConverter.Write(System.Text.Json.Utf8JsonWriter! writer, System.Collections.Generic.List<System.DateTime>! value, System.Text.Json.JsonSerializerOptions! options) -> void
+override StitchDB.Postgrest.Converters.IntArrayConverter.Read(ref System.Text.Json.Utf8JsonReader reader, System.Type! typeToConvert, System.Text.Json.JsonSerializerOptions! options) -> System.Collections.Generic.List<int>?
+override StitchDB.Postgrest.Converters.IntArrayConverter.Write(System.Text.Json.Utf8JsonWriter! writer, System.Collections.Generic.List<int>! value, System.Text.Json.JsonSerializerOptions! options) -> void
+override StitchDB.Postgrest.Converters.PostgrestStringEnumConverter.CanConvert(System.Type! typeToConvert) -> bool
+override StitchDB.Postgrest.Converters.PostgrestStringEnumConverter.CreateConverter(System.Type! typeToConvert, System.Text.Json.JsonSerializerOptions! options) -> System.Text.Json.Serialization.JsonConverter!
+override StitchDB.Postgrest.Index.Equals(object? value) -> bool
+override StitchDB.Postgrest.Index.GetHashCode() -> int
+override StitchDB.Postgrest.Index.ToString() -> string!
+override StitchDB.Postgrest.IntRange.Equals(object? value) -> bool
+override StitchDB.Postgrest.IntRange.GetHashCode() -> int
+override StitchDB.Postgrest.IntRange.ToString() -> string!
+readonly StitchDB.Postgrest.ClientOptions.DateTimeStyles -> System.Globalization.DateTimeStyles
+static StitchDB.Postgrest.Client.SerializerSettings(StitchDB.Postgrest.ClientOptions? options = null) -> System.Text.Json.JsonSerializerOptions!
+static StitchDB.Postgrest.Exceptions.FailureHint.DetectReason(StitchDB.Postgrest.Exceptions.PostgrestException! pgex) -> StitchDB.Postgrest.Exceptions.FailureHint.Reason
+static StitchDB.Postgrest.Extensions.UriExtensions.GetInstanceUrl(this System.Uri! uri) -> string!
+static StitchDB.Postgrest.Index.End.get -> StitchDB.Postgrest.Index!
+static StitchDB.Postgrest.Index.FromEnd(int value) -> StitchDB.Postgrest.Index!
+static StitchDB.Postgrest.Index.FromStart(int value) -> StitchDB.Postgrest.Index!
+static StitchDB.Postgrest.Index.Start.get -> StitchDB.Postgrest.Index!
+static StitchDB.Postgrest.Index.implicit operator StitchDB.Postgrest.Index!(int value) -> StitchDB.Postgrest.Index!
+static StitchDB.Postgrest.IntRange.All.get -> StitchDB.Postgrest.IntRange!
+static StitchDB.Postgrest.IntRange.EndAt(StitchDB.Postgrest.Index! end) -> StitchDB.Postgrest.IntRange!
+static StitchDB.Postgrest.IntRange.StartAt(StitchDB.Postgrest.Index! start) -> StitchDB.Postgrest.IntRange!
+virtual StitchDB.Postgrest.Interfaces.IPostgrestDebugger.DebugEventHandler.Invoke(object? sender, string! message, StitchDB.Postgrest.Exceptions.PostgrestException? exception) -> void
+virtual StitchDB.Postgrest.Models.BaseModel.Delete<T>(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+virtual StitchDB.Postgrest.OnRequestPreparedEventHandler.Invoke(object! sender, StitchDB.Postgrest.ClientOptions! clientOptions, System.Net.Http.HttpMethod! method, string! url, System.Text.Json.JsonSerializerOptions! serializerSettings, object? data = null, System.Collections.Generic.Dictionary<string!, string!>? headers = null) -> void
+virtual StitchDB.Postgrest.Requests.CacheBackedRequest<TModel>.RemoteModelsPopulatedEventHandler.Invoke(StitchDB.Postgrest.Requests.CacheBackedRequest<TModel!>! sender) -> void

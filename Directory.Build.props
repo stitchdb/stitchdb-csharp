@@ -1,0 +1,64 @@
+<Project>
+  <!--
+    Shared package metadata for every StitchDB.* package in the monorepo. Now that all
+    packages live in one repository, the repository URL, licence, authors and copyright
+    are uniform, so they live here instead of being duplicated (and drifting) across each
+    csproj. Package-specific metadata (PackageId, Title, Description, tags, version,
+    readme, and PackageProjectUrl which deep-links to each package's folder) stays in the
+    individual projects.
+
+    The package icon is identical across all packages, so it lives once at resources/icon.png
+    and is packed from here. Referenced via $(MSBuildThisFileDirectory) so it resolves from
+    any project depth, and marked Visible="false" so it does not appear as a linked file in
+    the IDE project tree.
+  -->
+  <PropertyGroup>
+    <Authors>StitchDB</Authors>
+    <Copyright>MIT</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/stitchdb/stitchdb-csharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!--
+      "latest" tracks the installed SDK's newest C# so packages are never stuck behind the
+      language, independent of the netstandard2.1 target. It is uniform here so it cannot
+      drift per package (it previously did: some projects pinned 8.0/9.0, others latest).
+      Using C# 9+ init-only setters or records on netstandard2.1 needs a local
+      System.Runtime.CompilerServices.IsExternalInit shim.
+    -->
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <!--
+    Test projects keep the documentation file on (so IDE0005 unused-using analysis still runs
+    on build) but suppress CS1591: public test fixtures and their members are not API surface
+    and are not expected to carry XML doc comments.
+  -->
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <!-- Shared package icon, applied to packable projects only (test projects set IsPackable=false). -->
+  <PropertyGroup Condition="'$(IsPackable)' != 'false'">
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(IsPackable)' != 'false'">
+    <None Include="$(MSBuildThisFileDirectory)resources\icon.png" Pack="true" PackagePath="\" Visible="false" />
+    <!-- MIT requires the license and the original copyright notices to ship with every copy. -->
+    <None Include="$(MSBuildThisFileDirectory)LICENSE" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="$(MSBuildThisFileDirectory)THIRD_PARTY_NOTICES" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+  <!--
+    Verify (approval tests) auto-discovers SolutionDir by searching only the project directory and its
+    two parents for a .sln. Test projects nest three deep (packages/<Name>/<Name>.Tests), and the gate
+    builds each test project directly rather than via the solution, so that search misses StitchDB.sln at
+    the repo root and Verify emits a spurious "No solution files found" warning on every test build. This
+    file sits at the repo root beside the solution, so point Verify at it explicitly. Guarded so a real
+    solution build (which sets SolutionDir itself) still wins.
+  -->
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests')) And ('$(SolutionDir)' == '' Or '$(SolutionDir)' == '*Undefined*')">
+    <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+    <SolutionName>StitchDB</SolutionName>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace StitchDB.Storage;
+
+public class Bucket
+{
+    [JsonPropertyName("id")]
+    public string? Id { get; set; }
+
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    [JsonPropertyName("owner")]
+    public string? Owner { get; set; }
+
+    [JsonPropertyName("created_at")]
+    public DateTime? CreatedAt { get; set; }
+
+    [JsonPropertyName("updated_at")]
+    public DateTime? UpdatedAt { get; set; }
+
+    /// <summary>
+    /// The visibility of the bucket. Public buckets don't require an authorization token to download objects,
+    /// but still require a valid token for all other operations. By default, buckets are private.
+    /// </summary>
+    [JsonPropertyName("public")]
+    public bool Public { get; set; }
+
+    /// <summary>
+    /// Specifies the file size limit that this bucket can accept during upload.
+    ///
+    /// Expects a string value following a format like: '1kb', '50mb', '150kb', etc.
+    /// </summary>
+    [JsonPropertyName("file_size_limit")]
+    public string? FileSizeLimit { get; set; }
+
+    /// <summary>
+    /// Specifies the allowed mime types that this bucket can accept during upload.
+    ///
+    /// Expects a List of values such as: ['image/jpeg', 'image/png', etc]
+    /// </summary>
+    [JsonPropertyName("allowed_mime_types")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public List<string>? AllowedMimes { get; set; }
+}

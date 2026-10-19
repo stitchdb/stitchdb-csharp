@@ -1,0 +1,592 @@
+#nullable enable
+StitchDB.Realtime.Binding
+StitchDB.Realtime.Binding.Binding() -> void
+StitchDB.Realtime.Binding.Handler.get -> StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler?
+StitchDB.Realtime.Binding.Handler.set -> void
+StitchDB.Realtime.Binding.Id.get -> int?
+StitchDB.Realtime.Binding.Id.set -> void
+StitchDB.Realtime.Binding.ListenType.get -> StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType?
+StitchDB.Realtime.Binding.ListenType.set -> void
+StitchDB.Realtime.Binding.Options.get -> StitchDB.Realtime.PostgresChanges.PostgresChangesOptions?
+StitchDB.Realtime.Binding.Options.set -> void
+StitchDB.Realtime.Broadcast.BroadcastOptions
+StitchDB.Realtime.Broadcast.BroadcastOptions.BroadcastAck.get -> bool
+StitchDB.Realtime.Broadcast.BroadcastOptions.BroadcastAck.set -> void
+StitchDB.Realtime.Broadcast.BroadcastOptions.BroadcastOptions(bool broadcastSelf = false, bool broadcastAck = false) -> void
+StitchDB.Realtime.Broadcast.BroadcastOptions.BroadcastSelf.get -> bool
+StitchDB.Realtime.Broadcast.BroadcastOptions.BroadcastSelf.set -> void
+StitchDB.Realtime.Broadcast.BroadcastOptions.Replay.get -> StitchDB.Realtime.Broadcast.BroadcastOptions.ReplayOptions?
+StitchDB.Realtime.Broadcast.BroadcastOptions.Replay.set -> void
+StitchDB.Realtime.Broadcast.BroadcastOptions.ReplayOptions
+StitchDB.Realtime.Broadcast.BroadcastOptions.ReplayOptions.Limit.get -> int?
+StitchDB.Realtime.Broadcast.BroadcastOptions.ReplayOptions.Limit.set -> void
+StitchDB.Realtime.Broadcast.BroadcastOptions.ReplayOptions.ReplayOptions() -> void
+StitchDB.Realtime.Broadcast.BroadcastOptions.ReplayOptions.Since.get -> long
+StitchDB.Realtime.Broadcast.BroadcastOptions.ReplayOptions.Since.set -> void
+StitchDB.Realtime.Channel.ChannelOptions
+StitchDB.Realtime.Channel.ChannelOptions.ChannelOptions(StitchDB.Realtime.ClientOptions! clientOptions, System.Func<string?>! retrieveAccessToken, System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.Channel.ChannelOptions.ClientOptions.get -> StitchDB.Realtime.ClientOptions!
+StitchDB.Realtime.Channel.ChannelOptions.IsPrivate.get -> bool
+StitchDB.Realtime.Channel.ChannelOptions.Parameters.get -> System.Collections.Generic.Dictionary<string!, string!>?
+StitchDB.Realtime.Channel.ChannelOptions.Parameters.set -> void
+StitchDB.Realtime.Channel.ChannelOptions.RetrieveAccessToken.get -> System.Func<string?>!
+StitchDB.Realtime.Channel.ChannelOptions.SerializerSettings.get -> System.Text.Json.JsonSerializerOptions!
+StitchDB.Realtime.Channel.Push
+StitchDB.Realtime.Channel.Push.AddMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimePush<StitchDB.Realtime.RealtimeChannel!, StitchDB.Realtime.Socket.SocketResponse!>.MessageEventHandler! handler) -> void
+StitchDB.Realtime.Channel.Push.Channel.get -> StitchDB.Realtime.RealtimeChannel!
+StitchDB.Realtime.Channel.Push.ClearMessageReceivedHandler() -> void
+StitchDB.Realtime.Channel.Push.EventName.get -> string!
+StitchDB.Realtime.Channel.Push.IsSent.get -> bool
+StitchDB.Realtime.Channel.Push.Message.get -> StitchDB.Realtime.Socket.SocketRequest?
+StitchDB.Realtime.Channel.Push.OnTimeout -> System.EventHandler?
+StitchDB.Realtime.Channel.Push.Payload.get -> object?
+StitchDB.Realtime.Channel.Push.Push(StitchDB.Realtime.Interfaces.IRealtimeSocket! socket, StitchDB.Realtime.RealtimeChannel! channel, string! eventName, string? type = null, object? payload = null, int timeoutMs = 10000) -> void
+StitchDB.Realtime.Channel.Push.Ref.get -> string?
+StitchDB.Realtime.Channel.Push.RemoveMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimePush<StitchDB.Realtime.RealtimeChannel!, StitchDB.Realtime.Socket.SocketResponse!>.MessageEventHandler! handler) -> void
+StitchDB.Realtime.Channel.Push.Resend(int timeoutMs = 10000) -> void
+StitchDB.Realtime.Channel.Push.Response.get -> StitchDB.Realtime.Interfaces.IRealtimeSocketResponse?
+StitchDB.Realtime.Channel.Push.Send() -> void
+StitchDB.Realtime.Client
+StitchDB.Realtime.Client.AddDebugHandler(StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler! handler) -> void
+StitchDB.Realtime.Client.AddStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>.SocketStateEventHandler! handler) -> void
+StitchDB.Realtime.Client.Channel(string! channelName) -> StitchDB.Realtime.RealtimeChannel!
+StitchDB.Realtime.Client.Channel(string! channelName, StitchDB.Realtime.Channel.ChannelOptions! options) -> StitchDB.Realtime.RealtimeChannel!
+StitchDB.Realtime.Client.Channel(string! database = "realtime", string! schema = "public", string! table = "*", string? column = null, string? value = null, System.Collections.Generic.Dictionary<string!, string!>? parameters = null) -> StitchDB.Realtime.RealtimeChannel!
+StitchDB.Realtime.Client.ClearDebugHandlers() -> void
+StitchDB.Realtime.Client.ClearStateChangedHandlers() -> void
+StitchDB.Realtime.Client.Client(string! realtimeUrl, StitchDB.Realtime.ClientOptions? options = null) -> void
+StitchDB.Realtime.Client.Connect(System.Action<StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>!, StitchDB.Realtime.Exceptions.RealtimeException?>? callback = null) -> StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>!
+StitchDB.Realtime.Client.ConnectAsync() -> System.Threading.Tasks.Task<StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>!>!
+StitchDB.Realtime.Client.Disconnect(System.Net.WebSockets.WebSocketCloseStatus code = System.Net.WebSockets.WebSocketCloseStatus.NormalClosure, string! reason = "Programmatic Disconnect") -> StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>!
+StitchDB.Realtime.Client.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Realtime.Client.GetHeaders.set -> void
+StitchDB.Realtime.Client.Options.get -> StitchDB.Realtime.ClientOptions!
+StitchDB.Realtime.Client.Remove(StitchDB.Realtime.RealtimeChannel! channel) -> void
+StitchDB.Realtime.Client.RemoveDebugHandler(StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler! handler) -> void
+StitchDB.Realtime.Client.RemoveStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>.SocketStateEventHandler! handler) -> void
+StitchDB.Realtime.Client.SerializerSettings.get -> System.Text.Json.JsonSerializerOptions!
+StitchDB.Realtime.Client.SetAuth(string! jwt) -> void
+StitchDB.Realtime.Client.Socket.get -> StitchDB.Realtime.Interfaces.IRealtimeSocket?
+StitchDB.Realtime.Client.Subscriptions.get -> System.Collections.ObjectModel.ReadOnlyDictionary<string!, StitchDB.Realtime.RealtimeChannel!>!
+StitchDB.Realtime.ClientOptions
+StitchDB.Realtime.ClientOptions.ClientOptions() -> void
+StitchDB.Realtime.ClientOptions.DateTimeFormat.get -> string!
+StitchDB.Realtime.ClientOptions.DateTimeFormat.set -> void
+StitchDB.Realtime.ClientOptions.Decode.get -> System.Action<string!, System.Action<StitchDB.Realtime.Socket.SocketResponse?>!>?
+StitchDB.Realtime.ClientOptions.Decode.set -> void
+StitchDB.Realtime.ClientOptions.Encode.get -> System.Action<object!, System.Action<string!>!>?
+StitchDB.Realtime.ClientOptions.Encode.set -> void
+StitchDB.Realtime.ClientOptions.EventsPerSecond.get -> int
+StitchDB.Realtime.ClientOptions.EventsPerSecond.set -> void
+StitchDB.Realtime.ClientOptions.HeartbeatInterval.get -> System.TimeSpan
+StitchDB.Realtime.ClientOptions.HeartbeatInterval.set -> void
+StitchDB.Realtime.ClientOptions.Parameters -> StitchDB.Realtime.Socket.SocketOptionsParameters!
+StitchDB.Realtime.ClientOptions.PostgrestClient.get -> StitchDB.Postgrest.Interfaces.IPostgrestClient?
+StitchDB.Realtime.ClientOptions.PostgrestClient.set -> void
+StitchDB.Realtime.ClientOptions.ReconnectAfterInterval.get -> System.Func<int, System.TimeSpan>!
+StitchDB.Realtime.ClientOptions.ReconnectAfterInterval.set -> void
+StitchDB.Realtime.ClientOptions.Timeout.get -> System.TimeSpan
+StitchDB.Realtime.ClientOptions.Timeout.set -> void
+StitchDB.Realtime.ClientOptions.Transport.get -> string!
+StitchDB.Realtime.ClientOptions.Transport.set -> void
+StitchDB.Realtime.ClientOptions.WebSocketFactory.get -> StitchDB.Realtime.Sockets.IWebSocketFactory?
+StitchDB.Realtime.ClientOptions.WebSocketFactory.set -> void
+StitchDB.Realtime.Constants
+StitchDB.Realtime.Constants.ChannelEventName
+StitchDB.Realtime.Constants.ChannelEventName.Broadcast = 0 -> StitchDB.Realtime.Constants.ChannelEventName
+StitchDB.Realtime.Constants.ChannelEventName.PostgresChanges = 2 -> StitchDB.Realtime.Constants.ChannelEventName
+StitchDB.Realtime.Constants.ChannelEventName.Presence = 1 -> StitchDB.Realtime.Constants.ChannelEventName
+StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.Constants.ChannelState.Closed = 0 -> StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.Constants.ChannelState.Errored = 1 -> StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.Constants.ChannelState.Joined = 2 -> StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.Constants.ChannelState.Joining = 3 -> StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.Constants.ChannelState.Leaving = 4 -> StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.Broadcast = 3 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.Delete = 2 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.Insert = 0 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.Internal = 8 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.PostgresChanges = 6 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.PresenceDiff = 5 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.PresenceState = 4 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.System = 7 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.Unknown = 9 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.EventType.Update = 1 -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Constants.PresenceListenEventTypes
+StitchDB.Realtime.Constants.PresenceListenEventTypes.Join = 1 -> StitchDB.Realtime.Constants.PresenceListenEventTypes
+StitchDB.Realtime.Constants.PresenceListenEventTypes.Leave = 2 -> StitchDB.Realtime.Constants.PresenceListenEventTypes
+StitchDB.Realtime.Constants.PresenceListenEventTypes.Sync = 0 -> StitchDB.Realtime.Constants.PresenceListenEventTypes
+StitchDB.Realtime.Constants.SocketState
+StitchDB.Realtime.Constants.SocketState.Close = 1 -> StitchDB.Realtime.Constants.SocketState
+StitchDB.Realtime.Constants.SocketState.Error = 3 -> StitchDB.Realtime.Constants.SocketState
+StitchDB.Realtime.Constants.SocketState.Open = 0 -> StitchDB.Realtime.Constants.SocketState
+StitchDB.Realtime.Constants.SocketState.Reconnect = 2 -> StitchDB.Realtime.Constants.SocketState
+StitchDB.Realtime.Converters.IntArrayConverter
+StitchDB.Realtime.Converters.IntArrayConverter.IntArrayConverter() -> void
+StitchDB.Realtime.Converters.StringArrayConverter
+StitchDB.Realtime.Converters.StringArrayConverter.StringArrayConverter() -> void
+StitchDB.Realtime.Exceptions.FailureHint
+StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.ChannelJoinFailure = 3 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.ChannelNotOpen = 2 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.ConnectionLost = 5 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.ConnectionStale = 6 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.PushTimeout = 1 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.SocketError = 4 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.StateInvalid = 7 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.FailureHint.Reason.Unknown = 0 -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Exceptions.RealtimeException
+StitchDB.Realtime.Exceptions.RealtimeException.RealtimeException(string? message) -> void
+StitchDB.Realtime.Exceptions.RealtimeException.RealtimeException(string? message, System.Exception? innerException) -> void
+StitchDB.Realtime.Exceptions.RealtimeException.Reason.get -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+StitchDB.Realtime.Interfaces.IRealtimeBroadcast
+StitchDB.Realtime.Interfaces.IRealtimeBroadcast.AddBroadcastEventHandler(StitchDB.Realtime.Interfaces.IRealtimeBroadcast.BroadcastEventHandler! broadcastEventHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeBroadcast.BroadcastEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeBroadcast.ClearBroadcastEventHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeBroadcast.RemoveBroadcastEventHandler(StitchDB.Realtime.Interfaces.IRealtimeBroadcast.BroadcastEventHandler! broadcastEventHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeBroadcast.Send(string? broadcastEventName, object! payload, int timeoutMs = 10000) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel
+StitchDB.Realtime.Interfaces.IRealtimeChannel.AddErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.AddMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.MessageReceivedHandler! messageReceivedHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.AddPostgresChangeHandler(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! postgresChangeHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.AddStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.StateChangedHandler! stateChangedHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Broadcast() -> StitchDB.Realtime.Interfaces.IRealtimeBroadcast?
+StitchDB.Realtime.Interfaces.IRealtimeChannel.BroadcastOptions.get -> StitchDB.Realtime.Broadcast.BroadcastOptions?
+StitchDB.Realtime.Interfaces.IRealtimeChannel.ClearErrorHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.ClearMessageReceivedHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.ClearPostgresChangeHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.ClearStateChangedHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.ErrorEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeChannel.HasJoinedOnce.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimeChannel.IsClosed.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimeChannel.IsErrored.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimeChannel.IsJoined.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimeChannel.IsJoining.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimeChannel.IsLeaving.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimeChannel.MessageReceivedHandler
+StitchDB.Realtime.Interfaces.IRealtimeChannel.OnPostgresChange(StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! postgresChangeHandler, StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.PostgresChanges.PostgresChangesFilter? filter = null) -> StitchDB.Realtime.Interfaces.IRealtimeChannel!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Options.get -> StitchDB.Realtime.Channel.ChannelOptions!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler
+StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesOptions.get -> System.Collections.Generic.List<StitchDB.Realtime.PostgresChanges.PostgresChangesOptions!>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Presence() -> StitchDB.Realtime.Interfaces.IRealtimePresence?
+StitchDB.Realtime.Interfaces.IRealtimeChannel.PresenceOptions.get -> StitchDB.Realtime.Presence.PresenceOptions?
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Push(string! eventName, string? type = null, object? payload = null, int timeoutMs = 10000) -> StitchDB.Realtime.Channel.Push!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Register(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions! postgresChangesOptions) -> StitchDB.Realtime.Interfaces.IRealtimeChannel!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Register<TBroadcastResponse>(StitchDB.Realtime.Broadcast.BroadcastOptions! options) -> StitchDB.Realtime.RealtimeBroadcast<TBroadcastResponse!>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Register<TBroadcastResponse>(bool broadcastSelf = false, bool broadcastAck = false) -> StitchDB.Realtime.RealtimeBroadcast<TBroadcastResponse!>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Register<TPresenceResponse>(StitchDB.Realtime.Presence.PresenceOptions! options) -> StitchDB.Realtime.RealtimePresence<TPresenceResponse!>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Register<TPresenceResponse>(string! presenceKey) -> StitchDB.Realtime.RealtimePresence<TPresenceResponse!>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Rejoin(int timeoutMs = 10000) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.RemoveErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.RemoveMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.MessageReceivedHandler! messageReceivedHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.RemovePostgresChangeHandler(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! postgresChangeHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.RemoveStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.StateChangedHandler! stateChangedHandler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Send(StitchDB.Realtime.Constants.ChannelEventName eventType, string? type, object! payload, int timeoutMs = 10000) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.State.get -> StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.Interfaces.IRealtimeChannel.StateChangedHandler
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Subscribe(int timeoutMs = 10000) -> System.Threading.Tasks.Task<StitchDB.Realtime.Interfaces.IRealtimeChannel!>!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Topic.get -> string!
+StitchDB.Realtime.Interfaces.IRealtimeChannel.Unsubscribe() -> StitchDB.Realtime.Interfaces.IRealtimeChannel!
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.AddDebugHandler(StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.AddStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.SocketStateEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Channel(string! channelName) -> TChannel
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Channel(string! channelName, StitchDB.Realtime.Channel.ChannelOptions! options) -> TChannel
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Channel(string! database = "realtime", string! schema = "public", string! table = "*", string? column = null, string? value = null, System.Collections.Generic.Dictionary<string!, string!>? parameters = null) -> TChannel
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.ClearDebugHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.ClearStateChangedHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Connect(System.Action<StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>!, StitchDB.Realtime.Exceptions.RealtimeException?>? callback = null) -> StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>!
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.ConnectAsync() -> System.Threading.Tasks.Task<StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>!>!
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Disconnect(System.Net.WebSockets.WebSocketCloseStatus code = System.Net.WebSockets.WebSocketCloseStatus.NormalClosure, string! reason = "Programmatic Disconnect") -> StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>!
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Options.get -> StitchDB.Realtime.ClientOptions!
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Remove(TChannel channel) -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.RemoveDebugHandler(StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.RemoveStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.SocketStateEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.SerializerSettings.get -> System.Text.Json.JsonSerializerOptions!
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.SetAuth(string! jwt) -> void
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Socket.get -> StitchDB.Realtime.Interfaces.IRealtimeSocket?
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.SocketStateEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.Subscriptions.get -> System.Collections.ObjectModel.ReadOnlyDictionary<string!, TChannel>!
+StitchDB.Realtime.Interfaces.IRealtimeDebugger
+StitchDB.Realtime.Interfaces.IRealtimeDebugger.AddDebugHandler(StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeDebugger.ClearDebugHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeDebugger.Log(object! sender, string! message, System.Exception? exception = null) -> void
+StitchDB.Realtime.Interfaces.IRealtimeDebugger.RemoveDebugHandler(StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimePresence
+StitchDB.Realtime.Interfaces.IRealtimePresence.AddPresenceEventHandler(StitchDB.Realtime.Interfaces.IRealtimePresence.EventType eventType, StitchDB.Realtime.Interfaces.IRealtimePresence.PresenceEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimePresence.ClearPresenceEventHandlers(StitchDB.Realtime.Interfaces.IRealtimePresence.EventType? eventType = null) -> void
+StitchDB.Realtime.Interfaces.IRealtimePresence.EventType
+StitchDB.Realtime.Interfaces.IRealtimePresence.EventType.Join = 1 -> StitchDB.Realtime.Interfaces.IRealtimePresence.EventType
+StitchDB.Realtime.Interfaces.IRealtimePresence.EventType.Leave = 2 -> StitchDB.Realtime.Interfaces.IRealtimePresence.EventType
+StitchDB.Realtime.Interfaces.IRealtimePresence.EventType.Sync = 0 -> StitchDB.Realtime.Interfaces.IRealtimePresence.EventType
+StitchDB.Realtime.Interfaces.IRealtimePresence.PresenceEventHandler
+StitchDB.Realtime.Interfaces.IRealtimePresence.RemovePresenceEventHandlers(StitchDB.Realtime.Interfaces.IRealtimePresence.EventType eventType, StitchDB.Realtime.Interfaces.IRealtimePresence.PresenceEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimePresence.Track(object? payload, int timeoutMs = 10000) -> System.Threading.Tasks.Task<StitchDB.Realtime.Channel.Push!>!
+StitchDB.Realtime.Interfaces.IRealtimePresence.Untrack() -> System.Threading.Tasks.Task<StitchDB.Realtime.Channel.Push!>!
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.AddMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.MessageEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.Channel.get -> TChannel
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.ClearMessageReceivedHandler() -> void
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.EventName.get -> string!
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.IsSent.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.Message.get -> StitchDB.Realtime.Socket.SocketRequest?
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.MessageEventHandler
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.OnTimeout -> System.EventHandler?
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.Payload.get -> object?
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.Ref.get -> string?
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.RemoveMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.MessageEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.Resend(int timeoutMs = 10000) -> void
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.Response.get -> StitchDB.Realtime.Interfaces.IRealtimeSocketResponse?
+StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.Send() -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket
+StitchDB.Realtime.Interfaces.IRealtimeSocket.AddErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.AddHeartbeatHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.HeartbeatEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.AddMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.MessageEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.AddStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.StateEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.ClearErrorHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.ClearHeartbeatHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.ClearMessageReceivedHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.ClearStateChangedHandlers() -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.Connect() -> System.Threading.Tasks.Task!
+StitchDB.Realtime.Interfaces.IRealtimeSocket.Disconnect(System.Net.WebSockets.WebSocketCloseStatus code = System.Net.WebSockets.WebSocketCloseStatus.NormalClosure, string! reason = "") -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.ErrorEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeSocket.GetLatency() -> System.Threading.Tasks.Task<double>!
+StitchDB.Realtime.Interfaces.IRealtimeSocket.HeartbeatEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeSocket.IsConnected.get -> bool
+StitchDB.Realtime.Interfaces.IRealtimeSocket.MakeMsgRef() -> string!
+StitchDB.Realtime.Interfaces.IRealtimeSocket.MessageEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeSocket.Push(StitchDB.Realtime.Socket.SocketRequest! data) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.RemoveErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.RemoveHeartbeatHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.HeartbeatEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.RemoveMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.MessageEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.RemoveStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.StateEventHandler! handler) -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocket.StateEventHandler
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse.Event.get -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse.Payload.get -> StitchDB.Realtime.Socket.SocketResponsePayload?
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse.Payload.set -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse.Ref.get -> string?
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse.Ref.set -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse.Topic.get -> string?
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse.Topic.set -> void
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse._event.get -> string?
+StitchDB.Realtime.Interfaces.IRealtimeSocketResponse._event.set -> void
+StitchDB.Realtime.Models.BaseBroadcast
+StitchDB.Realtime.Models.BaseBroadcast.BaseBroadcast() -> void
+StitchDB.Realtime.Models.BaseBroadcast.Event.get -> string?
+StitchDB.Realtime.Models.BaseBroadcast.Event.set -> void
+StitchDB.Realtime.Models.BaseBroadcast.Meta.get -> StitchDB.Realtime.Models.BroadcastMeta?
+StitchDB.Realtime.Models.BaseBroadcast.Meta.set -> void
+StitchDB.Realtime.Models.BaseBroadcast.Payload.get -> System.Collections.Generic.Dictionary<string!, object!>?
+StitchDB.Realtime.Models.BaseBroadcast.Payload.set -> void
+StitchDB.Realtime.Models.BaseBroadcast<T>
+StitchDB.Realtime.Models.BaseBroadcast<T>.BaseBroadcast() -> void
+StitchDB.Realtime.Models.BaseBroadcast<T>.Payload.get -> T?
+StitchDB.Realtime.Models.BaseBroadcast<T>.Payload.set -> void
+StitchDB.Realtime.Models.BasePresence
+StitchDB.Realtime.Models.BasePresence.BasePresence() -> void
+StitchDB.Realtime.Models.BasePresence.PhoenixPrevRef.get -> string?
+StitchDB.Realtime.Models.BasePresence.PhoenixPrevRef.set -> void
+StitchDB.Realtime.Models.BasePresence.PhoenixRef.get -> string?
+StitchDB.Realtime.Models.BasePresence.PhoenixRef.set -> void
+StitchDB.Realtime.Models.BasePresence.ShouldSerializePhoenixPrevRef() -> bool
+StitchDB.Realtime.Models.BasePresence.ShouldSerializePhoenixRef() -> bool
+StitchDB.Realtime.Models.BroadcastMeta
+StitchDB.Realtime.Models.BroadcastMeta.BroadcastMeta() -> void
+StitchDB.Realtime.Models.BroadcastMeta.Id.get -> string?
+StitchDB.Realtime.Models.BroadcastMeta.Id.set -> void
+StitchDB.Realtime.Models.BroadcastMeta.Replayed.get -> bool
+StitchDB.Realtime.Models.BroadcastMeta.Replayed.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter.Filter.get -> string?
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter.Filter.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter.PostgresChangesFilter() -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter.Schema.get -> string!
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter.Schema.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter.Table.get -> string?
+StitchDB.Realtime.PostgresChanges.PostgresChangesFilter.Table.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Event.get -> string!
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Filter.get -> string?
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Filter.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType.All = 0 -> StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType.Deletes = 3 -> StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType.Inserts = 1 -> StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType.Updates = 2 -> StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Parameters.get -> System.Collections.Generic.Dictionary<string!, string!>?
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Parameters.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.PostgresChangesOptions(string! schema, string? table = null, StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType eventType = StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType.All, string? filter = null, System.Collections.Generic.Dictionary<string!, string!>? parameters = null) -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Schema.get -> string!
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Schema.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Table.get -> string?
+StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Table.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesPayload<T>
+StitchDB.Realtime.PostgresChanges.PostgresChangesPayload<T>.Data.get -> StitchDB.Realtime.Socket.SocketResponsePayload<T!>?
+StitchDB.Realtime.PostgresChanges.PostgresChangesPayload<T>.Data.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesPayload<T>.Ids.get -> System.Collections.Generic.List<int?>!
+StitchDB.Realtime.PostgresChanges.PostgresChangesPayload<T>.Ids.set -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesPayload<T>.PostgresChangesPayload() -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesResponse
+StitchDB.Realtime.PostgresChanges.PostgresChangesResponse.PostgresChangesResponse() -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesResponse.PostgresChangesResponse(System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesResponse<T>
+StitchDB.Realtime.PostgresChanges.PostgresChangesResponse<T>.PostgresChangesResponse() -> void
+StitchDB.Realtime.PostgresChanges.PostgresChangesResponse<T>.PostgresChangesResponse(System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.Presence.PresenceDiffPayload<TPresence>
+StitchDB.Realtime.Presence.PresenceDiffPayload<TPresence>.Joins.get -> System.Collections.Generic.Dictionary<string!, StitchDB.Realtime.Presence.PresenceDiffPayloadMeta<TPresence!>!>?
+StitchDB.Realtime.Presence.PresenceDiffPayload<TPresence>.Joins.set -> void
+StitchDB.Realtime.Presence.PresenceDiffPayload<TPresence>.Leaves.get -> System.Collections.Generic.Dictionary<string!, StitchDB.Realtime.Presence.PresenceDiffPayloadMeta<TPresence!>!>?
+StitchDB.Realtime.Presence.PresenceDiffPayload<TPresence>.Leaves.set -> void
+StitchDB.Realtime.Presence.PresenceDiffPayload<TPresence>.PresenceDiffPayload() -> void
+StitchDB.Realtime.Presence.PresenceDiffPayloadMeta<TPresence>
+StitchDB.Realtime.Presence.PresenceDiffPayloadMeta<TPresence>.Metas.get -> System.Collections.Generic.List<TPresence!>?
+StitchDB.Realtime.Presence.PresenceDiffPayloadMeta<TPresence>.Metas.set -> void
+StitchDB.Realtime.Presence.PresenceDiffPayloadMeta<TPresence>.PresenceDiffPayloadMeta() -> void
+StitchDB.Realtime.Presence.PresenceOptions
+StitchDB.Realtime.Presence.PresenceOptions.Enabled.get -> bool
+StitchDB.Realtime.Presence.PresenceOptions.PresenceKey.get -> string!
+StitchDB.Realtime.Presence.PresenceOptions.PresenceKey.set -> void
+StitchDB.Realtime.Presence.PresenceOptions.PresenceOptions(string! presenceKey) -> void
+StitchDB.Realtime.Presence.RealtimePresenceDiff<TPresence>
+StitchDB.Realtime.Presence.RealtimePresenceDiff<TPresence>.RealtimePresenceDiff() -> void
+StitchDB.Realtime.Presence.RealtimePresenceDiff<TPresence>.RealtimePresenceDiff(System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.Presence.Responses.PresenceStatePayload<TPresence>
+StitchDB.Realtime.Presence.Responses.PresenceStatePayload<TPresence>.Metas.get -> System.Collections.Generic.List<TPresence!>?
+StitchDB.Realtime.Presence.Responses.PresenceStatePayload<TPresence>.Metas.set -> void
+StitchDB.Realtime.Presence.Responses.PresenceStatePayload<TPresence>.PresenceStatePayload() -> void
+StitchDB.Realtime.Presence.Responses.PresenceStateSocketResponse<TPresence>
+StitchDB.Realtime.Presence.Responses.PresenceStateSocketResponse<TPresence>.PresenceStateSocketResponse() -> void
+StitchDB.Realtime.Presence.Responses.PresenceStateSocketResponse<TPresence>.PresenceStateSocketResponse(System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>.AddBroadcastEventHandler(StitchDB.Realtime.Interfaces.IRealtimeBroadcast.BroadcastEventHandler! broadcastEventHandler) -> void
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>.ClearBroadcastEventHandlers() -> void
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>.Current() -> TBroadcastModel?
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>.RealtimeBroadcast(StitchDB.Realtime.RealtimeChannel! channel, StitchDB.Realtime.Broadcast.BroadcastOptions! options, System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>.RemoveBroadcastEventHandler(StitchDB.Realtime.Interfaces.IRealtimeBroadcast.BroadcastEventHandler! broadcastEventHandler) -> void
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>.Send(string? broadcastEventName, object! payload, int timeoutMs = 10000) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel>.TriggerReceived(StitchDB.Realtime.Socket.SocketResponse! response) -> void
+StitchDB.Realtime.RealtimeChannel
+StitchDB.Realtime.RealtimeChannel.AddErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeChannel.AddMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.MessageReceivedHandler! messageReceivedHandler) -> void
+StitchDB.Realtime.RealtimeChannel.AddPostgresChangeHandler(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! postgresChangeHandler) -> void
+StitchDB.Realtime.RealtimeChannel.AddStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.StateChangedHandler! stateChangedHandler) -> void
+StitchDB.Realtime.RealtimeChannel.Broadcast() -> StitchDB.Realtime.Interfaces.IRealtimeBroadcast?
+StitchDB.Realtime.RealtimeChannel.Broadcast<TBroadcastModel>() -> StitchDB.Realtime.RealtimeBroadcast<TBroadcastModel!>?
+StitchDB.Realtime.RealtimeChannel.BroadcastOptions.get -> StitchDB.Realtime.Broadcast.BroadcastOptions?
+StitchDB.Realtime.RealtimeChannel.ClearErrorHandlers() -> void
+StitchDB.Realtime.RealtimeChannel.ClearMessageReceivedHandlers() -> void
+StitchDB.Realtime.RealtimeChannel.ClearPostgresChangeHandlers() -> void
+StitchDB.Realtime.RealtimeChannel.ClearStateChangedHandlers() -> void
+StitchDB.Realtime.RealtimeChannel.HasJoinedOnce.get -> bool
+StitchDB.Realtime.RealtimeChannel.IsClosed.get -> bool
+StitchDB.Realtime.RealtimeChannel.IsErrored.get -> bool
+StitchDB.Realtime.RealtimeChannel.IsJoined.get -> bool
+StitchDB.Realtime.RealtimeChannel.IsJoining.get -> bool
+StitchDB.Realtime.RealtimeChannel.IsLeaving.get -> bool
+StitchDB.Realtime.RealtimeChannel.IsSubscribed -> bool
+StitchDB.Realtime.RealtimeChannel.OnPostgresChange(StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! postgresChangeHandler, StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.PostgresChanges.PostgresChangesFilter? filter = null) -> StitchDB.Realtime.Interfaces.IRealtimeChannel!
+StitchDB.Realtime.RealtimeChannel.Options.get -> StitchDB.Realtime.Channel.ChannelOptions!
+StitchDB.Realtime.RealtimeChannel.PostgresChangesOptions.get -> System.Collections.Generic.List<StitchDB.Realtime.PostgresChanges.PostgresChangesOptions!>!
+StitchDB.Realtime.RealtimeChannel.Presence() -> StitchDB.Realtime.Interfaces.IRealtimePresence?
+StitchDB.Realtime.RealtimeChannel.Presence<TPresenceModel>() -> StitchDB.Realtime.RealtimePresence<TPresenceModel!>?
+StitchDB.Realtime.RealtimeChannel.PresenceOptions.get -> StitchDB.Realtime.Presence.PresenceOptions?
+StitchDB.Realtime.RealtimeChannel.Push(string! eventName, string? type = null, object? payload = null, int timeoutMs = 10000) -> StitchDB.Realtime.Channel.Push!
+StitchDB.Realtime.RealtimeChannel.RealtimeChannel(StitchDB.Realtime.Interfaces.IRealtimeSocket! socket, string! channelName, StitchDB.Realtime.Channel.ChannelOptions! options) -> void
+StitchDB.Realtime.RealtimeChannel.Register(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions! postgresChangesOptions) -> StitchDB.Realtime.Interfaces.IRealtimeChannel!
+StitchDB.Realtime.RealtimeChannel.Register<TBroadcastResponse>(StitchDB.Realtime.Broadcast.BroadcastOptions! options) -> StitchDB.Realtime.RealtimeBroadcast<TBroadcastResponse!>!
+StitchDB.Realtime.RealtimeChannel.Register<TBroadcastResponse>(bool broadcastSelf = false, bool broadcastAck = false) -> StitchDB.Realtime.RealtimeBroadcast<TBroadcastResponse!>!
+StitchDB.Realtime.RealtimeChannel.Register<TPresenceResponse>(StitchDB.Realtime.Presence.PresenceOptions! options) -> StitchDB.Realtime.RealtimePresence<TPresenceResponse!>!
+StitchDB.Realtime.RealtimeChannel.Register<TPresenceResponse>(string! presenceKey) -> StitchDB.Realtime.RealtimePresence<TPresenceResponse!>!
+StitchDB.Realtime.RealtimeChannel.Rejoin(int timeoutMs = 10000) -> void
+StitchDB.Realtime.RealtimeChannel.RemoveErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeChannel.RemoveMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.MessageReceivedHandler! messageReceivedHandler) -> void
+StitchDB.Realtime.RealtimeChannel.RemovePostgresChangeHandler(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! postgresChangeHandler) -> void
+StitchDB.Realtime.RealtimeChannel.RemoveStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeChannel.StateChangedHandler! stateChangedHandler) -> void
+StitchDB.Realtime.RealtimeChannel.Send(StitchDB.Realtime.Constants.ChannelEventName eventName, string? type, object! payload, int timeoutMs = 10000) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Realtime.RealtimeChannel.State.get -> StitchDB.Realtime.Constants.ChannelState
+StitchDB.Realtime.RealtimeChannel.Subscribe(int timeoutMs = 10000) -> System.Threading.Tasks.Task<StitchDB.Realtime.Interfaces.IRealtimeChannel!>!
+StitchDB.Realtime.RealtimeChannel.Topic.get -> string!
+StitchDB.Realtime.RealtimeChannel.Unsubscribe() -> StitchDB.Realtime.Interfaces.IRealtimeChannel!
+StitchDB.Realtime.RealtimePresence<TPresenceModel>
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.AddPresenceEventHandler(StitchDB.Realtime.Interfaces.IRealtimePresence.EventType eventType, StitchDB.Realtime.Interfaces.IRealtimePresence.PresenceEventHandler! handler) -> void
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.ClearPresenceEventHandlers(StitchDB.Realtime.Interfaces.IRealtimePresence.EventType? eventType = null) -> void
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.CurrentState.get -> System.Collections.Generic.Dictionary<string!, System.Collections.Generic.List<TPresenceModel!>!>!
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.LastState.get -> System.Collections.Generic.Dictionary<string!, System.Collections.Generic.List<TPresenceModel!>!>!
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.RealtimePresence(StitchDB.Realtime.RealtimeChannel! channel, StitchDB.Realtime.Presence.PresenceOptions! options, System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.RemovePresenceEventHandlers(StitchDB.Realtime.Interfaces.IRealtimePresence.EventType eventType, StitchDB.Realtime.Interfaces.IRealtimePresence.PresenceEventHandler! handler) -> void
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.Track(object? payload, int timeoutMs = 10000) -> System.Threading.Tasks.Task<StitchDB.Realtime.Channel.Push!>!
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.TriggerDiff(StitchDB.Realtime.Socket.SocketResponse! response) -> void
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.TriggerSync(StitchDB.Realtime.Socket.SocketResponse! response) -> void
+StitchDB.Realtime.RealtimePresence<TPresenceModel>.Untrack() -> System.Threading.Tasks.Task<StitchDB.Realtime.Channel.Push!>!
+StitchDB.Realtime.RealtimeSocket
+StitchDB.Realtime.RealtimeSocket.AddErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.AddHeartbeatHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.HeartbeatEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.AddMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.MessageEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.AddStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.StateEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.ClearErrorHandlers() -> void
+StitchDB.Realtime.RealtimeSocket.ClearHeartbeatHandlers() -> void
+StitchDB.Realtime.RealtimeSocket.ClearMessageReceivedHandlers() -> void
+StitchDB.Realtime.RealtimeSocket.ClearStateChangedHandlers() -> void
+StitchDB.Realtime.RealtimeSocket.Connect() -> System.Threading.Tasks.Task!
+StitchDB.Realtime.RealtimeSocket.Disconnect(System.Net.WebSockets.WebSocketCloseStatus code = System.Net.WebSockets.WebSocketCloseStatus.NormalClosure, string! reason = "") -> void
+StitchDB.Realtime.RealtimeSocket.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Realtime.RealtimeSocket.GetHeaders.set -> void
+StitchDB.Realtime.RealtimeSocket.GetLatency() -> System.Threading.Tasks.Task<double>!
+StitchDB.Realtime.RealtimeSocket.IsConnected.get -> bool
+StitchDB.Realtime.RealtimeSocket.MakeMsgRef() -> string!
+StitchDB.Realtime.RealtimeSocket.Push(StitchDB.Realtime.Socket.SocketRequest! data) -> void
+StitchDB.Realtime.RealtimeSocket.RealtimeSocket(string! endpoint, StitchDB.Realtime.ClientOptions! options) -> void
+StitchDB.Realtime.RealtimeSocket.RemoveErrorHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.ErrorEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.RemoveHeartbeatHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.HeartbeatEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.RemoveMessageReceivedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.MessageEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.RemoveStateChangedHandler(StitchDB.Realtime.Interfaces.IRealtimeSocket.StateEventHandler! handler) -> void
+StitchDB.Realtime.RealtimeSocket.ReplyEventName(string! msgRef) -> string!
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.EventName.get -> string?
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.EventName.set -> void
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Filter.get -> string?
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Filter.set -> void
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Id.get -> int?
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Id.set -> void
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.PhoenixPostgresChangeResponse() -> void
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Schema.get -> string?
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Schema.set -> void
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Table.get -> string?
+StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse.Table.set -> void
+StitchDB.Realtime.Socket.Responses.PhoenixResponse
+StitchDB.Realtime.Socket.Responses.PhoenixResponse.PhoenixResponse() -> void
+StitchDB.Realtime.Socket.Responses.PhoenixResponse.Response -> StitchDB.Realtime.Socket.Responses.PostgresChangeResponse?
+StitchDB.Realtime.Socket.Responses.PhoenixResponse.Status -> string?
+StitchDB.Realtime.Socket.Responses.PostgresChangeResponse
+StitchDB.Realtime.Socket.Responses.PostgresChangeResponse.Change.get -> System.Collections.Generic.List<StitchDB.Realtime.Socket.Responses.PhoenixPostgresChangeResponse!>!
+StitchDB.Realtime.Socket.Responses.PostgresChangeResponse.Change.set -> void
+StitchDB.Realtime.Socket.Responses.PostgresChangeResponse.PostgresChangeResponse() -> void
+StitchDB.Realtime.Socket.SocketOptionsParameters
+StitchDB.Realtime.Socket.SocketOptionsParameters.ApiKey.get -> string?
+StitchDB.Realtime.Socket.SocketOptionsParameters.ApiKey.set -> void
+StitchDB.Realtime.Socket.SocketOptionsParameters.SocketOptionsParameters() -> void
+StitchDB.Realtime.Socket.SocketOptionsParameters.Token.get -> string?
+StitchDB.Realtime.Socket.SocketOptionsParameters.Token.set -> void
+StitchDB.Realtime.Socket.SocketRequest
+StitchDB.Realtime.Socket.SocketRequest.Event.get -> string?
+StitchDB.Realtime.Socket.SocketRequest.Event.set -> void
+StitchDB.Realtime.Socket.SocketRequest.JoinRef.get -> string?
+StitchDB.Realtime.Socket.SocketRequest.JoinRef.set -> void
+StitchDB.Realtime.Socket.SocketRequest.Payload.get -> object?
+StitchDB.Realtime.Socket.SocketRequest.Payload.set -> void
+StitchDB.Realtime.Socket.SocketRequest.Ref.get -> string?
+StitchDB.Realtime.Socket.SocketRequest.Ref.set -> void
+StitchDB.Realtime.Socket.SocketRequest.SocketRequest() -> void
+StitchDB.Realtime.Socket.SocketRequest.Topic.get -> string?
+StitchDB.Realtime.Socket.SocketRequest.Topic.set -> void
+StitchDB.Realtime.Socket.SocketRequest.Type.get -> string?
+StitchDB.Realtime.Socket.SocketRequest.Type.set -> void
+StitchDB.Realtime.Socket.SocketResponse
+StitchDB.Realtime.Socket.SocketResponse.Event.get -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Socket.SocketResponse.Payload.get -> StitchDB.Realtime.Socket.SocketResponsePayload?
+StitchDB.Realtime.Socket.SocketResponse.Payload.set -> void
+StitchDB.Realtime.Socket.SocketResponse.Ref.get -> string?
+StitchDB.Realtime.Socket.SocketResponse.Ref.set -> void
+StitchDB.Realtime.Socket.SocketResponse.SocketResponse() -> void
+StitchDB.Realtime.Socket.SocketResponse.SocketResponse(System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.Socket.SocketResponse.Topic.get -> string?
+StitchDB.Realtime.Socket.SocketResponse.Topic.set -> void
+StitchDB.Realtime.Socket.SocketResponse._event.get -> string?
+StitchDB.Realtime.Socket.SocketResponse._event.set -> void
+StitchDB.Realtime.Socket.SocketResponse<T>
+StitchDB.Realtime.Socket.SocketResponse<T>.Payload.get -> T?
+StitchDB.Realtime.Socket.SocketResponse<T>.Payload.set -> void
+StitchDB.Realtime.Socket.SocketResponse<T>.SocketResponse() -> void
+StitchDB.Realtime.Socket.SocketResponse<T>.SocketResponse(System.Text.Json.JsonSerializerOptions! serializerSettings) -> void
+StitchDB.Realtime.Socket.SocketResponsePayload
+StitchDB.Realtime.Socket.SocketResponsePayload.ActionType.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload.ActionType.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Channel.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload.Channel.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Columns.get -> System.Collections.Generic.List<object!>?
+StitchDB.Realtime.Socket.SocketResponsePayload.Columns.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.CommitTimestamp.get -> System.DateTimeOffset?
+StitchDB.Realtime.Socket.SocketResponsePayload.CommitTimestamp.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Errors.get -> System.Collections.Generic.List<string!>?
+StitchDB.Realtime.Socket.SocketResponsePayload.Errors.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Extension.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload.Extension.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Joins.get -> object?
+StitchDB.Realtime.Socket.SocketResponsePayload.Joins.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Leaves.get -> object?
+StitchDB.Realtime.Socket.SocketResponsePayload.Leaves.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Message.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload.Message.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.OldRecord.get -> object?
+StitchDB.Realtime.Socket.SocketResponsePayload.OldRecord.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Record.get -> object?
+StitchDB.Realtime.Socket.SocketResponsePayload.Record.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Response.get -> object?
+StitchDB.Realtime.Socket.SocketResponsePayload.Response.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Schema.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload.Schema.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.SocketResponsePayload() -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Status.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload.Status.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Table.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload.Table.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload.Type.get -> StitchDB.Realtime.Constants.EventType
+StitchDB.Realtime.Socket.SocketResponsePayload._type.get -> string?
+StitchDB.Realtime.Socket.SocketResponsePayload._type.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload<T>
+StitchDB.Realtime.Socket.SocketResponsePayload<T>.OldRecord.get -> T?
+StitchDB.Realtime.Socket.SocketResponsePayload<T>.OldRecord.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload<T>.Record.get -> T?
+StitchDB.Realtime.Socket.SocketResponsePayload<T>.Record.set -> void
+StitchDB.Realtime.Socket.SocketResponsePayload<T>.SocketResponsePayload() -> void
+StitchDB.Realtime.Sockets.IWebSocketFactory
+StitchDB.Realtime.Sockets.IWebSocketFactory.Create(System.Uri! uri, System.Func<System.Collections.Generic.Dictionary<string!, string!>!>! headers) -> Websocket.Client.IWebsocketClient!
+const StitchDB.Realtime.Constants.ChannelAccessToken = "access_token" -> string!
+const StitchDB.Realtime.Constants.ChannelEventBroadcast = "broadcast" -> string!
+const StitchDB.Realtime.Constants.ChannelEventJoin = "phx_join" -> string!
+const StitchDB.Realtime.Constants.ChannelEventLeave = "phx_leave" -> string!
+const StitchDB.Realtime.Constants.ChannelEventPostgresChanges = "postgres_changes" -> string!
+const StitchDB.Realtime.Constants.ChannelEventPresenceDiff = "presence_diff" -> string!
+const StitchDB.Realtime.Constants.ChannelEventPresenceState = "presence_state" -> string!
+const StitchDB.Realtime.Constants.ChannelEventReply = "phx_reply" -> string!
+const StitchDB.Realtime.Constants.ChannelEventSystem = "system" -> string!
+const StitchDB.Realtime.Constants.DefaultTimeout = 10000 -> int
+const StitchDB.Realtime.Constants.PhoenixStatusError = "error" -> string!
+const StitchDB.Realtime.Constants.PhoenixStatusOk = "ok" -> string!
+const StitchDB.Realtime.Constants.TransportWebsocket = "websocket" -> string!
+override StitchDB.Realtime.Converters.IntArrayConverter.Read(ref System.Text.Json.Utf8JsonReader reader, System.Type! typeToConvert, System.Text.Json.JsonSerializerOptions! options) -> System.Collections.Generic.List<int>?
+override StitchDB.Realtime.Converters.IntArrayConverter.Write(System.Text.Json.Utf8JsonWriter! writer, System.Collections.Generic.List<int>! value, System.Text.Json.JsonSerializerOptions! options) -> void
+override StitchDB.Realtime.Converters.StringArrayConverter.Read(ref System.Text.Json.Utf8JsonReader reader, System.Type! typeToConvert, System.Text.Json.JsonSerializerOptions! options) -> System.Collections.Generic.List<string!>?
+override StitchDB.Realtime.Converters.StringArrayConverter.Write(System.Text.Json.Utf8JsonWriter! writer, System.Collections.Generic.List<string!>! value, System.Text.Json.JsonSerializerOptions! options) -> void
+override StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.Equals(object? obj) -> bool
+override StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.GetHashCode() -> int
+readonly StitchDB.Realtime.ClientOptions.DateTimeStyles -> System.Globalization.DateTimeStyles
+readonly StitchDB.Realtime.ClientOptions.Headers -> System.Collections.Generic.Dictionary<string!, string!>!
+static StitchDB.Realtime.Channel.ChannelOptions.Private(StitchDB.Realtime.ClientOptions! clientOptions, System.Func<string?>! retrieveAccessToken, System.Text.Json.JsonSerializerOptions! serializerSettings) -> StitchDB.Realtime.Channel.ChannelOptions!
+static StitchDB.Realtime.Channel.ChannelOptions.Public(StitchDB.Realtime.ClientOptions! clientOptions, System.Func<string?>! retrieveAccessToken, System.Text.Json.JsonSerializerOptions! serializerSettings) -> StitchDB.Realtime.Channel.ChannelOptions!
+static StitchDB.Realtime.Constants.ChannelEventClose -> string!
+static StitchDB.Realtime.Constants.ChannelEventError -> string!
+static StitchDB.Realtime.Exceptions.FailureHint.Parse(Websocket.Client.DisconnectionInfo! info) -> StitchDB.Realtime.Exceptions.FailureHint.Reason
+static StitchDB.Realtime.Exceptions.RealtimeException.FromDisconnectionInfo(Websocket.Client.DisconnectionInfo! info) -> StitchDB.Realtime.Exceptions.RealtimeException!
+static StitchDB.Realtime.Presence.PresenceOptions.WithPresence(string! presenceKey) -> StitchDB.Realtime.Presence.PresenceOptions!
+static StitchDB.Realtime.Presence.PresenceOptions.WithTracking(string! presenceKey) -> StitchDB.Realtime.Presence.PresenceOptions!
+static StitchDB.Realtime.Presence.PresenceOptions.WithoutPresence(string! presenceKey) -> StitchDB.Realtime.Presence.PresenceOptions!
+static StitchDB.Realtime.Presence.PresenceOptions.WithoutTracking(string! presenceKey) -> StitchDB.Realtime.Presence.PresenceOptions!
+virtual StitchDB.Realtime.Interfaces.IRealtimeBroadcast.BroadcastEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeBroadcast! sender, StitchDB.Realtime.Models.BaseBroadcast? broadcast) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeChannel.ErrorEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeChannel! sender, StitchDB.Realtime.Exceptions.RealtimeException! exception) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeChannel.MessageReceivedHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeChannel! sender, StitchDB.Realtime.Socket.SocketResponse! message) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeChannel! sender, StitchDB.Realtime.PostgresChanges.PostgresChangesResponse! change) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeChannel.StateChangedHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeChannel! sender, StitchDB.Realtime.Constants.ChannelState state) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>.SocketStateEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>! sender, StitchDB.Realtime.Constants.SocketState state) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeDebugger.DebugEventHandler.Invoke(object! sender, string! message, System.Exception? exception) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimePresence.PresenceEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimePresence! sender, StitchDB.Realtime.Interfaces.IRealtimePresence.EventType eventType) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>.MessageEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimePush<TChannel, TSocketResponse>! sender, TSocketResponse message) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeSocket.ErrorEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeSocket! sender, StitchDB.Realtime.Exceptions.RealtimeException! exception) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeSocket.HeartbeatEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeSocket! sender, StitchDB.Realtime.Socket.SocketResponse! heartbeat) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeSocket.MessageEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeSocket! sender, StitchDB.Realtime.Socket.SocketResponse! message) -> void
+virtual StitchDB.Realtime.Interfaces.IRealtimeSocket.StateEventHandler.Invoke(StitchDB.Realtime.Interfaces.IRealtimeSocket! sender, StitchDB.Realtime.Constants.SocketState state) -> void
+virtual StitchDB.Realtime.PostgresChanges.PostgresChangesResponse.Model<TModel>() -> TModel?
+virtual StitchDB.Realtime.PostgresChanges.PostgresChangesResponse.OldModel<TModel>() -> TModel?

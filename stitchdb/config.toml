@@ -1,0 +1,28 @@
+# Local test stack for this repository's integration (E2E) tests. Used by "stitchdb start" from the StitchDB CLI.
+# Docs: https://stitchdb.com/docs/cli/local-development
+
+project_id = "stitchdb-csharp"
+
+[api]
+port = 54321
+# The test fixtures (stitchdb/migrations) use these schemas.
+schemas = ["public", "personal"]
+
+[db]
+port = 54322
+major_version = 17
+
+[studio]
+port = 54323
+
+[mail]
+port = 54324
+
+[auth]
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = ["http://127.0.0.1:3000/**"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_confirmations = false

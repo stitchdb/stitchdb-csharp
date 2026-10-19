@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "package": "Core",
+  "project": "Core/Core.csproj",
+  "testProject": "Core.Tests/Core.Tests.csproj",
+  "warnings": {
+    "total": 0,
+    "byCode": {}
+  },
+  "updated": "2026-08-14T08:21:47Z",
+  "coverage": {
+    "hermeticLine": 100.00
+  }
+}

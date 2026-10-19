@@ -1,0 +1,343 @@
+#nullable enable
+StitchDB.Storage.Bucket
+StitchDB.Storage.Bucket.AllowedMimes.get -> System.Collections.Generic.List<string!>?
+StitchDB.Storage.Bucket.AllowedMimes.set -> void
+StitchDB.Storage.Bucket.Bucket() -> void
+StitchDB.Storage.Bucket.CreatedAt.get -> System.DateTime?
+StitchDB.Storage.Bucket.CreatedAt.set -> void
+StitchDB.Storage.Bucket.FileSizeLimit.get -> string?
+StitchDB.Storage.Bucket.FileSizeLimit.set -> void
+StitchDB.Storage.Bucket.Id.get -> string?
+StitchDB.Storage.Bucket.Id.set -> void
+StitchDB.Storage.Bucket.Name.get -> string?
+StitchDB.Storage.Bucket.Name.set -> void
+StitchDB.Storage.Bucket.Owner.get -> string?
+StitchDB.Storage.Bucket.Owner.set -> void
+StitchDB.Storage.Bucket.Public.get -> bool
+StitchDB.Storage.Bucket.Public.set -> void
+StitchDB.Storage.Bucket.UpdatedAt.get -> System.DateTime?
+StitchDB.Storage.Bucket.UpdatedAt.set -> void
+StitchDB.Storage.BucketUpsertOptions
+StitchDB.Storage.BucketUpsertOptions.AllowedMimes.get -> System.Collections.Generic.List<string!>?
+StitchDB.Storage.BucketUpsertOptions.AllowedMimes.set -> void
+StitchDB.Storage.BucketUpsertOptions.BucketUpsertOptions() -> void
+StitchDB.Storage.BucketUpsertOptions.FileSizeLimit.get -> string?
+StitchDB.Storage.BucketUpsertOptions.FileSizeLimit.set -> void
+StitchDB.Storage.BucketUpsertOptions.Public.get -> bool
+StitchDB.Storage.BucketUpsertOptions.Public.set -> void
+StitchDB.Storage.Client
+StitchDB.Storage.Client.Client(string! url, StitchDB.Storage.ClientOptions? options, System.Collections.Generic.Dictionary<string!, string!>? headers = null) -> void
+StitchDB.Storage.Client.Client(string! url, System.Collections.Generic.Dictionary<string!, string!>? headers = null) -> void
+StitchDB.Storage.Client.From(string! id) -> StitchDB.Storage.Interfaces.IStorageFileApi<StitchDB.Storage.FileObject!>!
+StitchDB.Storage.ClientOptions
+StitchDB.Storage.ClientOptions.ClientOptions() -> void
+StitchDB.Storage.ClientOptions.HttpDownloadClient.get -> System.Net.Http.HttpClient?
+StitchDB.Storage.ClientOptions.HttpDownloadClient.set -> void
+StitchDB.Storage.ClientOptions.HttpDownloadTimeout -> System.TimeSpan
+StitchDB.Storage.ClientOptions.HttpRequestClient.get -> System.Net.Http.HttpClient?
+StitchDB.Storage.ClientOptions.HttpRequestClient.set -> void
+StitchDB.Storage.ClientOptions.HttpRequestTimeout -> System.TimeSpan
+StitchDB.Storage.ClientOptions.HttpUploadClient.get -> System.Net.Http.HttpClient?
+StitchDB.Storage.ClientOptions.HttpUploadClient.set -> void
+StitchDB.Storage.ClientOptions.HttpUploadTimeout -> System.TimeSpan
+StitchDB.Storage.ClientOptions.Proxy.get -> System.Net.IWebProxy?
+StitchDB.Storage.ClientOptions.Proxy.set -> void
+StitchDB.Storage.ClientOptions.Retry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.Storage.ClientOptions.Retry.set -> void
+StitchDB.Storage.CreateSignedUrlResponse
+StitchDB.Storage.CreateSignedUrlResponse.CreateSignedUrlResponse() -> void
+StitchDB.Storage.CreateSignedUrlResponse.SignedUrl.get -> string?
+StitchDB.Storage.CreateSignedUrlResponse.SignedUrl.set -> void
+StitchDB.Storage.CreateSignedUrlsResponse
+StitchDB.Storage.CreateSignedUrlsResponse.CreateSignedUrlsResponse() -> void
+StitchDB.Storage.CreateSignedUrlsResponse.Path.get -> string?
+StitchDB.Storage.CreateSignedUrlsResponse.Path.set -> void
+StitchDB.Storage.DestinationOptions
+StitchDB.Storage.DestinationOptions.DestinationBucket.get -> string?
+StitchDB.Storage.DestinationOptions.DestinationBucket.set -> void
+StitchDB.Storage.DestinationOptions.DestinationOptions() -> void
+StitchDB.Storage.DownloadOptions
+StitchDB.Storage.DownloadOptions.CacheNonce.get -> string?
+StitchDB.Storage.DownloadOptions.CacheNonce.set -> void
+StitchDB.Storage.DownloadOptions.DownloadOptions() -> void
+StitchDB.Storage.DownloadOptions.FileName.get -> string?
+StitchDB.Storage.DownloadOptions.FileName.set -> void
+StitchDB.Storage.ErrorResponse
+StitchDB.Storage.ErrorResponse.Code.get -> string?
+StitchDB.Storage.ErrorResponse.Code.set -> void
+StitchDB.Storage.ErrorResponse.ErrorResponse() -> void
+StitchDB.Storage.ErrorResponse.Message.get -> string?
+StitchDB.Storage.ErrorResponse.Message.set -> void
+StitchDB.Storage.ErrorResponse.StatusCode.get -> int
+StitchDB.Storage.ErrorResponse.StatusCode.set -> void
+StitchDB.Storage.Exceptions.FailureHint
+StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.FailureHint.Reason.AlreadyExists = 4 -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.FailureHint.Reason.EntityTooLarge = 6 -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.FailureHint.Reason.Internal = 2 -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.FailureHint.Reason.InvalidInput = 5 -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.FailureHint.Reason.NotAuthorized = 1 -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.FailureHint.Reason.NotFound = 3 -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.FailureHint.Reason.Unknown = 0 -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.StitchDBStorageException
+StitchDB.Storage.Exceptions.StitchDBStorageException.AddReason() -> void
+StitchDB.Storage.Exceptions.StitchDBStorageException.Code.get -> string?
+StitchDB.Storage.Exceptions.StitchDBStorageException.Content.get -> string?
+StitchDB.Storage.Exceptions.StitchDBStorageException.Reason.get -> StitchDB.Storage.Exceptions.FailureHint.Reason
+StitchDB.Storage.Exceptions.StitchDBStorageException.Response.get -> System.Net.Http.HttpResponseMessage?
+StitchDB.Storage.Exceptions.StitchDBStorageException.StatusCode.get -> int
+StitchDB.Storage.Exceptions.StitchDBStorageException.StitchDBStorageException(string? message) -> void
+StitchDB.Storage.Exceptions.StitchDBStorageException.StitchDBStorageException(string? message, System.Exception? innerException) -> void
+StitchDB.Storage.Extensions.DownloadOptionsExtension
+StitchDB.Storage.Extensions.PurgeCacheOptionsExtension
+StitchDB.Storage.Extensions.TransformOptionsExtension
+StitchDB.Storage.FileObject
+StitchDB.Storage.FileObject.BucketId.get -> string?
+StitchDB.Storage.FileObject.BucketId.set -> void
+StitchDB.Storage.FileObject.Buckets.get -> StitchDB.Storage.Bucket?
+StitchDB.Storage.FileObject.Buckets.set -> void
+StitchDB.Storage.FileObject.CreatedAt.get -> System.DateTime?
+StitchDB.Storage.FileObject.CreatedAt.set -> void
+StitchDB.Storage.FileObject.FileObject() -> void
+StitchDB.Storage.FileObject.Id.get -> string?
+StitchDB.Storage.FileObject.Id.set -> void
+StitchDB.Storage.FileObject.IsFolder.get -> bool
+StitchDB.Storage.FileObject.Key.get -> string?
+StitchDB.Storage.FileObject.Key.set -> void
+StitchDB.Storage.FileObject.LastAccessedAt.get -> System.DateTime?
+StitchDB.Storage.FileObject.LastAccessedAt.set -> void
+StitchDB.Storage.FileObject.MetaData -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Storage.FileObject.Name.get -> string?
+StitchDB.Storage.FileObject.Name.set -> void
+StitchDB.Storage.FileObject.Owner.get -> string?
+StitchDB.Storage.FileObject.Owner.set -> void
+StitchDB.Storage.FileObject.UpdatedAt.get -> System.DateTime?
+StitchDB.Storage.FileObject.UpdatedAt.set -> void
+StitchDB.Storage.FileObjectV2
+StitchDB.Storage.FileObjectV2.BucketId.get -> string?
+StitchDB.Storage.FileObjectV2.BucketId.set -> void
+StitchDB.Storage.FileObjectV2.CacheControl.get -> string?
+StitchDB.Storage.FileObjectV2.CacheControl.set -> void
+StitchDB.Storage.FileObjectV2.ContentType.get -> string?
+StitchDB.Storage.FileObjectV2.ContentType.set -> void
+StitchDB.Storage.FileObjectV2.CreatedAt.get -> System.DateTime?
+StitchDB.Storage.FileObjectV2.CreatedAt.set -> void
+StitchDB.Storage.FileObjectV2.Etag.get -> string?
+StitchDB.Storage.FileObjectV2.Etag.set -> void
+StitchDB.Storage.FileObjectV2.FileObjectV2() -> void
+StitchDB.Storage.FileObjectV2.Id.get -> string!
+StitchDB.Storage.FileObjectV2.Id.set -> void
+StitchDB.Storage.FileObjectV2.LastAccessedAt.get -> System.DateTime?
+StitchDB.Storage.FileObjectV2.LastAccessedAt.set -> void
+StitchDB.Storage.FileObjectV2.LastModified.get -> System.DateTime?
+StitchDB.Storage.FileObjectV2.LastModified.set -> void
+StitchDB.Storage.FileObjectV2.Metadata.get -> System.Collections.Generic.Dictionary<string!, string!>?
+StitchDB.Storage.FileObjectV2.Metadata.set -> void
+StitchDB.Storage.FileObjectV2.Name.get -> string?
+StitchDB.Storage.FileObjectV2.Name.set -> void
+StitchDB.Storage.FileObjectV2.Size.get -> int?
+StitchDB.Storage.FileObjectV2.Size.set -> void
+StitchDB.Storage.FileObjectV2.UpdatedAt.get -> System.DateTime?
+StitchDB.Storage.FileObjectV2.UpdatedAt.set -> void
+StitchDB.Storage.FileObjectV2.Version.get -> string!
+StitchDB.Storage.FileObjectV2.Version.set -> void
+StitchDB.Storage.FileOptions
+StitchDB.Storage.FileOptions.CacheControl.get -> string!
+StitchDB.Storage.FileOptions.CacheControl.set -> void
+StitchDB.Storage.FileOptions.ContentType.get -> string!
+StitchDB.Storage.FileOptions.ContentType.set -> void
+StitchDB.Storage.FileOptions.Duplex.get -> string?
+StitchDB.Storage.FileOptions.Duplex.set -> void
+StitchDB.Storage.FileOptions.FileOptions() -> void
+StitchDB.Storage.FileOptions.Headers.get -> System.Collections.Generic.Dictionary<string!, string!>?
+StitchDB.Storage.FileOptions.Headers.set -> void
+StitchDB.Storage.FileOptions.Metadata.get -> System.Collections.Generic.Dictionary<string!, string!>?
+StitchDB.Storage.FileOptions.Metadata.set -> void
+StitchDB.Storage.FileOptions.Upsert.get -> bool
+StitchDB.Storage.FileOptions.Upsert.set -> void
+StitchDB.Storage.GenericResponse
+StitchDB.Storage.GenericResponse.GenericResponse() -> void
+StitchDB.Storage.GenericResponse.Message.get -> string?
+StitchDB.Storage.GenericResponse.Message.set -> void
+StitchDB.Storage.Header
+StitchDB.Storage.Header.Add(System.Collections.Generic.Dictionary<string!, string!>! headers) -> void
+StitchDB.Storage.Header.Add(string! key, string! value) -> void
+StitchDB.Storage.Header.Get() -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Storage.Header.Header() -> void
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.CreateBucket(string! id, StitchDB.Storage.BucketUpsertOptions? options = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.DeleteBucket(string! id) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.EmptyBucket(string! id) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.GetBucket(string! id) -> System.Threading.Tasks.Task<TBucket?>!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.Headers.get -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.Headers.set -> void
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.ListBuckets() -> System.Threading.Tasks.Task<System.Collections.Generic.List<TBucket!>?>!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.Options.get -> StitchDB.Storage.ClientOptions!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.PurgeBucketCache(string! id, StitchDB.Storage.PurgeCacheOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.Interfaces.IStorageBucketApi<TBucket>.UpdateBucket(string! id, StitchDB.Storage.BucketUpsertOptions? options = null) -> System.Threading.Tasks.Task<TBucket?>!
+StitchDB.Storage.Interfaces.IStorageClient<TBucket, TFileObject>
+StitchDB.Storage.Interfaces.IStorageClient<TBucket, TFileObject>.From(string! id) -> StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Copy(string! fromPath, string! toPath, StitchDB.Storage.DestinationOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.CreateSignedUrl(string! path, int expiresIn, StitchDB.Storage.TransformOptions? transformOptions = null, StitchDB.Storage.DownloadOptions? options = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.CreateSignedUrls(System.Collections.Generic.List<string!>! paths, int expiresIn, StitchDB.Storage.DownloadOptions? options = null) -> System.Threading.Tasks.Task<System.Collections.Generic.List<StitchDB.Storage.CreateSignedUrlsResponse!>?>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.CreateUploadSignedUrl(string! stitchdbPath) -> System.Threading.Tasks.Task<StitchDB.Storage.UploadSignedUrl!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Download(string! stitchdbPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<byte[]!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Download(string! stitchdbPath, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<byte[]!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Download(string! stitchdbPath, string! localPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Download(string! stitchdbPath, string! localPath, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.DownloadPublicFile(string! stitchdbPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<byte[]!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.DownloadPublicFile(string! stitchdbPath, string! localPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.GetPublicUrl(string! path, StitchDB.Storage.TransformOptions? transformOptions = null, StitchDB.Storage.DownloadOptions? options = null) -> string!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Info(string! path) -> System.Threading.Tasks.Task<StitchDB.Storage.FileObjectV2?>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.List(string! path = "", StitchDB.Storage.SearchOptions? options = null) -> System.Threading.Tasks.Task<System.Collections.Generic.List<TFileObject!>?>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.ListV2Async(StitchDB.Storage.SearchV2Options? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Storage.SearchV2Result?>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Move(string! fromPath, string! toPath, StitchDB.Storage.DestinationOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Options.get -> StitchDB.Storage.ClientOptions!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.PurgeCache(string! path, StitchDB.Storage.PurgeCacheOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Remove(System.Collections.Generic.List<string!>! paths) -> System.Threading.Tasks.Task<System.Collections.Generic.List<TFileObject!>?>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Remove(string! path) -> System.Threading.Tasks.Task<TFileObject?>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Update(byte[]! data, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Update(string! localFilePath, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Upload(byte[]! data, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.Upload(string! localFilePath, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.UploadOrResume(byte[]! data, string! fileName, StitchDB.Storage.FileOptions! options, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.UploadOrResume(string! localPath, string! fileName, StitchDB.Storage.FileOptions! options, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.UploadToSignedUrl(byte[]! data, StitchDB.Storage.UploadSignedUrl! url, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.Interfaces.IStorageFileApi<TFileObject>.UploadToSignedUrl(string! localFilePath, StitchDB.Storage.UploadSignedUrl! url, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.PurgeCacheOptions
+StitchDB.Storage.PurgeCacheOptions.PurgeCacheOptions() -> void
+StitchDB.Storage.PurgeCacheOptions.Transformations.get -> bool?
+StitchDB.Storage.PurgeCacheOptions.Transformations.set -> void
+StitchDB.Storage.SearchOptions
+StitchDB.Storage.SearchOptions.Limit.get -> int
+StitchDB.Storage.SearchOptions.Limit.set -> void
+StitchDB.Storage.SearchOptions.Offset.get -> int
+StitchDB.Storage.SearchOptions.Offset.set -> void
+StitchDB.Storage.SearchOptions.Search.get -> string!
+StitchDB.Storage.SearchOptions.Search.set -> void
+StitchDB.Storage.SearchOptions.SearchOptions() -> void
+StitchDB.Storage.SearchOptions.SortBy.get -> StitchDB.Storage.SortBy!
+StitchDB.Storage.SearchOptions.SortBy.set -> void
+StitchDB.Storage.SearchV2Options
+StitchDB.Storage.SearchV2Options.Cursor.get -> string?
+StitchDB.Storage.SearchV2Options.Cursor.set -> void
+StitchDB.Storage.SearchV2Options.Limit.get -> int?
+StitchDB.Storage.SearchV2Options.Limit.set -> void
+StitchDB.Storage.SearchV2Options.Prefix.get -> string?
+StitchDB.Storage.SearchV2Options.Prefix.set -> void
+StitchDB.Storage.SearchV2Options.SearchV2Options() -> void
+StitchDB.Storage.SearchV2Options.SortBy.get -> StitchDB.Storage.SortBy?
+StitchDB.Storage.SearchV2Options.SortBy.set -> void
+StitchDB.Storage.SearchV2Options.WithDelimiter.get -> bool
+StitchDB.Storage.SearchV2Options.WithDelimiter.set -> void
+StitchDB.Storage.SearchV2Result
+StitchDB.Storage.SearchV2Result.Folders.get -> System.Collections.Generic.List<StitchDB.Storage.FileObject!>!
+StitchDB.Storage.SearchV2Result.Folders.set -> void
+StitchDB.Storage.SearchV2Result.HasNext.get -> bool
+StitchDB.Storage.SearchV2Result.HasNext.set -> void
+StitchDB.Storage.SearchV2Result.NextCursor.get -> string?
+StitchDB.Storage.SearchV2Result.NextCursor.set -> void
+StitchDB.Storage.SearchV2Result.Objects.get -> System.Collections.Generic.List<StitchDB.Storage.FileObject!>!
+StitchDB.Storage.SearchV2Result.Objects.set -> void
+StitchDB.Storage.SearchV2Result.SearchV2Result() -> void
+StitchDB.Storage.SortBy
+StitchDB.Storage.SortBy.Column.get -> string?
+StitchDB.Storage.SortBy.Column.set -> void
+StitchDB.Storage.SortBy.Order.get -> string?
+StitchDB.Storage.SortBy.Order.set -> void
+StitchDB.Storage.SortBy.SortBy() -> void
+StitchDB.Storage.StorageBucketApi
+StitchDB.Storage.StorageBucketApi.CreateBucket(string! id, StitchDB.Storage.BucketUpsertOptions? options = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageBucketApi.DeleteBucket(string! id) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.StorageBucketApi.EmptyBucket(string! id) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.StorageBucketApi.GetBucket(string! id) -> System.Threading.Tasks.Task<StitchDB.Storage.Bucket?>!
+StitchDB.Storage.StorageBucketApi.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Storage.StorageBucketApi.GetHeaders.set -> void
+StitchDB.Storage.StorageBucketApi.Headers.get -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Storage.StorageBucketApi.Headers.set -> void
+StitchDB.Storage.StorageBucketApi.ListBuckets() -> System.Threading.Tasks.Task<System.Collections.Generic.List<StitchDB.Storage.Bucket!>?>!
+StitchDB.Storage.StorageBucketApi.Options.get -> StitchDB.Storage.ClientOptions!
+StitchDB.Storage.StorageBucketApi.Options.set -> void
+StitchDB.Storage.StorageBucketApi.PurgeBucketCache(string! id, StitchDB.Storage.PurgeCacheOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.StorageBucketApi.StorageBucketApi(string! url, StitchDB.Storage.ClientOptions? options, System.Collections.Generic.Dictionary<string!, string!>? headers = null) -> void
+StitchDB.Storage.StorageBucketApi.StorageBucketApi(string! url, System.Collections.Generic.Dictionary<string!, string!>? headers = null) -> void
+StitchDB.Storage.StorageBucketApi.UpdateBucket(string! id, StitchDB.Storage.BucketUpsertOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Storage.Bucket?>!
+StitchDB.Storage.StorageBucketApi.Url.get -> string!
+StitchDB.Storage.StorageBucketApi.Url.set -> void
+StitchDB.Storage.StorageDiagnostics
+StitchDB.Storage.StorageFileApi
+StitchDB.Storage.StorageFileApi.BucketId.get -> string?
+StitchDB.Storage.StorageFileApi.BucketId.set -> void
+StitchDB.Storage.StorageFileApi.Copy(string! fromPath, string! toPath, StitchDB.Storage.DestinationOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Storage.StorageFileApi.CreateSignedUrl(string! path, int expiresIn, StitchDB.Storage.TransformOptions? transformOptions = null, StitchDB.Storage.DownloadOptions? downloadOptions = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.CreateSignedUrls(System.Collections.Generic.List<string!>! paths, int expiresIn, StitchDB.Storage.DownloadOptions? downloadOptions = null) -> System.Threading.Tasks.Task<System.Collections.Generic.List<StitchDB.Storage.CreateSignedUrlsResponse!>?>!
+StitchDB.Storage.StorageFileApi.CreateUploadSignedUrl(string! stitchdbPath) -> System.Threading.Tasks.Task<StitchDB.Storage.UploadSignedUrl!>!
+StitchDB.Storage.StorageFileApi.Download(string! stitchdbPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<byte[]!>!
+StitchDB.Storage.StorageFileApi.Download(string! stitchdbPath, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<byte[]!>!
+StitchDB.Storage.StorageFileApi.Download(string! stitchdbPath, string! localPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.Download(string! stitchdbPath, string! localPath, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.DownloadPublicFile(string! stitchdbPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<byte[]!>!
+StitchDB.Storage.StorageFileApi.DownloadPublicFile(string! stitchdbPath, string! localPath, StitchDB.Storage.TransformOptions? transformOptions = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), string? cacheNonce = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.GetPublicUrl(string! path, StitchDB.Storage.TransformOptions? transformOptions, StitchDB.Storage.DownloadOptions? downloadOptions = null) -> string!
+StitchDB.Storage.StorageFileApi.Headers.get -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Storage.StorageFileApi.Headers.set -> void
+StitchDB.Storage.StorageFileApi.Info(string! path) -> System.Threading.Tasks.Task<StitchDB.Storage.FileObjectV2?>!
+StitchDB.Storage.StorageFileApi.List(string! path = "", StitchDB.Storage.SearchOptions? options = null) -> System.Threading.Tasks.Task<System.Collections.Generic.List<StitchDB.Storage.FileObject!>?>!
+StitchDB.Storage.StorageFileApi.ListV2Async(StitchDB.Storage.SearchV2Options? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Storage.SearchV2Result?>!
+StitchDB.Storage.StorageFileApi.Move(string! fromPath, string! toPath, StitchDB.Storage.DestinationOptions? options = null) -> System.Threading.Tasks.Task<bool>!
+StitchDB.Storage.StorageFileApi.Options.get -> StitchDB.Storage.ClientOptions!
+StitchDB.Storage.StorageFileApi.Options.set -> void
+StitchDB.Storage.StorageFileApi.PurgeCache(string! path, StitchDB.Storage.PurgeCacheOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StitchDB.Storage.GenericResponse?>!
+StitchDB.Storage.StorageFileApi.Remove(System.Collections.Generic.List<string!>! paths) -> System.Threading.Tasks.Task<System.Collections.Generic.List<StitchDB.Storage.FileObject!>?>!
+StitchDB.Storage.StorageFileApi.Remove(string! path) -> System.Threading.Tasks.Task<StitchDB.Storage.FileObject?>!
+StitchDB.Storage.StorageFileApi.StorageFileApi(string! url, System.Collections.Generic.Dictionary<string!, string!>? headers = null, string? bucketId = null) -> void
+StitchDB.Storage.StorageFileApi.StorageFileApi(string! url, string! bucketId, StitchDB.Storage.ClientOptions? options, System.Collections.Generic.Dictionary<string!, string!>? headers = null) -> void
+StitchDB.Storage.StorageFileApi.Update(byte[]! data, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.Update(string! localFilePath, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.Upload(byte[]! data, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.Upload(byte[]! data, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.Upload(string! localFilePath, string! stitchdbPath, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.UploadOrResume(byte[]! data, string! fileName, StitchDB.Storage.FileOptions? options, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Storage.StorageFileApi.UploadOrResume(string! localPath, string! fileName, StitchDB.Storage.FileOptions? options, System.EventHandler<float>? onProgress = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+StitchDB.Storage.StorageFileApi.UploadToSignedUrl(byte[]! data, StitchDB.Storage.UploadSignedUrl! signedUrl, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.UploadToSignedUrl(string! localFilePath, StitchDB.Storage.UploadSignedUrl! signedUrl, StitchDB.Storage.FileOptions? options = null, System.EventHandler<float>? onProgress = null, bool inferContentType = true) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Storage.StorageFileApi.Url.get -> string!
+StitchDB.Storage.StorageFileApi.Url.set -> void
+StitchDB.Storage.TransformOptions
+StitchDB.Storage.TransformOptions.Format.get -> string!
+StitchDB.Storage.TransformOptions.Format.set -> void
+StitchDB.Storage.TransformOptions.Height.get -> int?
+StitchDB.Storage.TransformOptions.Height.set -> void
+StitchDB.Storage.TransformOptions.Quality.get -> int
+StitchDB.Storage.TransformOptions.Quality.set -> void
+StitchDB.Storage.TransformOptions.Resize.get -> StitchDB.Storage.TransformOptions.ResizeType
+StitchDB.Storage.TransformOptions.Resize.set -> void
+StitchDB.Storage.TransformOptions.ResizeType
+StitchDB.Storage.TransformOptions.ResizeType.Contain = 1 -> StitchDB.Storage.TransformOptions.ResizeType
+StitchDB.Storage.TransformOptions.ResizeType.Cover = 0 -> StitchDB.Storage.TransformOptions.ResizeType
+StitchDB.Storage.TransformOptions.ResizeType.Fill = 2 -> StitchDB.Storage.TransformOptions.ResizeType
+StitchDB.Storage.TransformOptions.TransformOptions() -> void
+StitchDB.Storage.TransformOptions.Width.get -> int?
+StitchDB.Storage.TransformOptions.Width.set -> void
+StitchDB.Storage.UploadMemoryCache
+StitchDB.Storage.UploadMemoryCache.UploadMemoryCache() -> void
+StitchDB.Storage.UploadSignedUrl
+StitchDB.Storage.UploadSignedUrl.Key.get -> string!
+StitchDB.Storage.UploadSignedUrl.SignedUrl.get -> System.Uri!
+StitchDB.Storage.UploadSignedUrl.Token.get -> string!
+StitchDB.Storage.UploadSignedUrl.UploadSignedUrl(System.Uri! signedUrl, string! token, string! key) -> void
+const StitchDB.Storage.StorageDiagnostics.SourceName = "StitchDB.Storage" -> string!
+readonly StitchDB.Storage.StorageFileApi.StorageHeader -> StitchDB.Storage.Header!
+static StitchDB.Storage.Exceptions.FailureHint.DetectReason(StitchDB.Storage.Exceptions.StitchDBStorageException! storageException) -> StitchDB.Storage.Exceptions.FailureHint.Reason
+static StitchDB.Storage.Extensions.DownloadOptionsExtension.ToQueryCollection(this StitchDB.Storage.DownloadOptions! download) -> System.Collections.Specialized.NameValueCollection!
+static StitchDB.Storage.Extensions.PurgeCacheOptionsExtension.ToPurgeUrl(this StitchDB.Storage.PurgeCacheOptions? options, string! baseUrl) -> string!
+static StitchDB.Storage.Extensions.PurgeCacheOptionsExtension.ToQueryCollection(this StitchDB.Storage.PurgeCacheOptions! options) -> System.Collections.Specialized.NameValueCollection!
+static StitchDB.Storage.Extensions.TransformOptionsExtension.ToQueryCollection(this StitchDB.Storage.TransformOptions! transform) -> System.Collections.Specialized.NameValueCollection!
+static StitchDB.Storage.UploadMemoryCache.Clear() -> void
+static StitchDB.Storage.UploadMemoryCache.Count.get -> int
+static StitchDB.Storage.UploadMemoryCache.Remove(string! key) -> bool
+static StitchDB.Storage.UploadMemoryCache.Set(string! key, string! url, System.TimeSpan? ttl = null) -> void
+static StitchDB.Storage.UploadMemoryCache.SetDefaultTtl(System.TimeSpan ttl) -> void
+static StitchDB.Storage.UploadMemoryCache.TryGet(string! key, out string? url) -> bool
+static readonly StitchDB.Storage.DownloadOptions.UseOriginalFileName -> StitchDB.Storage.DownloadOptions!

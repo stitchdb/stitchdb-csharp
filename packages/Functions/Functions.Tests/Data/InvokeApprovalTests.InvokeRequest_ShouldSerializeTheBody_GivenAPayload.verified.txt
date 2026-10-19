@@ -1,0 +1,1 @@
+{"name":"stitchdb","count":3,"enabled":true,"tags":["a","b"],"nested":{"key":"value"}}

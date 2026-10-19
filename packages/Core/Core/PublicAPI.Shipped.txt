@@ -1,0 +1,58 @@
+#nullable enable
+StitchDB.Core.Attributes.MapToAttribute
+StitchDB.Core.Attributes.MapToAttribute.Formatter.get -> string?
+StitchDB.Core.Attributes.MapToAttribute.Formatter.set -> void
+StitchDB.Core.Attributes.MapToAttribute.MapToAttribute(string! mapping, string? formatter = null) -> void
+StitchDB.Core.Attributes.MapToAttribute.Mapping.get -> string!
+StitchDB.Core.Attributes.MapToAttribute.Mapping.set -> void
+StitchDB.Core.Diagnostics.ActivityExtensions
+StitchDB.Core.Diagnostics.ActivityExtensions.extension(System.Diagnostics.Activity?)
+StitchDB.Core.Diagnostics.ActivityExtensions.extension(System.Diagnostics.Activity?).SetFailure(System.Exception! exception) -> System.Diagnostics.Activity?
+StitchDB.Core.Diagnostics.ActivityExtensions.extension(System.Diagnostics.Activity?).SetHttpRequestTags(string! method, System.Uri! uri) -> System.Diagnostics.Activity?
+StitchDB.Core.Diagnostics.ActivityExtensions.extension(System.Diagnostics.Activity?).SetHttpResponseTags(int statusCode) -> System.Diagnostics.Activity?
+StitchDB.Core.Diagnostics.Instrumentation
+StitchDB.Core.Diagnostics.UrlSanitizer
+StitchDB.Core.Extensions.DictionaryExtensions
+StitchDB.Core.Helpers
+StitchDB.Core.Http.DefaultHttpClientFactory
+StitchDB.Core.Http.RetryExecutor
+StitchDB.Core.Http.RetryOptions
+StitchDB.Core.Http.RetryOptions.<Clone>$() -> StitchDB.Core.Http.RetryOptions!
+StitchDB.Core.Http.RetryOptions.BaseDelay.get -> System.TimeSpan
+StitchDB.Core.Http.RetryOptions.BaseDelay.init -> void
+StitchDB.Core.Http.RetryOptions.Equals(StitchDB.Core.Http.RetryOptions? other) -> bool
+StitchDB.Core.Http.RetryOptions.MaxDelay.get -> System.TimeSpan
+StitchDB.Core.Http.RetryOptions.MaxDelay.init -> void
+StitchDB.Core.Http.RetryOptions.MaxRetries.get -> int
+StitchDB.Core.Http.RetryOptions.MaxRetries.init -> void
+StitchDB.Core.Http.RetryOptions.RetryOptions() -> void
+StitchDB.Core.Http.RetryOptions.RetryableStatusCodes.get -> System.Collections.Generic.IReadOnlyCollection<int>!
+StitchDB.Core.Http.RetryOptions.RetryableStatusCodes.init -> void
+StitchDB.Core.Http.RetryOptions.UseJitter.get -> bool
+StitchDB.Core.Http.RetryOptions.UseJitter.init -> void
+StitchDB.Core.Interfaces.IGettableHeaders
+StitchDB.Core.Interfaces.IGettableHeaders.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Core.Interfaces.IGettableHeaders.GetHeaders.set -> void
+StitchDB.Core.Util
+override StitchDB.Core.Http.RetryOptions.Equals(object? obj) -> bool
+override StitchDB.Core.Http.RetryOptions.GetHashCode() -> int
+override StitchDB.Core.Http.RetryOptions.ToString() -> string!
+static StitchDB.Core.Diagnostics.ActivityExtensions.SetFailure(this System.Diagnostics.Activity? activity, System.Exception! exception) -> System.Diagnostics.Activity?
+static StitchDB.Core.Diagnostics.ActivityExtensions.SetHttpRequestTags(this System.Diagnostics.Activity? activity, string! method, System.Uri! uri) -> System.Diagnostics.Activity?
+static StitchDB.Core.Diagnostics.ActivityExtensions.SetHttpResponseTags(this System.Diagnostics.Activity? activity, int statusCode) -> System.Diagnostics.Activity?
+static StitchDB.Core.Diagnostics.Instrumentation.CreateActivitySource(System.Reflection.Assembly! assembly, string! name) -> System.Diagnostics.ActivitySource!
+static StitchDB.Core.Diagnostics.Instrumentation.CreateMeter(System.Reflection.Assembly! assembly, string! name) -> System.Diagnostics.Metrics.Meter!
+static StitchDB.Core.Diagnostics.Instrumentation.GetVersion(System.Reflection.Assembly! assembly) -> string!
+static StitchDB.Core.Diagnostics.UrlSanitizer.Sanitize(System.Uri! uri) -> string!
+static StitchDB.Core.Diagnostics.UrlSanitizer.Sanitize(string! url) -> string!
+static StitchDB.Core.Extensions.DictionaryExtensions.MergeLeft<T, TKey, TValue>(this T me, params System.Collections.Generic.IDictionary<TKey, TValue>![]! others) -> T
+static StitchDB.Core.Helpers.GetCustomAttribute<T>(System.Type! type) -> T!
+static StitchDB.Core.Helpers.GetCustomAttribute<T>(object! obj) -> T!
+static StitchDB.Core.Helpers.GetMappedToAttr(System.Enum! obj) -> StitchDB.Core.Attributes.MapToAttribute!
+static StitchDB.Core.Helpers.GetPropertyValue<T>(object! obj, string! propName) -> T
+static StitchDB.Core.Http.DefaultHttpClientFactory.Create(System.TimeSpan? timeout = null, System.Net.IWebProxy? proxy = null) -> System.Net.Http.HttpClient!
+static StitchDB.Core.Http.RetryExecutor.SendAsync(System.Net.Http.HttpClient! client, System.Func<System.Net.Http.HttpRequestMessage!>! requestFactory, StitchDB.Core.Http.RetryOptions! options, System.Net.Http.HttpCompletionOption completionOption, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage!>!
+static StitchDB.Core.Http.RetryExecutor.SendAsync(System.Net.Http.HttpClient! client, System.Func<System.Net.Http.HttpRequestMessage!>! requestFactory, StitchDB.Core.Http.RetryOptions! options, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage!>!
+static StitchDB.Core.Http.RetryOptions.operator !=(StitchDB.Core.Http.RetryOptions? left, StitchDB.Core.Http.RetryOptions? right) -> bool
+static StitchDB.Core.Http.RetryOptions.operator ==(StitchDB.Core.Http.RetryOptions? left, StitchDB.Core.Http.RetryOptions? right) -> bool
+static StitchDB.Core.Util.GetAssemblyVersion(System.Type! clientType) -> string!

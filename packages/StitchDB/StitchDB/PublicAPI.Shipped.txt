@@ -1,0 +1,96 @@
+#nullable enable
+StitchDB.Client
+StitchDB.Client.AdminAuth(string! serviceKey) -> StitchDB.Gotrue.Interfaces.IGotrueAdminClient<StitchDB.Gotrue.User!>!
+StitchDB.Client.Auth.get -> StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>!
+StitchDB.Client.Auth.set -> void
+StitchDB.Client.Client(StitchDB.Gotrue.Interfaces.IGotrueClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!>! auth, StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>! realtime, StitchDB.Functions.Interfaces.IFunctionsClient! functions, StitchDB.Postgrest.Interfaces.IPostgrestClient! postgrest, StitchDB.Storage.Interfaces.IStorageClient<StitchDB.Storage.Bucket!, StitchDB.Storage.FileObject!>! storage, StitchDB.StitchDBOptions! options) -> void
+StitchDB.Client.Client(string! stitchdbUrl, string? stitchdbKey, StitchDB.StitchDBOptions? options = null) -> void
+StitchDB.Client.From<TModel>() -> StitchDB.Interfaces.IStitchDBTable<TModel!, StitchDB.Realtime.RealtimeChannel!>!
+StitchDB.Client.Functions.get -> StitchDB.Functions.Interfaces.IFunctionsClient!
+StitchDB.Client.Functions.set -> void
+StitchDB.Client.InitializeAsync() -> System.Threading.Tasks.Task<StitchDB.Interfaces.IStitchDBClient<StitchDB.Gotrue.User!, StitchDB.Gotrue.Session!, StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!, StitchDB.Storage.Bucket!, StitchDB.Storage.FileObject!>!>!
+StitchDB.Client.Postgrest.get -> StitchDB.Postgrest.Interfaces.IPostgrestClient!
+StitchDB.Client.Postgrest.set -> void
+StitchDB.Client.Realtime.get -> StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>!
+StitchDB.Client.Realtime.set -> void
+StitchDB.Client.Rpc(string! procedureName, object? parameters) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.BaseResponse!>!
+StitchDB.Client.Rpc<TModeledResponse>(string! procedureName, object? parameters) -> System.Threading.Tasks.Task<TModeledResponse?>!
+StitchDB.Client.Storage.get -> StitchDB.Storage.Interfaces.IStorageClient<StitchDB.Storage.Bucket!, StitchDB.Storage.FileObject!>!
+StitchDB.Client.Storage.set -> void
+StitchDB.DefaultStitchDBSessionHandler
+StitchDB.DefaultStitchDBSessionHandler.DefaultStitchDBSessionHandler() -> void
+StitchDB.DefaultStitchDBSessionHandler.DestroySession() -> void
+StitchDB.DefaultStitchDBSessionHandler.LoadSession() -> StitchDB.Gotrue.Session?
+StitchDB.DefaultStitchDBSessionHandler.SaveSession(StitchDB.Gotrue.Session! session) -> void
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.AdminAuth(string! serviceKey) -> StitchDB.Gotrue.Interfaces.IGotrueAdminClient<StitchDB.Gotrue.User!>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Auth.get -> StitchDB.Gotrue.Interfaces.IGotrueClient<TUser!, TSession!>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Auth.set -> void
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.From<TModel>() -> StitchDB.Interfaces.IStitchDBTable<TModel!, TChannel>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Functions.get -> StitchDB.Functions.Interfaces.IFunctionsClient!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Functions.set -> void
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.InitializeAsync() -> System.Threading.Tasks.Task<StitchDB.Interfaces.IStitchDBClient<TUser!, TSession!, TSocket, TChannel, TBucket!, TFileObject!>!>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Postgrest.get -> StitchDB.Postgrest.Interfaces.IPostgrestClient!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Postgrest.set -> void
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Realtime.get -> StitchDB.Realtime.Interfaces.IRealtimeClient<TSocket, TChannel>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Realtime.set -> void
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Rpc(string! procedureName, object? parameters) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.BaseResponse!>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Rpc<TModeledResponse>(string! procedureName, object? parameters) -> System.Threading.Tasks.Task<TModeledResponse?>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Storage.get -> StitchDB.Storage.Interfaces.IStorageClient<TBucket!, TFileObject!>!
+StitchDB.Interfaces.IStitchDBClient<TUser, TSession, TSocket, TChannel, TBucket, TFileObject>.Storage.set -> void
+StitchDB.Interfaces.IStitchDBFunctions
+StitchDB.Interfaces.IStitchDBFunctions.Invoke(string! functionName, System.Collections.Generic.Dictionary<string!, object!>? body = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Interfaces.IStitchDBFunctions.Invoke<T>(string! functionName, System.Collections.Generic.Dictionary<string!, object!>? body = null) -> System.Threading.Tasks.Task<T?>!
+StitchDB.Interfaces.IStitchDBFunctions.RawInvoke(string! functionName, System.Collections.Generic.Dictionary<string!, object!>? body = null) -> System.Threading.Tasks.Task<System.Net.Http.HttpContent!>!
+StitchDB.Interfaces.IStitchDBTable<TModel, TChannel>
+StitchDB.Interfaces.IStitchDBTable<TModel, TChannel>.On(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! handler) -> System.Threading.Tasks.Task<TChannel>!
+StitchDB.StatelessClient
+StitchDB.StitchDBDiagnostics
+StitchDB.StitchDBModel
+StitchDB.StitchDBModel.StitchDBModel() -> void
+StitchDB.StitchDBOptions
+StitchDB.StitchDBOptions.AuthUrlFormat.get -> string!
+StitchDB.StitchDBOptions.AuthUrlFormat.set -> void
+StitchDB.StitchDBOptions.AutoConnectRealtime.get -> bool
+StitchDB.StitchDBOptions.AutoConnectRealtime.set -> void
+StitchDB.StitchDBOptions.AutoRefreshToken.get -> bool
+StitchDB.StitchDBOptions.AutoRefreshToken.set -> void
+StitchDB.StitchDBOptions.FunctionsRetry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.StitchDBOptions.FunctionsRetry.set -> void
+StitchDB.StitchDBOptions.FunctionsUrlFormat.get -> string!
+StitchDB.StitchDBOptions.FunctionsUrlFormat.set -> void
+StitchDB.StitchDBOptions.GotrueRetry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.StitchDBOptions.GotrueRetry.set -> void
+StitchDB.StitchDBOptions.Headers -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.StitchDBOptions.HttpClient.get -> System.Net.Http.HttpClient?
+StitchDB.StitchDBOptions.HttpClient.set -> void
+StitchDB.StitchDBOptions.PostgrestRetry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.StitchDBOptions.PostgrestRetry.set -> void
+StitchDB.StitchDBOptions.PostgrestTimeout.get -> System.TimeSpan?
+StitchDB.StitchDBOptions.PostgrestTimeout.set -> void
+StitchDB.StitchDBOptions.Proxy.get -> System.Net.IWebProxy?
+StitchDB.StitchDBOptions.Proxy.set -> void
+StitchDB.StitchDBOptions.RealtimeUrlFormat.get -> string!
+StitchDB.StitchDBOptions.RealtimeUrlFormat.set -> void
+StitchDB.StitchDBOptions.RestUrlFormat.get -> string!
+StitchDB.StitchDBOptions.RestUrlFormat.set -> void
+StitchDB.StitchDBOptions.Schema -> string!
+StitchDB.StitchDBOptions.SessionHandler.get -> StitchDB.Gotrue.Interfaces.IGotrueSessionPersistence<StitchDB.Gotrue.Session!>!
+StitchDB.StitchDBOptions.SessionHandler.set -> void
+StitchDB.StitchDBOptions.StorageClientOptions.get -> StitchDB.Storage.ClientOptions!
+StitchDB.StitchDBOptions.StorageClientOptions.set -> void
+StitchDB.StitchDBOptions.StorageUrlFormat.get -> string!
+StitchDB.StitchDBOptions.StorageUrlFormat.set -> void
+StitchDB.StitchDBOptions.StitchDBOptions() -> void
+StitchDB.StitchDBOptions.WebSocketFactory.get -> StitchDB.Realtime.Sockets.IWebSocketFactory?
+StitchDB.StitchDBOptions.WebSocketFactory.set -> void
+StitchDB.StitchDBTable<TModel>
+StitchDB.StitchDBTable<TModel>.On(StitchDB.Realtime.PostgresChanges.PostgresChangesOptions.ListenType listenType, StitchDB.Realtime.Interfaces.IRealtimeChannel.PostgresChangesHandler! handler) -> System.Threading.Tasks.Task<StitchDB.Realtime.RealtimeChannel!>!
+StitchDB.StitchDBTable<TModel>.StitchDBTable(StitchDB.Postgrest.Interfaces.IPostgrestClient! postgrestClient, StitchDB.Realtime.Interfaces.IRealtimeClient<StitchDB.Realtime.RealtimeSocket!, StitchDB.Realtime.RealtimeChannel!>! realtimeClient, string! schema = "public") -> void
+static StitchDB.StatelessClient.From<T>(string! stitchdbUrl, string! stitchdbKey, StitchDB.StitchDBOptions? options = null) -> StitchDB.StitchDBTable<T!>!
+static StitchDB.StatelessClient.Functions(string! stitchdbUrl, string! stitchdbKey, StitchDB.StitchDBOptions? options = null) -> StitchDB.Functions.Interfaces.IFunctionsClient!
+static StitchDB.StatelessClient.GetAuthOptions(string! stitchdbUrl, string? stitchdbKey = null, StitchDB.StitchDBOptions? options = null) -> StitchDB.Gotrue.ClientOptions!
+static StitchDB.StatelessClient.GetRestOptions(string? stitchdbKey = null, StitchDB.StitchDBOptions? options = null) -> StitchDB.Postgrest.ClientOptions!
+static StitchDB.StatelessClient.Rpc(string! stitchdbUrl, string! stitchdbKey, string! procedureName, System.Collections.Generic.Dictionary<string!, object!>! parameters, StitchDB.StitchDBOptions? options = null) -> System.Threading.Tasks.Task<StitchDB.Postgrest.Responses.BaseResponse!>!
+static StitchDB.StatelessClient.Storage(string! stitchdbUrl, string? stitchdbKey = null, StitchDB.StitchDBOptions? options = null) -> StitchDB.Storage.Interfaces.IStorageClient<StitchDB.Storage.Bucket!, StitchDB.Storage.FileObject!>!
+static StitchDB.StitchDBDiagnostics.SourceNames.get -> System.Collections.Generic.IReadOnlyList<string!>!

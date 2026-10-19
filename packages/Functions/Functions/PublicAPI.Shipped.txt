@@ -1,0 +1,98 @@
+#nullable enable
+StitchDB.Functions.Client
+StitchDB.Functions.Client.Client(string! baseUrl, StitchDB.Functions.Client.FunctionRegion? region = null) -> void
+StitchDB.Functions.Client.Client(string! baseUrl, StitchDB.Functions.Client.FunctionRegion? region = null, StitchDB.Functions.ClientOptions? options = null) -> void
+StitchDB.Functions.Client.FunctionRegion
+StitchDB.Functions.Client.FunctionRegion.Equals(StitchDB.Functions.Client.FunctionRegion! other) -> bool
+StitchDB.Functions.Client.FunctionRegion.FunctionRegion(string! region) -> void
+StitchDB.Functions.Client.GetHeaders.get -> System.Func<System.Collections.Generic.Dictionary<string!, string!>!>?
+StitchDB.Functions.Client.GetHeaders.set -> void
+StitchDB.Functions.Client.Invoke(string! functionName, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Functions.Client.Invoke(string! functionName, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Functions.Client.Invoke<T>(string! functionName, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null) -> System.Threading.Tasks.Task<T?>!
+StitchDB.Functions.Client.Invoke<T>(string! functionName, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<T?>!
+StitchDB.Functions.Client.InvokeFunctionOptions
+StitchDB.Functions.Client.InvokeFunctionOptions.Body.get -> System.Collections.Generic.Dictionary<string!, object!>!
+StitchDB.Functions.Client.InvokeFunctionOptions.Body.set -> void
+StitchDB.Functions.Client.InvokeFunctionOptions.FunctionRegion.get -> StitchDB.Functions.Client.FunctionRegion?
+StitchDB.Functions.Client.InvokeFunctionOptions.FunctionRegion.set -> void
+StitchDB.Functions.Client.InvokeFunctionOptions.Headers.get -> System.Collections.Generic.Dictionary<string!, string!>!
+StitchDB.Functions.Client.InvokeFunctionOptions.Headers.set -> void
+StitchDB.Functions.Client.InvokeFunctionOptions.HttpMethod.get -> System.Net.Http.HttpMethod!
+StitchDB.Functions.Client.InvokeFunctionOptions.HttpMethod.set -> void
+StitchDB.Functions.Client.InvokeFunctionOptions.HttpTimeout.get -> System.TimeSpan
+StitchDB.Functions.Client.InvokeFunctionOptions.HttpTimeout.set -> void
+StitchDB.Functions.Client.InvokeFunctionOptions.InvokeFunctionOptions() -> void
+StitchDB.Functions.Client.InvokeStream(string! functionName, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage!>!
+StitchDB.Functions.Client.Options.get -> StitchDB.Functions.ClientOptions!
+StitchDB.Functions.Client.RawInvoke(string! functionName, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null) -> System.Threading.Tasks.Task<System.Net.Http.HttpContent!>!
+StitchDB.Functions.Client.RawInvoke(string! functionName, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Net.Http.HttpContent!>!
+StitchDB.Functions.Client.SetAuth(string! token) -> void
+StitchDB.Functions.ClientOptions
+StitchDB.Functions.ClientOptions.<Clone>$() -> StitchDB.Functions.ClientOptions!
+StitchDB.Functions.ClientOptions.ClientOptions() -> void
+StitchDB.Functions.ClientOptions.Equals(StitchDB.Functions.ClientOptions? other) -> bool
+StitchDB.Functions.ClientOptions.HttpClient.get -> System.Net.Http.HttpClient?
+StitchDB.Functions.ClientOptions.HttpClient.init -> void
+StitchDB.Functions.ClientOptions.Proxy.get -> System.Net.IWebProxy?
+StitchDB.Functions.ClientOptions.Proxy.init -> void
+StitchDB.Functions.ClientOptions.Retry.get -> StitchDB.Core.Http.RetryOptions!
+StitchDB.Functions.ClientOptions.Retry.init -> void
+StitchDB.Functions.Exceptions.FailureHint
+StitchDB.Functions.Exceptions.FailureHint.Reason
+StitchDB.Functions.Exceptions.FailureHint.Reason.Internal = 2 -> StitchDB.Functions.Exceptions.FailureHint.Reason
+StitchDB.Functions.Exceptions.FailureHint.Reason.NotAuthorized = 1 -> StitchDB.Functions.Exceptions.FailureHint.Reason
+StitchDB.Functions.Exceptions.FailureHint.Reason.Unknown = 0 -> StitchDB.Functions.Exceptions.FailureHint.Reason
+StitchDB.Functions.Exceptions.FunctionsException
+StitchDB.Functions.Exceptions.FunctionsException.AddReason() -> void
+StitchDB.Functions.Exceptions.FunctionsException.Content.get -> string?
+StitchDB.Functions.Exceptions.FunctionsException.FunctionsException(string? message) -> void
+StitchDB.Functions.Exceptions.FunctionsException.FunctionsException(string? message, System.Exception? innerException) -> void
+StitchDB.Functions.Exceptions.FunctionsException.Reason.get -> StitchDB.Functions.Exceptions.FailureHint.Reason
+StitchDB.Functions.Exceptions.FunctionsException.Response.get -> System.Net.Http.HttpResponseMessage?
+StitchDB.Functions.Exceptions.FunctionsException.StatusCode.get -> int
+StitchDB.Functions.FunctionsDiagnostics
+StitchDB.Functions.Interfaces.IFunctionsClient
+StitchDB.Functions.Interfaces.IFunctionsClient.Invoke(string! url, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Functions.Interfaces.IFunctionsClient.Invoke(string! url, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+StitchDB.Functions.Interfaces.IFunctionsClient.Invoke<T>(string! url, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null) -> System.Threading.Tasks.Task<T?>!
+StitchDB.Functions.Interfaces.IFunctionsClient.Invoke<T>(string! url, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<T?>!
+StitchDB.Functions.Interfaces.IFunctionsClient.InvokeStream(string! url, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage!>!
+StitchDB.Functions.Interfaces.IFunctionsClient.RawInvoke(string! url, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null) -> System.Threading.Tasks.Task<System.Net.Http.HttpContent!>!
+StitchDB.Functions.Interfaces.IFunctionsClient.RawInvoke(string! url, string? token = null, StitchDB.Functions.Client.InvokeFunctionOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Net.Http.HttpContent!>!
+StitchDB.Functions.Interfaces.IFunctionsClient.SetAuth(string! token) -> void
+StitchDB.Functions.Responses.BaseResponse
+StitchDB.Functions.Responses.BaseResponse.BaseResponse() -> void
+StitchDB.Functions.Responses.BaseResponse.Content.get -> string?
+StitchDB.Functions.Responses.BaseResponse.Content.set -> void
+StitchDB.Functions.Responses.BaseResponse.ResponseMessage.get -> System.Net.Http.HttpResponseMessage?
+StitchDB.Functions.Responses.BaseResponse.ResponseMessage.set -> void
+const StitchDB.Functions.FunctionsDiagnostics.SourceName = "StitchDB.Functions" -> string!
+override StitchDB.Functions.Client.FunctionRegion.Equals(object! obj) -> bool
+override StitchDB.Functions.Client.FunctionRegion.GetHashCode() -> int
+override StitchDB.Functions.Client.FunctionRegion.ToString() -> string!
+override StitchDB.Functions.ClientOptions.Equals(object? obj) -> bool
+override StitchDB.Functions.ClientOptions.GetHashCode() -> int
+override StitchDB.Functions.ClientOptions.ToString() -> string!
+static StitchDB.Functions.Client.FunctionRegion.Any.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.ApNortheast1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.ApNortheast2.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.ApSouth1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.ApSoutheast1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.ApSoutheast2.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.CaCentral1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.EuCentral1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.EuWest1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.EuWest2.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.EuWest3.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.SaEast1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.UsEast1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.UsWest1.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.UsWest2.get -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.explicit operator StitchDB.Functions.Client.FunctionRegion!(string! region) -> StitchDB.Functions.Client.FunctionRegion!
+static StitchDB.Functions.Client.FunctionRegion.explicit operator string!(StitchDB.Functions.Client.FunctionRegion! region) -> string!
+static StitchDB.Functions.Client.FunctionRegion.operator !=(StitchDB.Functions.Client.FunctionRegion? left, StitchDB.Functions.Client.FunctionRegion? right) -> bool
+static StitchDB.Functions.Client.FunctionRegion.operator ==(StitchDB.Functions.Client.FunctionRegion? left, StitchDB.Functions.Client.FunctionRegion? right) -> bool
+static StitchDB.Functions.ClientOptions.operator !=(StitchDB.Functions.ClientOptions? left, StitchDB.Functions.ClientOptions? right) -> bool
+static StitchDB.Functions.ClientOptions.operator ==(StitchDB.Functions.ClientOptions? left, StitchDB.Functions.ClientOptions? right) -> bool
+static StitchDB.Functions.Exceptions.FailureHint.DetectReason(StitchDB.Functions.Exceptions.FunctionsException! ex) -> StitchDB.Functions.Exceptions.FailureHint.Reason

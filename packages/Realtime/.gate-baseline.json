@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "package": "Realtime",
+  "project": "Realtime/Realtime.csproj",
+  "testProject": "Realtime.Tests/Realtime.Tests.csproj",
+  "warnings": {
+    "total": 54,
+    "byCode": {
+      "CS1591": 28,
+      "IDE0009": 10,
+      "IDE0022": 4,
+      "CS8618": 4,
+      "CS1572": 4,
+      "IDE0005": 2,
+      "CS8604": 2
+    }
+  },
+  "updated": "2026-09-03T09:51:04Z",
+  "coverage": {
+    "hermeticLine": 56.54
+  }
+}

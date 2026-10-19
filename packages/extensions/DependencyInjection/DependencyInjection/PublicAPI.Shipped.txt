@@ -1,0 +1,3 @@
+#nullable enable
+StitchDB.Extensions.DependencyInjection.StitchDBServiceCollectionExtensions
+static StitchDB.Extensions.DependencyInjection.StitchDBServiceCollectionExtensions.AddStitchDB(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, string! stitchdbUrl, string! stitchdbKey, System.Action<StitchDB.StitchDBOptions!>? configureOptions = null) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!

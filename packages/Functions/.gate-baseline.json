@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "package": "Functions",
+  "project": "Functions/Functions.csproj",
+  "testProject": "Functions.Tests/Functions.Tests.csproj",
+  "warnings": {
+    "total": 10,
+    "byCode": {
+      "IDE0161": 10
+    }
+  },
+  "updated": "2026-08-20T12:24:42Z",
+  "coverage": {
+    "hermeticLine": 98.18
+  }
+}
