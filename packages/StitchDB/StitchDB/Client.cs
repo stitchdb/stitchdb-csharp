@@ -144,7 +144,7 @@ public class Client : IStitchDBClient<User, Session, RealtimeSocket, RealtimeCha
     /// Creates a new StitchDB Client.
     /// </summary>
     /// <param name="stitchdbUrl">
-    /// The project URL from <b>Settings → API keys</b>, e.g. <c>https://xyzcompany.stitchdb.com</c>. The
+    /// The project URL from <b>Settings → API keys</b>, e.g. <c>https://<project-ref>.p.stitchdb.com</c>. The
     /// service URLs (auth, rest, realtime, storage, functions) are derived from it.
     /// </param>
     /// <param name="stitchdbKey">

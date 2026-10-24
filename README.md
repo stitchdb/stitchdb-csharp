@@ -27,8 +27,11 @@ Guides and API reference: https://stitchdb.com/docs/sdk/csharp
 
 ## Installation
 
+Add the client to your app from this repository:
+
 ```sh
-dotnet add package StitchDB
+git clone https://github.com/stitchdb/stitchdb-csharp
+dotnet add reference stitchdb-csharp/packages/StitchDB/StitchDB/StitchDB.csproj
 ```
 
 ## Quickstart
